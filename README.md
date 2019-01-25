@@ -1,2 +1,30 @@
 # ADempiere Dictionary Client for gRPC
 ADempiere Dictionary Client write in Javascript for gRPC service
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Recreate proto stup class
+For recreate stup class you must have follow:
+- [protobuf](https://github.com/protocolbuffers/protobuf/releases)
+- [protoc](https://github.com/grpc/grpc-web/releases)
+- Also you can see it: [gRPC-web](https://github.com/grpc/grpc-web)
+- [gRPC](https://grpc.io/docs/tutorials/basic/web.html)
+After installed it just go to source code folder an run it:
+```
+protoc proto/dictionary.proto \
+--js_out=import_style=commonjs:src/grpc \
+--grpc-web_out=import_style=commonjs,mode=grpcwebtext:src/grpc
+```
+The result is generated on: src/grpc folder
