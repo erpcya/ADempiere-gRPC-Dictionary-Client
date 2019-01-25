@@ -1,5 +1,5 @@
 {
-  "name": "grpc-dictionary-client",
+  "name": "@adempiere/grpc-dictionary-client",
   "version": "1.0.0",
   "description": "ADempiere Dictionary Client write in Javascript for gRPC service",
   "main": "index.js",
@@ -19,5 +19,6 @@
   "dependencies": {
     "google-protobuf": "^3.6.1",
     "grpc-web": "^1.0.3"
-  }
+  },
+  "devDependencies": {}
 }
