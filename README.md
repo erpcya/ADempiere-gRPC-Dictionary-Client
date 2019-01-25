@@ -7,8 +7,6 @@ ADempiere Dictionary Client write in Javascript for gRPC service
 npm install @adempiere/grpc-dictionary-client --save
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
 ## Recreate proto stup class
 For recreate stup class you must have follow:
 - [protobuf](https://github.com/protocolbuffers/protobuf/releases)
