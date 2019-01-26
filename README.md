@@ -9,18 +9,18 @@ npm install @adempiere/grpc-dictionary-client --save
 
 ## A Example
 ### Declare Dictionary
-```
+```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
 let dictionary = new Dictionary('Version Epale', GRPC_HOST);
 ```
 ### Declare Dictionary with specific language
-```
+```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
 let dictionary = new Dictionary('Version Epale', GRPC_HOST, 'es_VE');
 ```
 
 ### Request a simple Menu
-```
+```javascript
 //  Request Menu
 dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', false)
 .then(menu => {
@@ -29,7 +29,7 @@ dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', false)
 .catch(err => console.log("Error: " + err));
 ```
 ### Request Menu and Childs
-```
+```javascript
 //  Request Menu with childs
 dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', true)
 .then(menu => {
@@ -42,7 +42,7 @@ dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', true)
 ```
 
 ### Request a Window
-```
+```javascript
 //  Request Window
 dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
 .then(window => {
@@ -51,7 +51,7 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
 .catch(err => console.log("Error: " + err));
 ```
 ### Request a Window and Tabs of it
-```
+```javascript
 //  Request Window and Tabs
 dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
 .then(window => {
@@ -63,7 +63,7 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
 ```
 
 ### Request a Tab
-```
+```javascript
 //  Request Tab
 dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
 .then(tab => {
@@ -72,7 +72,7 @@ dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
 .catch(err => console.log("Error: " + err));
 ```
 ### Request a Tab and Fields
-```
+```javascript
 //  Request Window and Tabs
 dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', true)
 .then(tab => {
@@ -83,7 +83,7 @@ dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', true)
 .catch(err => console.log("Error: " + err));
 ```
 ### Request a Field
-```
+```javascript
 //  Request Field
 dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
 .then(field => {
