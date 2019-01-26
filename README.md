@@ -7,7 +7,92 @@ ADempiere Dictionary Client write in Javascript for gRPC service
 npm install @adempiere/grpc-dictionary-client --save
 ```
 
-## Recreate proto stup class
+## A Example
+### Declare Dictionary
+```
+const Dictionary = require('@adempiere/grpc-dictionary-client');
+let dictionary = new Dictionary('Version Epale', GRPC_HOST);
+```
+### Declare Dictionary with specific language
+```
+const Dictionary = require('@adempiere/grpc-dictionary-client');
+let dictionary = new Dictionary('Version Epale', GRPC_HOST, 'es_VE');
+```
+
+### Request a simple Menu
+```
+//  Request Menu
+dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', false)
+.then(menu => {
+  console.log("Menu: " + menu);
+})
+.catch(err => console.log("Error: " + err));
+```
+### Request Menu and Childs
+```
+//  Request Menu with childs
+dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', true)
+.then(menu => {
+  console.log("Menu: " + menu);
+  for(var i = 0; i < menu.getChildsList().length; i++) {
+    console.log("Menu Child: " + menu.getChildsList()[i]);
+  }
+})
+.catch(err => console.log("Error: " + err));
+```
+
+### Request a Window
+```
+//  Request Window
+dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
+.then(window => {
+  console.log("Window: " + window);
+})
+.catch(err => console.log("Error: " + err));
+```
+### Request a Window and Tabs of it
+```
+//  Request Window and Tabs
+dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
+.then(window => {
+  for(var i = 0; i < window.getTabsList().length; i++) {
+    console.log("Window Tab: " + window.getTabsList()[i]);
+  }
+})
+.catch(err => console.log("Error: " + err));
+```
+
+### Request a Tab
+```
+//  Request Tab
+dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
+.then(tab => {
+  console.log("Tab: " + tab);
+})
+.catch(err => console.log("Error: " + err));
+```
+### Request a Tab and Fields
+```
+//  Request Window and Tabs
+dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', true)
+.then(tab => {
+  for(var i = 0; i < tab.getFieldsList().length; i++) {
+    console.log("Field: " + tab.getFieldsList()[i]);
+  }
+})
+.catch(err => console.log("Error: " + err));
+```
+### Request a Field
+```
+//  Request Field
+dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
+.then(field => {
+  console.log("Field: " + field);
+})
+.catch(err => console.log("Error: " + err));
+```
+
+## Recreate proto stup class (only for contribute to project)
 For recreate stup class you must have follow:
 - [protobuf](https://github.com/protocolbuffers/protobuf/releases)
 - [protoc](https://github.com/grpc/grpc-web/releases)
