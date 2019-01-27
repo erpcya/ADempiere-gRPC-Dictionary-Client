@@ -1,5 +1,6 @@
 # ADempiere Dictionary Client for gRPC
-ADempiere Dictionary Client write in Javascript for gRPC service
+ADempiere Dictionary Client write in Javascript for gRPC service, use it for connect with
+[ADempiere-gRPC-Server](https://github.com/erpcya/adempiere-gRPC-Server).
 ## Using it
 
 ``` bash

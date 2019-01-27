@@ -16,6 +16,16 @@
     "url": "https://github.com/erpcya/gRPC-Dictionary-Client/issues"
   },
   "homepage": "https://github.com/erpcya/gRPC-Dictionary-Client#readme",
+  "keywords": [
+    "compiere",
+    "adempiere",
+    "erp",
+    "grpc",
+    "grpc-web"
+    "java",
+    "web",
+    "dictionary"
+  ],
   "dependencies": {
     "google-protobuf": "^3.6.1",
     "grpc": "^1.18.0",
