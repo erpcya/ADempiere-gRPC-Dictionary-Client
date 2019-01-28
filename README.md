@@ -27,7 +27,9 @@ dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', false)
 .then(menu => {
   console.log("Menu: " + menu);
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 ### Request Menu and Childs
 ```javascript
@@ -39,7 +41,9 @@ dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', true)
     console.log("Menu Child: " + menu.getChildsList()[i]);
   }
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 
 ### Request a Window
@@ -49,7 +53,9 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
 .then(window => {
   console.log("Window: " + window);
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 ### Request a Window and Tabs of it
 ```javascript
@@ -60,7 +66,9 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
     console.log("Window Tab: " + window.getTabsList()[i]);
   }
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 
 ### Request a Tab
@@ -70,7 +78,9 @@ dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
 .then(tab => {
   console.log("Tab: " + tab);
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 ### Request a Tab and Fields
 ```javascript
@@ -81,7 +91,9 @@ dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', true)
     console.log("Field: " + tab.getFieldsList()[i]);
   }
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 ### Request a Field
 ```javascript
@@ -90,7 +102,9 @@ dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
 .then(field => {
   console.log("Field: " + field);
 })
-.catch(err => console.log("Error: " + err));
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
 ```
 
 ## Recreate proto stup class (only for contribute to project)
