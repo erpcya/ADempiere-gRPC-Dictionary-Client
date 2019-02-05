@@ -75,12 +75,12 @@ proto.dictionary.DictionaryServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Menu>}
  */
 const methodInfo_DictionaryService_RequestMenuAndChild = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Menu,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -89,7 +89,7 @@ const methodInfo_DictionaryService_RequestMenuAndChild = new grpc.web.AbstractCl
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -110,7 +110,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenuAndChild =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -131,12 +131,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestMenuAndChild =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Menu>}
  */
 const methodInfo_DictionaryService_RequestMenu = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Menu,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -145,7 +145,7 @@ const methodInfo_DictionaryService_RequestMenu = new grpc.web.AbstractClientBase
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -166,7 +166,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenu =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -187,12 +187,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestMenu =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Window>}
  */
 const methodInfo_DictionaryService_RequestWindow = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -201,7 +201,7 @@ const methodInfo_DictionaryService_RequestWindow = new grpc.web.AbstractClientBa
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -222,7 +222,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindow =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -243,12 +243,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindow =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Window>}
  */
 const methodInfo_DictionaryService_RequestWindowAndTabs = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -257,7 +257,7 @@ const methodInfo_DictionaryService_RequestWindowAndTabs = new grpc.web.AbstractC
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -278,7 +278,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindowAndTabs =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -299,12 +299,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindowAndTabs =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Tab>}
  */
 const methodInfo_DictionaryService_RequestTab = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -313,7 +313,7 @@ const methodInfo_DictionaryService_RequestTab = new grpc.web.AbstractClientBase.
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -334,7 +334,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTab =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -355,12 +355,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestTab =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Tab>}
  */
 const methodInfo_DictionaryService_RequestTabAndFields = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -369,7 +369,7 @@ const methodInfo_DictionaryService_RequestTabAndFields = new grpc.web.AbstractCl
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -390,7 +390,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTabAndFields =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -411,12 +411,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestTabAndFields =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.ObjectRequest,
+ *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Field>}
  */
 const methodInfo_DictionaryService_RequestField = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Field,
-  /** @param {!proto.dictionary.ObjectRequest} request */
+  /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -425,7 +425,7 @@ const methodInfo_DictionaryService_RequestField = new grpc.web.AbstractClientBas
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
@@ -446,7 +446,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestField =
 
 
 /**
- * @param {!proto.dictionary.ObjectRequest} request The
+ * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata

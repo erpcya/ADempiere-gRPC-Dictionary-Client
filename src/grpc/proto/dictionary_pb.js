@@ -11,9 +11,9 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-goog.exportSymbol('proto.dictionary.ClientRequest', null, global);
+goog.exportSymbol('proto.dictionary.ApplicationRequest', null, global);
 goog.exportSymbol('proto.dictionary.ContextInfo', null, global);
-goog.exportSymbol('proto.dictionary.ErrorMessage', null, global);
+goog.exportSymbol('proto.dictionary.EntityRequest', null, global);
 goog.exportSymbol('proto.dictionary.Field', null, global);
 goog.exportSymbol('proto.dictionary.FieldCondition', null, global);
 goog.exportSymbol('proto.dictionary.FieldDefinition', null, global);
@@ -21,7 +21,6 @@ goog.exportSymbol('proto.dictionary.FieldGroup', null, global);
 goog.exportSymbol('proto.dictionary.Form', null, global);
 goog.exportSymbol('proto.dictionary.Menu', null, global);
 goog.exportSymbol('proto.dictionary.MessageText', null, global);
-goog.exportSymbol('proto.dictionary.ObjectRequest', null, global);
 goog.exportSymbol('proto.dictionary.Process', null, global);
 goog.exportSymbol('proto.dictionary.Reference', null, global);
 goog.exportSymbol('proto.dictionary.ReferenceTable', null, global);
@@ -41,12 +40,12 @@ goog.exportSymbol('proto.dictionary.Window', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.dictionary.ClientRequest = function(opt_data) {
+proto.dictionary.ApplicationRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dictionary.ClientRequest, jspb.Message);
+goog.inherits(proto.dictionary.ApplicationRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.dictionary.ClientRequest.displayName = 'proto.dictionary.ClientRequest';
+  proto.dictionary.ApplicationRequest.displayName = 'proto.dictionary.ApplicationRequest';
 }
 
 
@@ -61,8 +60,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.dictionary.ClientRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.dictionary.ClientRequest.toObject(opt_includeInstance, this);
+proto.dictionary.ApplicationRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.dictionary.ApplicationRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -71,15 +70,15 @@ proto.dictionary.ClientRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.dictionary.ClientRequest} msg The msg instance to transform.
+ * @param {!proto.dictionary.ApplicationRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ClientRequest.toObject = function(includeInstance, msg) {
+proto.dictionary.ApplicationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 3, "")
+    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    clientversion: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -93,23 +92,23 @@ proto.dictionary.ClientRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.dictionary.ClientRequest}
+ * @return {!proto.dictionary.ApplicationRequest}
  */
-proto.dictionary.ClientRequest.deserializeBinary = function(bytes) {
+proto.dictionary.ApplicationRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.dictionary.ClientRequest;
-  return proto.dictionary.ClientRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.dictionary.ApplicationRequest;
+  return proto.dictionary.ApplicationRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.dictionary.ClientRequest} msg The message object to deserialize into.
+ * @param {!proto.dictionary.ApplicationRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.dictionary.ClientRequest}
+ * @return {!proto.dictionary.ApplicationRequest}
  */
-proto.dictionary.ClientRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.dictionary.ApplicationRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -117,16 +116,16 @@ proto.dictionary.ClientRequest.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setLanguage(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientversion(value);
       break;
     default:
       reader.skipField();
@@ -141,9 +140,9 @@ proto.dictionary.ClientRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.dictionary.ClientRequest.prototype.serializeBinary = function() {
+proto.dictionary.ApplicationRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.dictionary.ClientRequest.serializeBinaryToWriter(this, writer);
+  proto.dictionary.ApplicationRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -151,27 +150,27 @@ proto.dictionary.ClientRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.dictionary.ClientRequest} message
+ * @param {!proto.dictionary.ApplicationRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ClientRequest.serializeBinaryToWriter = function(message, writer) {
+proto.dictionary.ApplicationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getUuid();
+  f = message.getLanguage();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getLanguage();
+  f = message.getClientversion();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -182,46 +181,46 @@ proto.dictionary.ClientRequest.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional int32 id = 1;
- * @return {number}
+ * optional string uuid = 1;
+ * @return {string}
  */
-proto.dictionary.ClientRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.dictionary.ApplicationRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {number} value */
-proto.dictionary.ClientRequest.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+/** @param {string} value */
+proto.dictionary.ApplicationRequest.prototype.setUuid = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string uuid = 2;
+ * optional string language = 2;
  * @return {string}
  */
-proto.dictionary.ClientRequest.prototype.getUuid = function() {
+proto.dictionary.ApplicationRequest.prototype.getLanguage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ClientRequest.prototype.setUuid = function(value) {
+proto.dictionary.ApplicationRequest.prototype.setLanguage = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string language = 3;
+ * optional string clientVersion = 3;
  * @return {string}
  */
-proto.dictionary.ClientRequest.prototype.getLanguage = function() {
+proto.dictionary.ApplicationRequest.prototype.getClientversion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ClientRequest.prototype.setLanguage = function(value) {
+proto.dictionary.ApplicationRequest.prototype.setClientversion = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -237,12 +236,12 @@ proto.dictionary.ClientRequest.prototype.setLanguage = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.dictionary.ObjectRequest = function(opt_data) {
+proto.dictionary.EntityRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dictionary.ObjectRequest, jspb.Message);
+goog.inherits(proto.dictionary.EntityRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.dictionary.ObjectRequest.displayName = 'proto.dictionary.ObjectRequest';
+  proto.dictionary.EntityRequest.displayName = 'proto.dictionary.EntityRequest';
 }
 
 
@@ -257,8 +256,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.dictionary.ObjectRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.dictionary.ObjectRequest.toObject(opt_includeInstance, this);
+proto.dictionary.EntityRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.dictionary.EntityRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -267,14 +266,15 @@ proto.dictionary.ObjectRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.dictionary.ObjectRequest} msg The msg instance to transform.
+ * @param {!proto.dictionary.EntityRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ObjectRequest.toObject = function(includeInstance, msg) {
+proto.dictionary.EntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    clientrequest: (f = msg.getClientrequest()) && proto.dictionary.ClientRequest.toObject(includeInstance, f)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    applicationrequest: (f = msg.getApplicationrequest()) && proto.dictionary.ApplicationRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -288,23 +288,23 @@ proto.dictionary.ObjectRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.dictionary.ObjectRequest}
+ * @return {!proto.dictionary.EntityRequest}
  */
-proto.dictionary.ObjectRequest.deserializeBinary = function(bytes) {
+proto.dictionary.EntityRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.dictionary.ObjectRequest;
-  return proto.dictionary.ObjectRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.dictionary.EntityRequest;
+  return proto.dictionary.EntityRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.dictionary.ObjectRequest} msg The message object to deserialize into.
+ * @param {!proto.dictionary.EntityRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.dictionary.ObjectRequest}
+ * @return {!proto.dictionary.EntityRequest}
  */
-proto.dictionary.ObjectRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.dictionary.EntityRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -312,13 +312,17 @@ proto.dictionary.ObjectRequest.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 2:
-      var value = new proto.dictionary.ClientRequest;
-      reader.readMessage(value,proto.dictionary.ClientRequest.deserializeBinaryFromReader);
-      msg.setClientrequest(value);
+    case 3:
+      var value = new proto.dictionary.ApplicationRequest;
+      reader.readMessage(value,proto.dictionary.ApplicationRequest.deserializeBinaryFromReader);
+      msg.setApplicationrequest(value);
       break;
     default:
       reader.skipField();
@@ -333,9 +337,9 @@ proto.dictionary.ObjectRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.dictionary.ObjectRequest.prototype.serializeBinary = function() {
+proto.dictionary.EntityRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.dictionary.ObjectRequest.serializeBinaryToWriter(this, writer);
+  proto.dictionary.EntityRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -343,63 +347,85 @@ proto.dictionary.ObjectRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.dictionary.ObjectRequest} message
+ * @param {!proto.dictionary.EntityRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ObjectRequest.serializeBinaryToWriter = function(message, writer) {
+proto.dictionary.EntityRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUuid();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getClientrequest();
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getApplicationrequest();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
-      proto.dictionary.ClientRequest.serializeBinaryToWriter
+      proto.dictionary.ApplicationRequest.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string uuid = 1;
- * @return {string}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.ObjectRequest.prototype.getUuid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.dictionary.EntityRequest.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {string} value */
-proto.dictionary.ObjectRequest.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+/** @param {number} value */
+proto.dictionary.EntityRequest.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional ClientRequest clientRequest = 2;
- * @return {?proto.dictionary.ClientRequest}
+ * optional string uuid = 2;
+ * @return {string}
  */
-proto.dictionary.ObjectRequest.prototype.getClientrequest = function() {
-  return /** @type{?proto.dictionary.ClientRequest} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ClientRequest, 2));
+proto.dictionary.EntityRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {?proto.dictionary.ClientRequest|undefined} value */
-proto.dictionary.ObjectRequest.prototype.setClientrequest = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+/** @param {string} value */
+proto.dictionary.EntityRequest.prototype.setUuid = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
-proto.dictionary.ObjectRequest.prototype.clearClientrequest = function() {
-  this.setClientrequest(undefined);
+/**
+ * optional ApplicationRequest applicationRequest = 3;
+ * @return {?proto.dictionary.ApplicationRequest}
+ */
+proto.dictionary.EntityRequest.prototype.getApplicationrequest = function() {
+  return /** @type{?proto.dictionary.ApplicationRequest} */ (
+    jspb.Message.getWrapperField(this, proto.dictionary.ApplicationRequest, 3));
+};
+
+
+/** @param {?proto.dictionary.ApplicationRequest|undefined} value */
+proto.dictionary.EntityRequest.prototype.setApplicationrequest = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.dictionary.EntityRequest.prototype.clearApplicationrequest = function() {
+  this.setApplicationrequest(undefined);
 };
 
 
@@ -407,177 +433,8 @@ proto.dictionary.ObjectRequest.prototype.clearClientrequest = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.dictionary.ObjectRequest.prototype.hasClientrequest = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.dictionary.ErrorMessage = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.dictionary.ErrorMessage, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.dictionary.ErrorMessage.displayName = 'proto.dictionary.ErrorMessage';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.dictionary.ErrorMessage.prototype.toObject = function(opt_includeInstance) {
-  return proto.dictionary.ErrorMessage.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.dictionary.ErrorMessage} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dictionary.ErrorMessage.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    errormessage: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    errorcode: jspb.Message.getFieldWithDefault(msg, 2, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.dictionary.ErrorMessage}
- */
-proto.dictionary.ErrorMessage.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.dictionary.ErrorMessage;
-  return proto.dictionary.ErrorMessage.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.dictionary.ErrorMessage} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.dictionary.ErrorMessage}
- */
-proto.dictionary.ErrorMessage.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setErrormessage(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setErrorcode(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.dictionary.ErrorMessage.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.dictionary.ErrorMessage.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.dictionary.ErrorMessage} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.dictionary.ErrorMessage.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getErrormessage();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getErrorcode();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string errorMessage = 1;
- * @return {string}
- */
-proto.dictionary.ErrorMessage.prototype.getErrormessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.dictionary.ErrorMessage.prototype.setErrormessage = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional int32 errorCode = 2;
- * @return {number}
- */
-proto.dictionary.ErrorMessage.prototype.getErrorcode = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {number} value */
-proto.dictionary.ErrorMessage.prototype.setErrorcode = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+proto.dictionary.EntityRequest.prototype.hasApplicationrequest = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -604,7 +461,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Window.repeatedFields_ = [9];
+proto.dictionary.Window.repeatedFields_ = [8];
 
 
 
@@ -637,10 +494,10 @@ proto.dictionary.Window.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    help: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    issotrx: jspb.Message.getFieldWithDefault(msg, 7, false),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    help: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    issotrx: jspb.Message.getFieldWithDefault(msg, 6, false),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     tabsList: jspb.Message.toObjectList(msg.getTabsList(),
     proto.dictionary.Tab.toObject, includeInstance)
@@ -688,28 +545,28 @@ proto.dictionary.Window.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setHelp(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIssotrx(value);
       break;
-    case 8:
+    case 7:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 9:
+    case 8:
       var value = new proto.dictionary.Tab;
       reader.readMessage(value,proto.dictionary.Tab.deserializeBinaryFromReader);
       msg.addTabs(value);
@@ -760,35 +617,35 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
   f = message.getHelp();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
   f = message.getIssotrx();
   if (f) {
     writer.writeBool(
-      7,
+      6,
       f
     );
   }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -796,7 +653,7 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
   f = message.getTabsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      8,
       f,
       proto.dictionary.Tab.serializeBinaryToWriter
     );
@@ -835,80 +692,80 @@ proto.dictionary.Window.prototype.setUuid = function(value) {
 
 
 /**
- * optional string name = 4;
+ * optional string name = 3;
  * @return {string}
  */
 proto.dictionary.Window.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Window.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string description = 5;
+ * optional string description = 4;
  * @return {string}
  */
 proto.dictionary.Window.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Window.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string help = 6;
+ * optional string help = 5;
  * @return {string}
  */
 proto.dictionary.Window.prototype.getHelp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Window.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional bool isSOTrx = 7;
+ * optional bool isSOTrx = 6;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Window.prototype.getIssotrx = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Window.prototype.setIssotrx = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 8;
+ * optional ContextInfo contextInfo = 7;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Window.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 8));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 7));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Window.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -922,23 +779,23 @@ proto.dictionary.Window.prototype.clearContextinfo = function() {
  * @return {!boolean}
  */
 proto.dictionary.Window.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated Tab tabs = 9;
+ * repeated Tab tabs = 8;
  * @return {!Array<!proto.dictionary.Tab>}
  */
 proto.dictionary.Window.prototype.getTabsList = function() {
   return /** @type{!Array<!proto.dictionary.Tab>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 8));
 };
 
 
 /** @param {!Array<!proto.dictionary.Tab>} value */
 proto.dictionary.Window.prototype.setTabsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -948,7 +805,7 @@ proto.dictionary.Window.prototype.setTabsList = function(value) {
  * @return {!proto.dictionary.Tab}
  */
 proto.dictionary.Window.prototype.addTabs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.dictionary.Tab, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.dictionary.Tab, opt_index);
 };
 
 
@@ -980,7 +837,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Tab.repeatedFields_ = [29];
+proto.dictionary.Tab.repeatedFields_ = [28];
 
 
 
@@ -1013,29 +870,29 @@ proto.dictionary.Tab.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    help: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    tablename: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    sequence: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    tablevel: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    issinglerow: jspb.Message.getFieldWithDefault(msg, 10, false),
-    isadvancedtab: jspb.Message.getFieldWithDefault(msg, 11, false),
-    ishastree: jspb.Message.getFieldWithDefault(msg, 12, false),
-    isinfotab: jspb.Message.getFieldWithDefault(msg, 13, false),
-    issorttab: jspb.Message.getFieldWithDefault(msg, 14, false),
-    istranslationtab: jspb.Message.getFieldWithDefault(msg, 15, false),
-    isreadonly: jspb.Message.getFieldWithDefault(msg, 16, false),
-    isinsertrecord: jspb.Message.getFieldWithDefault(msg, 17, false),
-    isview: jspb.Message.getFieldWithDefault(msg, 18, false),
-    isdeleteable: jspb.Message.getFieldWithDefault(msg, 19, false),
-    isdocument: jspb.Message.getFieldWithDefault(msg, 20, false),
-    accesslevel: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    linkcolumnname: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    displaylogic: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    commitwarning: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    orderbyclause: jspb.Message.getFieldWithDefault(msg, 26, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    help: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    tablename: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    sequence: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    tablevel: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    issinglerow: jspb.Message.getFieldWithDefault(msg, 9, false),
+    isadvancedtab: jspb.Message.getFieldWithDefault(msg, 10, false),
+    ishastree: jspb.Message.getFieldWithDefault(msg, 11, false),
+    isinfotab: jspb.Message.getFieldWithDefault(msg, 12, false),
+    issorttab: jspb.Message.getFieldWithDefault(msg, 13, false),
+    istranslationtab: jspb.Message.getFieldWithDefault(msg, 14, false),
+    isreadonly: jspb.Message.getFieldWithDefault(msg, 15, false),
+    isinsertrecord: jspb.Message.getFieldWithDefault(msg, 16, false),
+    isview: jspb.Message.getFieldWithDefault(msg, 17, false),
+    isdeleteable: jspb.Message.getFieldWithDefault(msg, 18, false),
+    isdocument: jspb.Message.getFieldWithDefault(msg, 19, false),
+    accesslevel: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    linkcolumnname: jspb.Message.getFieldWithDefault(msg, 21, ""),
+    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    displaylogic: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    commitwarning: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    orderbyclause: jspb.Message.getFieldWithDefault(msg, 25, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
@@ -1084,109 +941,109 @@ proto.dictionary.Tab.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setHelp(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setTablename(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSequence(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTablevel(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIssinglerow(value);
       break;
-    case 11:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsadvancedtab(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIshastree(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsinfotab(value);
       break;
-    case 14:
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIssorttab(value);
       break;
-    case 15:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIstranslationtab(value);
       break;
-    case 16:
+    case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsreadonly(value);
       break;
-    case 17:
+    case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsinsertrecord(value);
       break;
-    case 18:
+    case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsview(value);
       break;
-    case 19:
+    case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsdeleteable(value);
       break;
-    case 20:
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsdocument(value);
       break;
-    case 21:
+    case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAccesslevel(value);
       break;
-    case 22:
+    case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.setLinkcolumnname(value);
       break;
-    case 23:
+    case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setParentcolumnname(value);
       break;
-    case 24:
+    case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setDisplaylogic(value);
       break;
-    case 25:
+    case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setCommitwarning(value);
       break;
-    case 26:
+    case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrderbyclause(value);
       break;
-    case 27:
+    case 26:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 28:
+    case 27:
       var value = new proto.dictionary.Process;
       reader.readMessage(value,proto.dictionary.Process.deserializeBinaryFromReader);
       msg.setProcess(value);
       break;
-    case 29:
+    case 28:
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
@@ -1237,168 +1094,168 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
   f = message.getHelp();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
   f = message.getTablename();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      6,
       f
     );
   }
   f = message.getSequence();
   if (f !== 0) {
     writer.writeInt32(
-      8,
+      7,
       f
     );
   }
   f = message.getTablevel();
   if (f !== 0) {
     writer.writeInt32(
-      9,
+      8,
       f
     );
   }
   f = message.getIssinglerow();
   if (f) {
     writer.writeBool(
-      10,
+      9,
       f
     );
   }
   f = message.getIsadvancedtab();
   if (f) {
     writer.writeBool(
-      11,
+      10,
       f
     );
   }
   f = message.getIshastree();
   if (f) {
     writer.writeBool(
-      12,
+      11,
       f
     );
   }
   f = message.getIsinfotab();
   if (f) {
     writer.writeBool(
-      13,
+      12,
       f
     );
   }
   f = message.getIssorttab();
   if (f) {
     writer.writeBool(
-      14,
+      13,
       f
     );
   }
   f = message.getIstranslationtab();
   if (f) {
     writer.writeBool(
-      15,
+      14,
       f
     );
   }
   f = message.getIsreadonly();
   if (f) {
     writer.writeBool(
-      16,
+      15,
       f
     );
   }
   f = message.getIsinsertrecord();
   if (f) {
     writer.writeBool(
-      17,
+      16,
       f
     );
   }
   f = message.getIsview();
   if (f) {
     writer.writeBool(
-      18,
+      17,
       f
     );
   }
   f = message.getIsdeleteable();
   if (f) {
     writer.writeBool(
-      19,
+      18,
       f
     );
   }
   f = message.getIsdocument();
   if (f) {
     writer.writeBool(
-      20,
+      19,
       f
     );
   }
   f = message.getAccesslevel();
   if (f !== 0) {
     writer.writeInt32(
-      21,
+      20,
       f
     );
   }
   f = message.getLinkcolumnname();
   if (f.length > 0) {
     writer.writeString(
-      22,
+      21,
       f
     );
   }
   f = message.getParentcolumnname();
   if (f.length > 0) {
     writer.writeString(
-      23,
+      22,
       f
     );
   }
   f = message.getDisplaylogic();
   if (f.length > 0) {
     writer.writeString(
-      24,
+      23,
       f
     );
   }
   f = message.getCommitwarning();
   if (f.length > 0) {
     writer.writeString(
-      25,
+      24,
       f
     );
   }
   f = message.getOrderbyclause();
   if (f.length > 0) {
     writer.writeString(
-      26,
+      25,
       f
     );
   }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      27,
+      26,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -1406,7 +1263,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getProcess();
   if (f != null) {
     writer.writeMessage(
-      28,
+      27,
       f,
       proto.dictionary.Process.serializeBinaryToWriter
     );
@@ -1414,7 +1271,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      29,
+      28,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
     );
@@ -1453,385 +1310,385 @@ proto.dictionary.Tab.prototype.setUuid = function(value) {
 
 
 /**
- * optional string name = 4;
+ * optional string name = 3;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string description = 5;
+ * optional string description = 4;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string help = 6;
+ * optional string help = 5;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getHelp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string tableName = 7;
+ * optional string tableName = 6;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getTablename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setTablename = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 sequence = 8;
+ * optional int32 sequence = 7;
  * @return {number}
  */
 proto.dictionary.Tab.prototype.getSequence = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Tab.prototype.setSequence = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional int32 tabLevel = 9;
+ * optional int32 tabLevel = 8;
  * @return {number}
  */
 proto.dictionary.Tab.prototype.getTablevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Tab.prototype.setTablevel = function(value) {
-  jspb.Message.setProto3IntField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional bool isSingleRow = 10;
+ * optional bool isSingleRow = 9;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIssinglerow = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 9, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIssinglerow = function(value) {
-  jspb.Message.setProto3BooleanField(this, 10, value);
+  jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool isAdvancedTab = 11;
+ * optional bool isAdvancedTab = 10;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsadvancedtab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsadvancedtab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 11, value);
+  jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool isHasTree = 12;
+ * optional bool isHasTree = 11;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIshastree = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIshastree = function(value) {
-  jspb.Message.setProto3BooleanField(this, 12, value);
+  jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * optional bool isInfoTab = 13;
+ * optional bool isInfoTab = 12;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsinfotab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsinfotab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 13, value);
+  jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional bool isSortTab = 14;
+ * optional bool isSortTab = 13;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIssorttab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIssorttab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 14, value);
+  jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional bool isTranslationTab = 15;
+ * optional bool isTranslationTab = 14;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIstranslationtab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIstranslationtab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 15, value);
+  jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
 /**
- * optional bool isReadOnly = 16;
+ * optional bool isReadOnly = 15;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsreadonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsreadonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 16, value);
+  jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
 /**
- * optional bool isInsertRecord = 17;
+ * optional bool isInsertRecord = 16;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsinsertrecord = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsinsertrecord = function(value) {
-  jspb.Message.setProto3BooleanField(this, 17, value);
+  jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
 /**
- * optional bool isView = 18;
+ * optional bool isView = 17;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsview = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsview = function(value) {
-  jspb.Message.setProto3BooleanField(this, 18, value);
+  jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
 /**
- * optional bool isDeleteable = 19;
+ * optional bool isDeleteable = 18;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsdeleteable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 18, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsdeleteable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 19, value);
+  jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
 /**
- * optional bool isDocument = 20;
+ * optional bool isDocument = 19;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsdocument = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Tab.prototype.setIsdocument = function(value) {
-  jspb.Message.setProto3BooleanField(this, 20, value);
+  jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
 /**
- * optional int32 accessLevel = 21;
+ * optional int32 accessLevel = 20;
  * @return {number}
  */
 proto.dictionary.Tab.prototype.getAccesslevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Tab.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 20, value);
 };
 
 
 /**
- * optional string linkColumnName = 22;
+ * optional string linkColumnName = 21;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getLinkcolumnname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setLinkcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 22, value);
+  jspb.Message.setProto3StringField(this, 21, value);
 };
 
 
 /**
- * optional string parentColumnName = 23;
+ * optional string parentColumnName = 22;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getParentcolumnname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 23, value);
+  jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
 /**
- * optional string displayLogic = 24;
+ * optional string displayLogic = 23;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getDisplaylogic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 24, value);
+  jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
 /**
- * optional string commitWarning = 25;
+ * optional string commitWarning = 24;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getCommitwarning = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
-  jspb.Message.setProto3StringField(this, 25, value);
+  jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
 /**
- * optional string orderByClause = 26;
+ * optional string orderByClause = 25;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getOrderbyclause = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
-  jspb.Message.setProto3StringField(this, 26, value);
+  jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 27;
+ * optional ContextInfo contextInfo = 26;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Tab.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 27));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 26));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Tab.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 27, value);
+  jspb.Message.setWrapperField(this, 26, value);
 };
 
 
@@ -1845,23 +1702,23 @@ proto.dictionary.Tab.prototype.clearContextinfo = function() {
  * @return {!boolean}
  */
 proto.dictionary.Tab.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 27) != null;
+  return jspb.Message.getField(this, 26) != null;
 };
 
 
 /**
- * optional Process process = 28;
+ * optional Process process = 27;
  * @return {?proto.dictionary.Process}
  */
 proto.dictionary.Tab.prototype.getProcess = function() {
   return /** @type{?proto.dictionary.Process} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Process, 28));
+    jspb.Message.getWrapperField(this, proto.dictionary.Process, 27));
 };
 
 
 /** @param {?proto.dictionary.Process|undefined} value */
 proto.dictionary.Tab.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 28, value);
+  jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -1875,23 +1732,23 @@ proto.dictionary.Tab.prototype.clearProcess = function() {
  * @return {!boolean}
  */
 proto.dictionary.Tab.prototype.hasProcess = function() {
-  return jspb.Message.getField(this, 28) != null;
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * repeated Field fields = 29;
+ * repeated Field fields = 28;
  * @return {!Array<!proto.dictionary.Field>}
  */
 proto.dictionary.Tab.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.dictionary.Field>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 29));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 28));
 };
 
 
 /** @param {!Array<!proto.dictionary.Field>} value */
 proto.dictionary.Tab.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 29, value);
+  jspb.Message.setRepeatedWrapperField(this, 28, value);
 };
 
 
@@ -1901,7 +1758,7 @@ proto.dictionary.Tab.prototype.setFieldsList = function(value) {
  * @return {!proto.dictionary.Field}
  */
 proto.dictionary.Tab.prototype.addFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 29, opt_value, proto.dictionary.Field, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 28, opt_value, proto.dictionary.Field, opt_index);
 };
 
 
