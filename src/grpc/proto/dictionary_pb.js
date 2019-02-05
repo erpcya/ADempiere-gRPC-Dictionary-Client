@@ -77,8 +77,9 @@ proto.dictionary.ClientRequest.prototype.toObject = function(opt_includeInstance
  */
 proto.dictionary.ClientRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, "")
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    language: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -116,10 +117,14 @@ proto.dictionary.ClientRequest.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setUuid(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setLanguage(value);
       break;
@@ -152,50 +157,72 @@ proto.dictionary.ClientRequest.prototype.serializeBinary = function() {
  */
 proto.dictionary.ClientRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUuid();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getLanguage();
+  f = message.getUuid();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string uuid = 1;
+ * optional int32 id = 1;
+ * @return {number}
+ */
+proto.dictionary.ClientRequest.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {number} value */
+proto.dictionary.ClientRequest.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string uuid = 2;
  * @return {string}
  */
 proto.dictionary.ClientRequest.prototype.getUuid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.dictionary.ClientRequest.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string language = 2;
- * @return {string}
- */
-proto.dictionary.ClientRequest.prototype.getLanguage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ClientRequest.prototype.setLanguage = function(value) {
+proto.dictionary.ClientRequest.prototype.setUuid = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string language = 3;
+ * @return {string}
+ */
+proto.dictionary.ClientRequest.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.ClientRequest.prototype.setLanguage = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -608,7 +635,7 @@ proto.dictionary.Window.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Window.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -654,9 +681,8 @@ proto.dictionary.Window.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -717,12 +743,11 @@ proto.dictionary.Window.prototype.serializeBinary = function() {
  */
 proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -780,32 +805,17 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Window.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Window.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Window.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Window.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Window.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Window.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1001,7 +1011,7 @@ proto.dictionary.Tab.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Tab.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -1067,9 +1077,8 @@ proto.dictionary.Tab.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1211,12 +1220,11 @@ proto.dictionary.Tab.prototype.serializeBinary = function() {
  */
 proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -1415,32 +1423,17 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Tab.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Tab.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Tab.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Tab.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Tab.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Tab.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1964,7 +1957,7 @@ proto.dictionary.Field.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1999,8 +1992,8 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     callout: jspb.Message.getFieldWithDefault(msg, 33, ""),
     columnsql: jspb.Message.getFieldWithDefault(msg, 34, ""),
     vformat: jspb.Message.getFieldWithDefault(msg, 35, ""),
-    valuemin: +jspb.Message.getFieldWithDefault(msg, 36, 0.0),
-    valuemax: +jspb.Message.getFieldWithDefault(msg, 37, 0.0),
+    valuemin: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    valuemax: jspb.Message.getFieldWithDefault(msg, 37, ""),
     formatpattern: jspb.Message.getFieldWithDefault(msg, 38, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     fieldgroup: (f = msg.getFieldgroup()) && proto.dictionary.FieldGroup.toObject(includeInstance, f),
@@ -2051,9 +2044,8 @@ proto.dictionary.Field.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2192,11 +2184,11 @@ proto.dictionary.Field.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVformat(value);
       break;
     case 36:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setValuemin(value);
       break;
     case 37:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {string} */ (reader.readString());
       msg.setValuemax(value);
       break;
     case 38:
@@ -2286,12 +2278,11 @@ proto.dictionary.Field.prototype.serializeBinary = function() {
  */
 proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -2533,15 +2524,15 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getValuemin();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       36,
       f
     );
   }
   f = message.getValuemax();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f.length > 0) {
+    writer.writeString(
       37,
       f
     );
@@ -2647,32 +2638,17 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Field.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Field.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Field.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Field.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Field.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Field.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3225,32 +3201,32 @@ proto.dictionary.Field.prototype.setVformat = function(value) {
 
 
 /**
- * optional double valueMin = 36;
- * @return {number}
+ * optional string valueMin = 36;
+ * @return {string}
  */
 proto.dictionary.Field.prototype.getValuemin = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 36, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
 };
 
 
-/** @param {number} value */
+/** @param {string} value */
 proto.dictionary.Field.prototype.setValuemin = function(value) {
-  jspb.Message.setProto3FloatField(this, 36, value);
+  jspb.Message.setProto3StringField(this, 36, value);
 };
 
 
 /**
- * optional double valueMax = 37;
- * @return {number}
+ * optional string valueMax = 37;
+ * @return {string}
  */
 proto.dictionary.Field.prototype.getValuemax = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 37, 0.0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
 };
 
 
-/** @param {number} value */
+/** @param {string} value */
 proto.dictionary.Field.prototype.setValuemax = function(value) {
-  jspb.Message.setProto3FloatField(this, 37, value);
+  jspb.Message.setProto3StringField(this, 37, value);
 };
 
 
@@ -3592,7 +3568,7 @@ proto.dictionary.ContextInfo.prototype.toObject = function(opt_includeInstance) 
  */
 proto.dictionary.ContextInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -3635,9 +3611,8 @@ proto.dictionary.ContextInfo.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -3689,12 +3664,11 @@ proto.dictionary.ContextInfo.prototype.serializeBinary = function() {
  */
 proto.dictionary.ContextInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -3737,32 +3711,17 @@ proto.dictionary.ContextInfo.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.ContextInfo.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.ContextInfo.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.ContextInfo.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.ContextInfo.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.ContextInfo.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.ContextInfo.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3903,7 +3862,7 @@ proto.dictionary.MessageText.prototype.toObject = function(opt_includeInstance) 
  */
 proto.dictionary.MessageText.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     msgtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -3946,9 +3905,8 @@ proto.dictionary.MessageText.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -3999,12 +3957,11 @@ proto.dictionary.MessageText.prototype.serializeBinary = function() {
  */
 proto.dictionary.MessageText.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -4046,32 +4003,17 @@ proto.dictionary.MessageText.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.MessageText.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.MessageText.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.MessageText.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.MessageText.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.MessageText.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.MessageText.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -4197,7 +4139,7 @@ proto.dictionary.FieldGroup.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.FieldGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 4, "")
@@ -4238,9 +4180,8 @@ proto.dictionary.FieldGroup.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -4283,12 +4224,11 @@ proto.dictionary.FieldGroup.prototype.serializeBinary = function() {
  */
 proto.dictionary.FieldGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -4316,32 +4256,17 @@ proto.dictionary.FieldGroup.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.FieldGroup.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.FieldGroup.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.FieldGroup.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.FieldGroup.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.FieldGroup.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.FieldGroup.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -4444,7 +4369,7 @@ proto.dictionary.FieldDefinition.prototype.toObject = function(opt_includeInstan
  */
 proto.dictionary.FieldDefinition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -4488,9 +4413,8 @@ proto.dictionary.FieldDefinition.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -4542,12 +4466,11 @@ proto.dictionary.FieldDefinition.prototype.serializeBinary = function() {
  */
 proto.dictionary.FieldDefinition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -4590,32 +4513,17 @@ proto.dictionary.FieldDefinition.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.FieldDefinition.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.FieldDefinition.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.FieldDefinition.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.FieldDefinition.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.FieldDefinition.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.FieldDefinition.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -4757,7 +4665,7 @@ proto.dictionary.FieldCondition.prototype.toObject = function(opt_includeInstanc
  */
 proto.dictionary.FieldCondition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     condition: jspb.Message.getFieldWithDefault(msg, 3, ""),
     stylesheet: jspb.Message.getFieldWithDefault(msg, 4, "")
@@ -4798,9 +4706,8 @@ proto.dictionary.FieldCondition.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -4843,12 +4750,11 @@ proto.dictionary.FieldCondition.prototype.serializeBinary = function() {
  */
 proto.dictionary.FieldCondition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -4876,32 +4782,17 @@ proto.dictionary.FieldCondition.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.FieldCondition.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.FieldCondition.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.FieldCondition.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.FieldCondition.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.FieldCondition.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.FieldCondition.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5004,7 +4895,7 @@ proto.dictionary.Process.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Process.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -5053,9 +4944,8 @@ proto.dictionary.Process.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -5127,12 +5017,11 @@ proto.dictionary.Process.prototype.serializeBinary = function() {
  */
 proto.dictionary.Process.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -5210,32 +5099,17 @@ proto.dictionary.Process.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Process.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Process.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Process.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Process.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Process.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Process.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5456,7 +5330,7 @@ proto.dictionary.Form.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Form.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -5500,9 +5374,8 @@ proto.dictionary.Form.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -5557,12 +5430,11 @@ proto.dictionary.Form.prototype.serializeBinary = function() {
  */
 proto.dictionary.Form.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -5611,32 +5483,17 @@ proto.dictionary.Form.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Form.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Form.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Form.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Form.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Form.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Form.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5784,7 +5641,7 @@ proto.dictionary.SmartBrowser.prototype.toObject = function(opt_includeInstance)
  */
 proto.dictionary.SmartBrowser.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -5840,9 +5697,8 @@ proto.dictionary.SmartBrowser.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -5944,12 +5800,11 @@ proto.dictionary.SmartBrowser.prototype.serializeBinary = function() {
  */
 proto.dictionary.SmartBrowser.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -6078,32 +5933,17 @@ proto.dictionary.SmartBrowser.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.SmartBrowser.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.SmartBrowser.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.SmartBrowser.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.SmartBrowser.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.SmartBrowser.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.SmartBrowser.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6467,7 +6307,7 @@ proto.dictionary.Validation.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Validation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     validationtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -6509,9 +6349,8 @@ proto.dictionary.Validation.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -6558,12 +6397,11 @@ proto.dictionary.Validation.prototype.serializeBinary = function() {
  */
 proto.dictionary.Validation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -6598,32 +6436,17 @@ proto.dictionary.Validation.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Validation.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Validation.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Validation.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Validation.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Validation.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Validation.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6741,7 +6564,7 @@ proto.dictionary.Reference.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Reference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     validationtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -6785,9 +6608,8 @@ proto.dictionary.Reference.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -6840,12 +6662,11 @@ proto.dictionary.Reference.prototype.serializeBinary = function() {
  */
 proto.dictionary.Reference.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -6889,32 +6710,17 @@ proto.dictionary.Reference.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Reference.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Reference.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Reference.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Reference.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Reference.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Reference.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7071,7 +6877,7 @@ proto.dictionary.ReferenceValue.prototype.toObject = function(opt_includeInstanc
  */
 proto.dictionary.ReferenceValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -7113,9 +6919,8 @@ proto.dictionary.ReferenceValue.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -7162,12 +6967,11 @@ proto.dictionary.ReferenceValue.prototype.serializeBinary = function() {
  */
 proto.dictionary.ReferenceValue.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -7202,32 +7006,17 @@ proto.dictionary.ReferenceValue.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.ReferenceValue.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.ReferenceValue.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.ReferenceValue.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.ReferenceValue.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.ReferenceValue.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.ReferenceValue.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7338,7 +7127,7 @@ proto.dictionary.ReferenceTable.prototype.toObject = function(opt_includeInstanc
  */
 proto.dictionary.ReferenceTable.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     tablename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     keycolumnname: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -7384,9 +7173,8 @@ proto.dictionary.ReferenceTable.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -7449,12 +7237,11 @@ proto.dictionary.ReferenceTable.prototype.serializeBinary = function() {
  */
 proto.dictionary.ReferenceTable.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -7517,32 +7304,17 @@ proto.dictionary.ReferenceTable.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.ReferenceTable.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.ReferenceTable.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.ReferenceTable.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.ReferenceTable.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.ReferenceTable.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.ReferenceTable.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7724,7 +7496,7 @@ proto.dictionary.Menu.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dictionary.Menu.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errormessage: (f = msg.getErrormessage()) && proto.dictionary.ErrorMessage.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     parentuuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -7777,9 +7549,8 @@ proto.dictionary.Menu.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.dictionary.ErrorMessage;
-      reader.readMessage(value,proto.dictionary.ErrorMessage.deserializeBinaryFromReader);
-      msg.setErrormessage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -7867,12 +7638,11 @@ proto.dictionary.Menu.prototype.serializeBinary = function() {
  */
 proto.dictionary.Menu.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrormessage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
-      f,
-      proto.dictionary.ErrorMessage.serializeBinaryToWriter
+      f
     );
   }
   f = message.getUuid();
@@ -7978,32 +7748,17 @@ proto.dictionary.Menu.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ErrorMessage errorMessage = 1;
- * @return {?proto.dictionary.ErrorMessage}
+ * optional int32 id = 1;
+ * @return {number}
  */
-proto.dictionary.Menu.prototype.getErrormessage = function() {
-  return /** @type{?proto.dictionary.ErrorMessage} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ErrorMessage, 1));
+proto.dictionary.Menu.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {?proto.dictionary.ErrorMessage|undefined} value */
-proto.dictionary.Menu.prototype.setErrormessage = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dictionary.Menu.prototype.clearErrormessage = function() {
-  this.setErrormessage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.dictionary.Menu.prototype.hasErrormessage = function() {
-  return jspb.Message.getField(this, 1) != null;
+/** @param {number} value */
+proto.dictionary.Menu.prototype.setId = function(value) {
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
