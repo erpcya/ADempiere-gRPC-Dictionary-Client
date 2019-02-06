@@ -49,13 +49,13 @@ class Dictionary {
   * Get Client Request
   */
   getRequest(uuid) {
-    const {ClientRequest, ObjectRequest} = require('./src/grpc/proto/dictionary_pb.js');
-    let clientRequest = new ClientRequest();
-    clientRequest.setUuid(this.clientVersion);
-    clientRequest.setLanguage(this.language);
-    let request = new ObjectRequest();
+    const {ApplicationRequest, EntityRequest} = require('./src/grpc/proto/dictionary_pb.js');
+    let applicationRequest = new ApplicationRequest();
+    applicationRequest.setUuid(this.clientVersion);
+    applicationRequest.setLanguage(this.language);
+    let request = new EntityRequest();
     request.setUuid(uuid);
-    request.setClientrequest(clientRequest);
+    request.setApplicationrequest(applicationRequest);
     //  return
     return request;
   }
