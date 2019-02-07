@@ -4,20 +4,24 @@ ADempiere Dictionary Client write in Javascript for gRPC service, use it for con
 ## Using it
 
 ``` bash
-# installing
-npm install @adempiere/grpc-dictionary-client --save
+# installing via NPM
+npm install @adempiere/grpc-dictionary-client
+```
+``` bash
+# installing via Yarn
+yarn add @adempiere/grpc-dictionary-client 
 ```
 
 ## A Example
 ### Declare Dictionary
 ```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary('Version Epale', GRPC_HOST);
+var dictionary = new Dictionary(GRPC_HOST, 'Version Epale');
 ```
 ### Declare Dictionary with specific language
 ```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary('Version Epale', GRPC_HOST, 'es_VE');
+var dictionary = new Dictionary(GRPC_HOST, 'Version Epale', 'es_VE');
 ```
 
 ### Request a simple Menu

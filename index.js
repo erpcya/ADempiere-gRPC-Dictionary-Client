@@ -14,10 +14,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.            *
  ************************************************************************************/
 class Dictionary {
-  //  No authentication rerquired
-  constructor(clientVersion, host, language) {
-    this.clientVersion = clientVersion;
+  //  No authentication required
+  constructor(host, clientVersion, language = 'en_US') {
     this.host = host;
+    this.clientVersion = clientVersion;
     this.language = language;
   }
 
@@ -38,7 +38,7 @@ class Dictionary {
   */
   getService() {
     const grpc_promise = require('grpc-promise');
-    const {DictionaryServicePromiseClient} = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
+    const { DictionaryServicePromiseClient } = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
     var requestService = new DictionaryServicePromiseClient(this.host);
     grpc_promise.promisifyAll(requestService);
     //  Return request for get data
@@ -49,7 +49,7 @@ class Dictionary {
   * Get Client Request
   */
   getRequest(uuid) {
-    const {ApplicationRequest, EntityRequest} = require('./src/grpc/proto/dictionary_pb.js');
+    const { ApplicationRequest, EntityRequest } = require('./src/grpc/proto/dictionary_pb.js');
     let applicationRequest = new ApplicationRequest();
     applicationRequest.setUuid(this.clientVersion);
     applicationRequest.setLanguage(this.language);
@@ -62,6 +62,7 @@ class Dictionary {
 
   /**
   * Request a Window, the Tabs are optional
+  * @return {Object} Object Window and attributes, and tabs if its required.
   */
   requestWindow(uuid, withTabs) {
     //  Get Window
@@ -86,10 +87,12 @@ class Dictionary {
 
   /**
   * Request a Field
+  * @return {Object} Object field and attributes.
   */
   requestField(uuid) {
     //  Get Field
     return this.getService().requestField(this.getRequest(uuid));
   }
 }
+
 module.exports = Dictionary;
