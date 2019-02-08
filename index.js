@@ -14,18 +14,26 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.            *
  ************************************************************************************/
 class Dictionary {
-  //  No authentication rerquired
-  constructor(clientVersion, host, language) {
-    this.clientVersion = clientVersion;
+
+  /**
+   * Constructor, No authentication required
+   * @param {string} host 
+   * @param {string} clientVersion 
+   * @param {string} language 
+   */
+  constructor(host, clientVersion, language = 'en_US') {
     this.host = host;
+    this.clientVersion = clientVersion;
     this.language = language;
   }
 
   /**
-  * Request a Menu, the child are optional
-  */
-  requestMenu(uuid, withChild) {
-    //  Get Menu
+   * Get and request a Menu, the child are optional
+   * @param {string} uuid Universally Unique IDentifier
+   * @param {boolean} withChild Indicate if you will also extract the children
+   * @return {Object} Object Menu and attributes, and sub menus if its required.
+   */
+  requestMenu(uuid, withChild = false) {
     if(withChild) {
       return this.getService().requestMenuAndChild(this.getRequest(uuid));
     } else {
@@ -34,37 +42,40 @@ class Dictionary {
   }
 
   /**
-  * Load gRPC Connection
-  */
+   * Load gRPC Connection
+   * @return {Object} Return request for get data
+   */
   getService() {
     const grpc_promise = require('grpc-promise');
-    const {DictionaryServicePromiseClient} = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
+    const { DictionaryServicePromiseClient } = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
     var requestService = new DictionaryServicePromiseClient(this.host);
     grpc_promise.promisifyAll(requestService);
-    //  Return request for get data
     return requestService;
   }
 
   /**
-  * Get Client Request
-  */
+   * Get Client Request
+   * @param {string} uuid Universally Unique IDentifier
+   * @return {Object} Return request for get data
+   */
   getRequest(uuid) {
-    const {ApplicationRequest, EntityRequest} = require('./src/grpc/proto/dictionary_pb.js');
+    const { ApplicationRequest, EntityRequest } = require('./src/grpc/proto/dictionary_pb.js');
     let applicationRequest = new ApplicationRequest();
     applicationRequest.setUuid(this.clientVersion);
     applicationRequest.setLanguage(this.language);
     let request = new EntityRequest();
     request.setUuid(uuid);
     request.setApplicationrequest(applicationRequest);
-    //  return
     return request;
   }
 
   /**
-  * Request a Window, the Tabs are optional
-  */
-  requestWindow(uuid, withTabs) {
-    //  Get Window
+   * Get and request a Window, the Tabs are optional
+   * @param {string} uuid Universally Unique IDentifier
+   * @param {boolean} withTabs Indicate if you will also extract the tabs
+   * @return {Object} Object Window and attributes, and tabs if its required.
+   */
+  requestWindow(uuid, withTabs = false) {
     if(withTabs) {
       return this.getService().requestWindowAndTabs(this.getRequest(uuid));
     } else {
@@ -73,10 +84,12 @@ class Dictionary {
   }
 
   /**
-  * Request a Tab, the Fields are optional
-  */
-  requestTab(uuid, withFields) {
-    //  Get Tab
+   * Get and request a Tab, the Fields are optional
+   * @param {string} uuid Universally Unique IDentifier
+   * @param {boolean} withFields Indicate if you will also extract the fields
+   * @return {Object} Object Tabs and attributes, and fields if its required.
+   */
+  requestTab(uuid, withFields = false) {
     if(withFields) {
       return this.getService().requestTabAndFields(this.getRequest(uuid));
     } else {
@@ -85,11 +98,13 @@ class Dictionary {
   }
 
   /**
-  * Request a Field
-  */
+   * Get and request a Field
+   * @return {Object} Object field and attributes.
+   * @param {string} uuid Universally Unique IDentifier
+   */
   requestField(uuid) {
-    //  Get Field
     return this.getService().requestField(this.getRequest(uuid));
   }
 }
+
 module.exports = Dictionary;
