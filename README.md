@@ -1,6 +1,11 @@
 # ADempiere Dictionary Client for gRPC
 ADempiere Dictionary Client write in Javascript for gRPC service, use it for connect with
 [ADempiere-gRPC-Server](https://github.com/erpcya/adempiere-gRPC-Server).
+
+## Requirements
+- [Envoy Proxy](https://www.envoyproxy.io/)
+- [Envoy Pre-configured Proxy](https://github.com/erpcya/gRPC-Envoy-Proxy)
+
 ## Using it
 
 ``` bash
@@ -9,7 +14,7 @@ npm install @adempiere/grpc-dictionary-client
 ```
 ``` bash
 # installing via Yarn
-yarn add @adempiere/grpc-dictionary-client 
+yarn add @adempiere/grpc-dictionary-client
 ```
 
 ## A Example
