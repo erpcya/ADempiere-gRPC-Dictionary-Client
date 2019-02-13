@@ -117,7 +117,7 @@ dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
 ```
 
 ## Recreate proto stup class (only for contribute to project)
-For recreate stup class you must have follow:
+For recreate stub class you must have follow:
 - [protobuf](https://github.com/protocolbuffers/protobuf/releases)
 - [protoc](https://github.com/grpc/grpc-web/releases)
 - Also you can see it: [gRPC-web](https://github.com/grpc/grpc-web)
