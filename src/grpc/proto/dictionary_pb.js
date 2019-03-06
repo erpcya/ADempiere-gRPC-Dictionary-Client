@@ -896,7 +896,8 @@ proto.dictionary.Tab.toObject = function(includeInstance, msg) {
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    proto.dictionary.Field.toObject, includeInstance)
+    proto.dictionary.Field.toObject, includeInstance),
+    fieldgroup: (f = msg.getFieldgroup()) && proto.dictionary.FieldGroup.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1047,6 +1048,11 @@ proto.dictionary.Tab.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
+      break;
+    case 29:
+      var value = new proto.dictionary.FieldGroup;
+      reader.readMessage(value,proto.dictionary.FieldGroup.deserializeBinaryFromReader);
+      msg.setFieldgroup(value);
       break;
     default:
       reader.skipField();
@@ -1274,6 +1280,14 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
       28,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
+    );
+  }
+  f = message.getFieldgroup();
+  if (f != null) {
+    writer.writeMessage(
+      29,
+      f,
+      proto.dictionary.FieldGroup.serializeBinaryToWriter
     );
   }
 };
@@ -1764,6 +1778,36 @@ proto.dictionary.Tab.prototype.addFields = function(opt_value, opt_index) {
 
 proto.dictionary.Tab.prototype.clearFieldsList = function() {
   this.setFieldsList([]);
+};
+
+
+/**
+ * optional FieldGroup fieldGroup = 29;
+ * @return {?proto.dictionary.FieldGroup}
+ */
+proto.dictionary.Tab.prototype.getFieldgroup = function() {
+  return /** @type{?proto.dictionary.FieldGroup} */ (
+    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 29));
+};
+
+
+/** @param {?proto.dictionary.FieldGroup|undefined} value */
+proto.dictionary.Tab.prototype.setFieldgroup = function(value) {
+  jspb.Message.setWrapperField(this, 29, value);
+};
+
+
+proto.dictionary.Tab.prototype.clearFieldgroup = function() {
+  this.setFieldgroup(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dictionary.Tab.prototype.hasFieldgroup = function() {
+  return jspb.Message.getField(this, 29) != null;
 };
 
 

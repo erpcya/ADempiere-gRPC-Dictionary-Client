@@ -1,6 +1,6 @@
 {
   "name": "@adempiere/grpc-dictionary-client",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "ADempiere Dictionary Client write in Javascript for gRPC service",
   "main": "index.js",
   "scripts": {
