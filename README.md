@@ -115,6 +115,18 @@ dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+### Request a Process
+```javascript
+//  Request Field
+dictionary.requestProcess('a42adc88-fb40-11e8-a479-7a0060f0aa01')
+.then(process => {
+  console.log("Process: " + process);
+})
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
+```
+
 
 ## Recreate proto stub class (only for contribute to project)
 For recreate stub class you must have follow:

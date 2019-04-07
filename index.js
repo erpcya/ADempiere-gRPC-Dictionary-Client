@@ -17,9 +17,9 @@ class Dictionary {
 
   /**
    * Constructor, No authentication required
-   * @param {string} host 
-   * @param {string} clientVersion 
-   * @param {string} language 
+   * @param {string} host
+   * @param {string} clientVersion
+   * @param {string} language
    */
   constructor(host, clientVersion, language = 'en_US') {
     this.host = host;
@@ -104,6 +104,15 @@ class Dictionary {
    */
   requestField(uuid) {
     return this.getService().requestField(this.getRequest(uuid));
+  }
+
+  /**
+   * Get and request a Process with parameters
+   * @return {Object} Object field and attributes.
+   * @param {string} uuid Universally Unique IDentifier
+   */
+  requestProcess(uuid) {
+    return this.getService().requestProcess(this.getRequest(uuid));
   }
 }
 

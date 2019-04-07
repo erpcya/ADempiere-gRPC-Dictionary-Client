@@ -64,11 +64,25 @@ proto.dictionary.DictionaryServicePromiseClient =
   options['format'] = 'text';
 
   /**
-   * @private @const {!proto.dictionary.DictionaryServiceClient} The delegate callback based client
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.delegateClient_ = new proto.dictionary.DictionaryServiceClient(
-      hostname, credentials, options);
+  this.client_ = new grpc.web.GrpcWebClientBase(options);
 
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname;
+
+  /**
+   * @private @const {?Object} The credentials to be used to connect
+   *    to the server
+   */
+  this.credentials_ = credentials;
+
+  /**
+   * @private @const {?Object} Options for the client
+   */
+  this.options_ = options;
 };
 
 
@@ -91,7 +105,7 @@ const methodInfo_DictionaryService_RequestMenuAndChild = new grpc.web.AbstractCl
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Menu)}
  *     callback The callback function(error, response)
@@ -103,7 +117,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenuAndChild =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestMenuAndChild',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestMenuAndChild,
       callback);
 };
@@ -112,19 +126,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenuAndChild =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Menu>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestMenuAndChild =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestMenuAndChild(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestMenuAndChild',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestMenuAndChild);
 };
 
 
@@ -147,7 +160,7 @@ const methodInfo_DictionaryService_RequestMenu = new grpc.web.AbstractClientBase
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Menu)}
  *     callback The callback function(error, response)
@@ -159,7 +172,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenu =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestMenu',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestMenu,
       callback);
 };
@@ -168,19 +181,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestMenu =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Menu>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestMenu =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestMenu(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestMenu',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestMenu);
 };
 
 
@@ -203,7 +215,7 @@ const methodInfo_DictionaryService_RequestWindow = new grpc.web.AbstractClientBa
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Window)}
  *     callback The callback function(error, response)
@@ -215,7 +227,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindow =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestWindow',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestWindow,
       callback);
 };
@@ -224,19 +236,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindow =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Window>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindow =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestWindow(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestWindow',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestWindow);
 };
 
 
@@ -259,7 +270,7 @@ const methodInfo_DictionaryService_RequestWindowAndTabs = new grpc.web.AbstractC
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Window)}
  *     callback The callback function(error, response)
@@ -271,7 +282,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindowAndTabs =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestWindowAndTabs',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestWindowAndTabs,
       callback);
 };
@@ -280,19 +291,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindowAndTabs =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Window>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindowAndTabs =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestWindowAndTabs(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestWindowAndTabs',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestWindowAndTabs);
 };
 
 
@@ -315,7 +325,7 @@ const methodInfo_DictionaryService_RequestTab = new grpc.web.AbstractClientBase.
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Tab)}
  *     callback The callback function(error, response)
@@ -327,7 +337,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTab =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestTab',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestTab,
       callback);
 };
@@ -336,19 +346,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTab =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Tab>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestTab =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestTab(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestTab',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestTab);
 };
 
 
@@ -371,7 +380,7 @@ const methodInfo_DictionaryService_RequestTabAndFields = new grpc.web.AbstractCl
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Tab)}
  *     callback The callback function(error, response)
@@ -383,7 +392,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTabAndFields =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestTabAndFields',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestTabAndFields,
       callback);
 };
@@ -392,19 +401,18 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTabAndFields =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Tab>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestTabAndFields =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestTabAndFields(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestTabAndFields',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestTabAndFields);
 };
 
 
@@ -427,7 +435,7 @@ const methodInfo_DictionaryService_RequestField = new grpc.web.AbstractClientBas
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @param {function(?grpc.web.Error, ?proto.dictionary.Field)}
  *     callback The callback function(error, response)
@@ -439,7 +447,7 @@ proto.dictionary.DictionaryServiceClient.prototype.requestField =
   return this.client_.rpcCall(this.hostname_ +
       '/dictionary.DictionaryService/RequestField',
       request,
-      metadata,
+      metadata || {},
       methodInfo_DictionaryService_RequestField,
       callback);
 };
@@ -448,19 +456,73 @@ proto.dictionary.DictionaryServiceClient.prototype.requestField =
 /**
  * @param {!proto.dictionary.EntityRequest} request The
  *     request proto
- * @param {!Object<string, string>} metadata User defined
+ * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.dictionary.Field>}
- *     The XHR Node Readable Stream
+ *     A native promise that resolves to the response
  */
 proto.dictionary.DictionaryServicePromiseClient.prototype.requestField =
     function(request, metadata) {
-  return new Promise((resolve, reject) => {
-    this.delegateClient_.requestField(
-      request, metadata, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
-  });
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestField',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestField);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Process>}
+ */
+const methodInfo_DictionaryService_RequestProcess = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.dictionary.Process,
+  /** @param {!proto.dictionary.EntityRequest} request */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Process.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.dictionary.Process)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Process>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.dictionary.DictionaryServiceClient.prototype.requestProcess =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestProcess',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestProcess,
+      callback);
+};
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.dictionary.Process>}
+ *     A native promise that resolves to the response
+ */
+proto.dictionary.DictionaryServicePromiseClient.prototype.requestProcess =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestProcess',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestProcess);
 };
 
 
