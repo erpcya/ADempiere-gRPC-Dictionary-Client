@@ -791,7 +791,7 @@ proto.dictionary.EntityRequest.prototype.hasApplicationrequest = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Window.repeatedFields_ = [8];
+proto.dictionary.Window.repeatedFields_ = [9];
 
 
 
@@ -827,7 +827,8 @@ proto.dictionary.Window.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    issotrx: jspb.Message.getFieldWithDefault(msg, 6, false),
+    isactive: jspb.Message.getFieldWithDefault(msg, 6, false),
+    issotrx: jspb.Message.getFieldWithDefault(msg, 7, false),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     tabsList: jspb.Message.toObjectList(msg.getTabsList(),
     proto.dictionary.Tab.toObject, includeInstance)
@@ -889,14 +890,18 @@ proto.dictionary.Window.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIssotrx(value);
+      msg.setIsactive(value);
       break;
     case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIssotrx(value);
+      break;
+    case 8:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.dictionary.Tab;
       reader.readMessage(value,proto.dictionary.Tab.deserializeBinaryFromReader);
       msg.addTabs(value);
@@ -965,17 +970,24 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIssotrx();
+  f = message.getIsactive();
   if (f) {
     writer.writeBool(
       6,
       f
     );
   }
+  f = message.getIssotrx();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -983,7 +995,7 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
   f = message.getTabsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.dictionary.Tab.serializeBinaryToWriter
     );
@@ -1067,35 +1079,52 @@ proto.dictionary.Window.prototype.setHelp = function(value) {
 
 
 /**
- * optional bool isSOTrx = 6;
+ * optional bool isActive = 6;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Window.prototype.getIssotrx = function() {
+proto.dictionary.Window.prototype.getIsactive = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Window.prototype.setIssotrx = function(value) {
+proto.dictionary.Window.prototype.setIsactive = function(value) {
   jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 7;
+ * optional bool isSOTrx = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Window.prototype.getIssotrx = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Window.prototype.setIssotrx = function(value) {
+  jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional ContextInfo contextInfo = 8;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Window.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 7));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 8));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Window.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -1112,23 +1141,23 @@ proto.dictionary.Window.prototype.clearContextinfo = function() {
  * @return {boolean}
  */
 proto.dictionary.Window.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * repeated Tab tabs = 8;
+ * repeated Tab tabs = 9;
  * @return {!Array<!proto.dictionary.Tab>}
  */
 proto.dictionary.Window.prototype.getTabsList = function() {
   return /** @type{!Array<!proto.dictionary.Tab>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 9));
 };
 
 
 /** @param {!Array<!proto.dictionary.Tab>} value */
 proto.dictionary.Window.prototype.setTabsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 8, value);
+  jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -1138,7 +1167,7 @@ proto.dictionary.Window.prototype.setTabsList = function(value) {
  * @return {!proto.dictionary.Tab}
  */
 proto.dictionary.Window.prototype.addTabs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.dictionary.Tab, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.dictionary.Tab, opt_index);
 };
 
 
@@ -1156,7 +1185,7 @@ proto.dictionary.Window.prototype.clearTabsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Tab.repeatedFields_ = [28];
+proto.dictionary.Tab.repeatedFields_ = [28,29];
 
 
 
@@ -1195,25 +1224,27 @@ proto.dictionary.Tab.toObject = function(includeInstance, msg) {
     tablename: jspb.Message.getFieldWithDefault(msg, 6, ""),
     sequence: jspb.Message.getFieldWithDefault(msg, 7, 0),
     tablevel: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    issinglerow: jspb.Message.getFieldWithDefault(msg, 9, false),
-    isadvancedtab: jspb.Message.getFieldWithDefault(msg, 10, false),
-    ishastree: jspb.Message.getFieldWithDefault(msg, 11, false),
-    isinfotab: jspb.Message.getFieldWithDefault(msg, 12, false),
-    issorttab: jspb.Message.getFieldWithDefault(msg, 13, false),
-    istranslationtab: jspb.Message.getFieldWithDefault(msg, 14, false),
-    isreadonly: jspb.Message.getFieldWithDefault(msg, 15, false),
-    isinsertrecord: jspb.Message.getFieldWithDefault(msg, 16, false),
-    isview: jspb.Message.getFieldWithDefault(msg, 17, false),
-    isdeleteable: jspb.Message.getFieldWithDefault(msg, 18, false),
-    isdocument: jspb.Message.getFieldWithDefault(msg, 19, false),
-    accesslevel: jspb.Message.getFieldWithDefault(msg, 20, 0),
-    linkcolumnname: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    displaylogic: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    commitwarning: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    orderbyclause: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 9, false),
+    issinglerow: jspb.Message.getFieldWithDefault(msg, 10, false),
+    isadvancedtab: jspb.Message.getFieldWithDefault(msg, 11, false),
+    ishastree: jspb.Message.getFieldWithDefault(msg, 12, false),
+    isinfotab: jspb.Message.getFieldWithDefault(msg, 13, false),
+    issorttab: jspb.Message.getFieldWithDefault(msg, 14, false),
+    istranslationtab: jspb.Message.getFieldWithDefault(msg, 15, false),
+    isreadonly: jspb.Message.getFieldWithDefault(msg, 16, false),
+    isinsertrecord: jspb.Message.getFieldWithDefault(msg, 17, false),
+    isview: jspb.Message.getFieldWithDefault(msg, 18, false),
+    isdeleteable: jspb.Message.getFieldWithDefault(msg, 19, false),
+    isdocument: jspb.Message.getFieldWithDefault(msg, 20, false),
+    accesslevel: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    linkcolumnname: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    displaylogic: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    commitwarning: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    orderbyclause: jspb.Message.getFieldWithDefault(msg, 26, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
-    process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
+    processesList: jspb.Message.toObjectList(msg.getProcessesList(),
+    proto.dictionary.Process.toObject, includeInstance),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.dictionary.Field.toObject, includeInstance),
     fieldgroup: (f = msg.getFieldgroup()) && proto.dictionary.FieldGroup.toObject(includeInstance, f)
@@ -1287,88 +1318,92 @@ proto.dictionary.Tab.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIssinglerow(value);
+      msg.setIsactive(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsadvancedtab(value);
+      msg.setIssinglerow(value);
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIshastree(value);
+      msg.setIsadvancedtab(value);
       break;
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsinfotab(value);
+      msg.setIshastree(value);
       break;
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIssorttab(value);
+      msg.setIsinfotab(value);
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIstranslationtab(value);
+      msg.setIssorttab(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsreadonly(value);
+      msg.setIstranslationtab(value);
       break;
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsinsertrecord(value);
+      msg.setIsreadonly(value);
       break;
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsview(value);
+      msg.setIsinsertrecord(value);
       break;
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsdeleteable(value);
+      msg.setIsview(value);
       break;
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsdocument(value);
+      msg.setIsdeleteable(value);
       break;
     case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsdocument(value);
+      break;
+    case 21:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAccesslevel(value);
       break;
-    case 21:
+    case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setLinkcolumnname(value);
       break;
-    case 22:
+    case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setParentcolumnname(value);
       break;
-    case 23:
+    case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setDisplaylogic(value);
       break;
-    case 24:
+    case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setCommitwarning(value);
       break;
-    case 25:
+    case 26:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrderbyclause(value);
       break;
-    case 26:
+    case 27:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 27:
+    case 28:
       var value = new proto.dictionary.Process;
       reader.readMessage(value,proto.dictionary.Process.deserializeBinaryFromReader);
-      msg.setProcess(value);
+      msg.addProcesses(value);
       break;
-    case 28:
+    case 29:
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
-    case 29:
+    case 30:
       var value = new proto.dictionary.FieldGroup;
       reader.readMessage(value,proto.dictionary.FieldGroup.deserializeBinaryFromReader);
       msg.setFieldgroup(value);
@@ -1458,137 +1493,144 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIssinglerow();
+  f = message.getIsactive();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
-  f = message.getIsadvancedtab();
+  f = message.getIssinglerow();
   if (f) {
     writer.writeBool(
       10,
       f
     );
   }
-  f = message.getIshastree();
+  f = message.getIsadvancedtab();
   if (f) {
     writer.writeBool(
       11,
       f
     );
   }
-  f = message.getIsinfotab();
+  f = message.getIshastree();
   if (f) {
     writer.writeBool(
       12,
       f
     );
   }
-  f = message.getIssorttab();
+  f = message.getIsinfotab();
   if (f) {
     writer.writeBool(
       13,
       f
     );
   }
-  f = message.getIstranslationtab();
+  f = message.getIssorttab();
   if (f) {
     writer.writeBool(
       14,
       f
     );
   }
-  f = message.getIsreadonly();
+  f = message.getIstranslationtab();
   if (f) {
     writer.writeBool(
       15,
       f
     );
   }
-  f = message.getIsinsertrecord();
+  f = message.getIsreadonly();
   if (f) {
     writer.writeBool(
       16,
       f
     );
   }
-  f = message.getIsview();
+  f = message.getIsinsertrecord();
   if (f) {
     writer.writeBool(
       17,
       f
     );
   }
-  f = message.getIsdeleteable();
+  f = message.getIsview();
   if (f) {
     writer.writeBool(
       18,
       f
     );
   }
-  f = message.getIsdocument();
+  f = message.getIsdeleteable();
   if (f) {
     writer.writeBool(
       19,
       f
     );
   }
+  f = message.getIsdocument();
+  if (f) {
+    writer.writeBool(
+      20,
+      f
+    );
+  }
   f = message.getAccesslevel();
   if (f !== 0) {
     writer.writeInt32(
-      20,
+      21,
       f
     );
   }
   f = message.getLinkcolumnname();
   if (f.length > 0) {
     writer.writeString(
-      21,
+      22,
       f
     );
   }
   f = message.getParentcolumnname();
   if (f.length > 0) {
     writer.writeString(
-      22,
+      23,
       f
     );
   }
   f = message.getDisplaylogic();
   if (f.length > 0) {
     writer.writeString(
-      23,
+      24,
       f
     );
   }
   f = message.getCommitwarning();
   if (f.length > 0) {
     writer.writeString(
-      24,
+      25,
       f
     );
   }
   f = message.getOrderbyclause();
   if (f.length > 0) {
     writer.writeString(
-      25,
+      26,
       f
     );
   }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      26,
+      27,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
   }
-  f = message.getProcess();
-  if (f != null) {
-    writer.writeMessage(
-      27,
+  f = message.getProcessesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      28,
       f,
       proto.dictionary.Process.serializeBinaryToWriter
     );
@@ -1596,7 +1638,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      28,
+      29,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
     );
@@ -1604,7 +1646,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldgroup();
   if (f != null) {
     writer.writeMessage(
-      29,
+      30,
       f,
       proto.dictionary.FieldGroup.serializeBinaryToWriter
     );
@@ -1733,295 +1775,312 @@ proto.dictionary.Tab.prototype.setTablevel = function(value) {
 
 
 /**
- * optional bool isSingleRow = 9;
+ * optional bool isActive = 9;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIssinglerow = function() {
+proto.dictionary.Tab.prototype.getIsactive = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 9, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIssinglerow = function(value) {
+proto.dictionary.Tab.prototype.setIsactive = function(value) {
   jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool isAdvancedTab = 10;
+ * optional bool isSingleRow = 10;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsadvancedtab = function() {
+proto.dictionary.Tab.prototype.getIssinglerow = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsadvancedtab = function(value) {
+proto.dictionary.Tab.prototype.setIssinglerow = function(value) {
   jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool isHasTree = 11;
+ * optional bool isAdvancedTab = 11;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIshastree = function() {
+proto.dictionary.Tab.prototype.getIsadvancedtab = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIshastree = function(value) {
+proto.dictionary.Tab.prototype.setIsadvancedtab = function(value) {
   jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * optional bool isInfoTab = 12;
+ * optional bool isHasTree = 12;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsinfotab = function() {
+proto.dictionary.Tab.prototype.getIshastree = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsinfotab = function(value) {
+proto.dictionary.Tab.prototype.setIshastree = function(value) {
   jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional bool isSortTab = 13;
+ * optional bool isInfoTab = 13;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIssorttab = function() {
+proto.dictionary.Tab.prototype.getIsinfotab = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIssorttab = function(value) {
+proto.dictionary.Tab.prototype.setIsinfotab = function(value) {
   jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional bool isTranslationTab = 14;
+ * optional bool isSortTab = 14;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIstranslationtab = function() {
+proto.dictionary.Tab.prototype.getIssorttab = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIstranslationtab = function(value) {
+proto.dictionary.Tab.prototype.setIssorttab = function(value) {
   jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
 /**
- * optional bool isReadOnly = 15;
+ * optional bool isTranslationTab = 15;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsreadonly = function() {
+proto.dictionary.Tab.prototype.getIstranslationtab = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsreadonly = function(value) {
+proto.dictionary.Tab.prototype.setIstranslationtab = function(value) {
   jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
 /**
- * optional bool isInsertRecord = 16;
+ * optional bool isReadOnly = 16;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsinsertrecord = function() {
+proto.dictionary.Tab.prototype.getIsreadonly = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsinsertrecord = function(value) {
+proto.dictionary.Tab.prototype.setIsreadonly = function(value) {
   jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
 /**
- * optional bool isView = 17;
+ * optional bool isInsertRecord = 17;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsview = function() {
+proto.dictionary.Tab.prototype.getIsinsertrecord = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsview = function(value) {
+proto.dictionary.Tab.prototype.setIsinsertrecord = function(value) {
   jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
 /**
- * optional bool isDeleteable = 18;
+ * optional bool isView = 18;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsdeleteable = function() {
+proto.dictionary.Tab.prototype.getIsview = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 18, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsdeleteable = function(value) {
+proto.dictionary.Tab.prototype.setIsview = function(value) {
   jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
 /**
- * optional bool isDocument = 19;
+ * optional bool isDeleteable = 19;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Tab.prototype.getIsdocument = function() {
+proto.dictionary.Tab.prototype.getIsdeleteable = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Tab.prototype.setIsdocument = function(value) {
+proto.dictionary.Tab.prototype.setIsdeleteable = function(value) {
   jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
 /**
- * optional int32 accessLevel = 20;
+ * optional bool isDocument = 20;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Tab.prototype.getIsdocument = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Tab.prototype.setIsdocument = function(value) {
+  jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
+/**
+ * optional int32 accessLevel = 21;
  * @return {number}
  */
 proto.dictionary.Tab.prototype.getAccesslevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Tab.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 20, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
 /**
- * optional string linkColumnName = 21;
+ * optional string linkColumnName = 22;
  * @return {string}
  */
 proto.dictionary.Tab.prototype.getLinkcolumnname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
-};
-
-
-/** @param {string} value */
-proto.dictionary.Tab.prototype.setLinkcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 21, value);
-};
-
-
-/**
- * optional string parentColumnName = 22;
- * @return {string}
- */
-proto.dictionary.Tab.prototype.getParentcolumnname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
+proto.dictionary.Tab.prototype.setLinkcolumnname = function(value) {
   jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
 /**
- * optional string displayLogic = 23;
+ * optional string parentColumnName = 23;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getDisplaylogic = function() {
+proto.dictionary.Tab.prototype.getParentcolumnname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
+proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
   jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
 /**
- * optional string commitWarning = 24;
+ * optional string displayLogic = 24;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getCommitwarning = function() {
+proto.dictionary.Tab.prototype.getDisplaylogic = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
+proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
   jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
 /**
- * optional string orderByClause = 25;
+ * optional string commitWarning = 25;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getOrderbyclause = function() {
+proto.dictionary.Tab.prototype.getCommitwarning = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
+proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
   jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 26;
+ * optional string orderByClause = 26;
+ * @return {string}
+ */
+proto.dictionary.Tab.prototype.getOrderbyclause = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
+  jspb.Message.setProto3StringField(this, 26, value);
+};
+
+
+/**
+ * optional ContextInfo contextInfo = 27;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Tab.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 26));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 27));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Tab.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 26, value);
+  jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -2038,56 +2097,57 @@ proto.dictionary.Tab.prototype.clearContextinfo = function() {
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 26) != null;
-};
-
-
-/**
- * optional Process process = 27;
- * @return {?proto.dictionary.Process}
- */
-proto.dictionary.Tab.prototype.getProcess = function() {
-  return /** @type{?proto.dictionary.Process} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Process, 27));
-};
-
-
-/** @param {?proto.dictionary.Process|undefined} value */
-proto.dictionary.Tab.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 27, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- */
-proto.dictionary.Tab.prototype.clearProcess = function() {
-  this.setProcess(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.dictionary.Tab.prototype.hasProcess = function() {
   return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * repeated Field fields = 28;
+ * repeated Process processes = 28;
+ * @return {!Array<!proto.dictionary.Process>}
+ */
+proto.dictionary.Tab.prototype.getProcessesList = function() {
+  return /** @type{!Array<!proto.dictionary.Process>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Process, 28));
+};
+
+
+/** @param {!Array<!proto.dictionary.Process>} value */
+proto.dictionary.Tab.prototype.setProcessesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 28, value);
+};
+
+
+/**
+ * @param {!proto.dictionary.Process=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dictionary.Process}
+ */
+proto.dictionary.Tab.prototype.addProcesses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 28, opt_value, proto.dictionary.Process, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.dictionary.Tab.prototype.clearProcessesList = function() {
+  this.setProcessesList([]);
+};
+
+
+/**
+ * repeated Field fields = 29;
  * @return {!Array<!proto.dictionary.Field>}
  */
 proto.dictionary.Tab.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.dictionary.Field>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 28));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 29));
 };
 
 
 /** @param {!Array<!proto.dictionary.Field>} value */
 proto.dictionary.Tab.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 28, value);
+  jspb.Message.setRepeatedWrapperField(this, 29, value);
 };
 
 
@@ -2097,7 +2157,7 @@ proto.dictionary.Tab.prototype.setFieldsList = function(value) {
  * @return {!proto.dictionary.Field}
  */
 proto.dictionary.Tab.prototype.addFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 28, opt_value, proto.dictionary.Field, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 29, opt_value, proto.dictionary.Field, opt_index);
 };
 
 
@@ -2110,18 +2170,18 @@ proto.dictionary.Tab.prototype.clearFieldsList = function() {
 
 
 /**
- * optional FieldGroup fieldGroup = 29;
+ * optional FieldGroup fieldGroup = 30;
  * @return {?proto.dictionary.FieldGroup}
  */
 proto.dictionary.Tab.prototype.getFieldgroup = function() {
   return /** @type{?proto.dictionary.FieldGroup} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 29));
+    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 30));
 };
 
 
 /** @param {?proto.dictionary.FieldGroup|undefined} value */
 proto.dictionary.Tab.prototype.setFieldgroup = function(value) {
-  jspb.Message.setWrapperField(this, 29, value);
+  jspb.Message.setWrapperField(this, 30, value);
 };
 
 
@@ -2138,7 +2198,7 @@ proto.dictionary.Tab.prototype.clearFieldgroup = function() {
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.hasFieldgroup = function() {
-  return jspb.Message.getField(this, 29) != null;
+  return jspb.Message.getField(this, 30) != null;
 };
 
 
@@ -2221,7 +2281,8 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     seqnogrid: jspb.Message.getFieldWithDefault(msg, 47, 0),
     sortno: jspb.Message.getFieldWithDefault(msg, 48, 0),
     isinfoonly: jspb.Message.getFieldWithDefault(msg, 49, false),
-    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 50, "")
+    isactive: jspb.Message.getFieldWithDefault(msg, 50, false),
+    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 51, "")
   };
 
   if (includeInstance) {
@@ -2461,6 +2522,10 @@ proto.dictionary.Field.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsinfoonly(value);
       break;
     case 50:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
+      break;
+    case 51:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultvalueto(value);
       break;
@@ -2842,10 +2907,17 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      50,
+      f
+    );
+  }
   f = message.getDefaultvalueto();
   if (f.length > 0) {
     writer.writeString(
-      50,
+      51,
       f
     );
   }
@@ -3740,17 +3812,34 @@ proto.dictionary.Field.prototype.setIsinfoonly = function(value) {
 
 
 /**
- * optional string defaultValueTo = 50;
+ * optional bool isActive = 50;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Field.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 50, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Field.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 50, value);
+};
+
+
+/**
+ * optional string defaultValueTo = 51;
  * @return {string}
  */
 proto.dictionary.Field.prototype.getDefaultvalueto = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 50, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 51, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Field.prototype.setDefaultvalueto = function(value) {
-  jspb.Message.setProto3StringField(this, 50, value);
+  jspb.Message.setProto3StringField(this, 51, value);
 };
 
 
@@ -3789,7 +3878,8 @@ proto.dictionary.ContextInfo.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     messagetext: (f = msg.getMessagetext()) && proto.dictionary.MessageText.toObject(includeInstance, f),
-    sqlstatement: jspb.Message.getFieldWithDefault(msg, 6, "")
+    sqlstatement: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -3850,6 +3940,10 @@ proto.dictionary.ContextInfo.deserializeBinaryFromReader = function(msg, reader)
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setSqlstatement(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -3920,6 +4014,13 @@ proto.dictionary.ContextInfo.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -4034,6 +4135,23 @@ proto.dictionary.ContextInfo.prototype.setSqlstatement = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.ContextInfo.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.ContextInfo.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
 
 
 
@@ -4069,7 +4187,8 @@ proto.dictionary.MessageText.toObject = function(includeInstance, msg) {
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     msgtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
     msgtext: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    msgtip: jspb.Message.getFieldWithDefault(msg, 6, "")
+    msgtip: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -4129,6 +4248,10 @@ proto.dictionary.MessageText.deserializeBinaryFromReader = function(msg, reader)
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setMsgtip(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -4198,6 +4321,13 @@ proto.dictionary.MessageText.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -4294,6 +4424,23 @@ proto.dictionary.MessageText.prototype.setMsgtip = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.MessageText.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.MessageText.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
 
 
 
@@ -4327,7 +4474,8 @@ proto.dictionary.FieldGroup.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 4, "")
+    fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -4379,6 +4527,10 @@ proto.dictionary.FieldGroup.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldgrouptype(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -4434,6 +4586,13 @@ proto.dictionary.FieldGroup.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -4500,6 +4659,23 @@ proto.dictionary.FieldGroup.prototype.setFieldgrouptype = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 5;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.FieldGroup.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.FieldGroup.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -4543,7 +4719,8 @@ proto.dictionary.FieldDefinition.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 5, ""),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.dictionary.FieldCondition.toObject, includeInstance)
+    proto.dictionary.FieldCondition.toObject, includeInstance),
+    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -4604,6 +4781,10 @@ proto.dictionary.FieldDefinition.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.dictionary.FieldCondition;
       reader.readMessage(value,proto.dictionary.FieldCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -4675,6 +4856,13 @@ proto.dictionary.FieldDefinition.serializeBinaryToWriter = function(message, wri
       6,
       f,
       proto.dictionary.FieldCondition.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
     );
   }
 };
@@ -4789,6 +4977,23 @@ proto.dictionary.FieldDefinition.prototype.clearConditionsList = function() {
 };
 
 
+/**
+ * optional bool isActive = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.FieldDefinition.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.FieldDefinition.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
 
 
 
@@ -4822,7 +5027,8 @@ proto.dictionary.FieldCondition.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     condition: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    stylesheet: jspb.Message.getFieldWithDefault(msg, 4, "")
+    stylesheet: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -4874,6 +5080,10 @@ proto.dictionary.FieldCondition.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStylesheet(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -4932,6 +5142,13 @@ proto.dictionary.FieldCondition.serializeBinaryToWriter = function(message, writ
       f
     );
   }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -4981,7 +5198,7 @@ proto.dictionary.FieldCondition.prototype.setCondition = function(value) {
 
 
 /**
- * optional string Stylesheet = 4;
+ * optional string stylesheet = 4;
  * @return {string}
  */
 proto.dictionary.FieldCondition.prototype.getStylesheet = function() {
@@ -4992,6 +5209,23 @@ proto.dictionary.FieldCondition.prototype.getStylesheet = function() {
 /** @param {string} value */
 proto.dictionary.FieldCondition.prototype.setStylesheet = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool isActive = 5;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.FieldCondition.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.FieldCondition.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
@@ -5043,7 +5277,8 @@ proto.dictionary.Process.toObject = function(includeInstance, msg) {
     showhelp: jspb.Message.getFieldWithDefault(msg, 9, ""),
     isdirectprint: jspb.Message.getFieldWithDefault(msg, 10, false),
     parametersList: jspb.Message.toObjectList(msg.getParametersList(),
-    proto.dictionary.Field.toObject, includeInstance)
+    proto.dictionary.Field.toObject, includeInstance),
+    isactive: jspb.Message.getFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -5124,6 +5359,10 @@ proto.dictionary.Process.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addParameters(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -5230,6 +5469,13 @@ proto.dictionary.Process.serializeBinaryToWriter = function(message, writer) {
       11,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      12,
+      f
     );
   }
 };
@@ -5423,6 +5669,23 @@ proto.dictionary.Process.prototype.clearParametersList = function() {
 };
 
 
+/**
+ * optional bool isActive = 12;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Process.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Process.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 12, value);
+};
+
+
 
 
 
@@ -5459,7 +5722,8 @@ proto.dictionary.Form.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    classname: jspb.Message.getFieldWithDefault(msg, 7, "")
+    classname: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -5523,6 +5787,10 @@ proto.dictionary.Form.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setClassname(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -5599,6 +5867,13 @@ proto.dictionary.Form.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -5710,6 +5985,23 @@ proto.dictionary.Form.prototype.setClassname = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 8;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Form.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 8, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Form.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -5765,7 +6057,8 @@ proto.dictionary.SmartBrowser.toObject = function(includeInstance, msg) {
     window: (f = msg.getWindow()) && proto.dictionary.Window.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
-    proto.dictionary.Field.toObject, includeInstance)
+    proto.dictionary.Field.toObject, includeInstance),
+    isactive: jspb.Message.getFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -5876,6 +6169,10 @@ proto.dictionary.SmartBrowser.deserializeBinaryFromReader = function(msg, reader
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
+      break;
+    case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -6033,6 +6330,13 @@ proto.dictionary.SmartBrowser.serializeBinaryToWriter = function(message, writer
       19,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      20,
+      f
     );
   }
 };
@@ -6375,6 +6679,23 @@ proto.dictionary.SmartBrowser.prototype.clearFieldsList = function() {
 };
 
 
+/**
+ * optional bool isActive = 20;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.SmartBrowser.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.SmartBrowser.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
 
 
 
@@ -6409,7 +6730,8 @@ proto.dictionary.Validation.toObject = function(includeInstance, msg) {
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     validationtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    code: jspb.Message.getFieldWithDefault(msg, 5, "")
+    code: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -6465,6 +6787,10 @@ proto.dictionary.Validation.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setCode(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -6527,6 +6853,13 @@ proto.dictionary.Validation.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -6608,6 +6941,23 @@ proto.dictionary.Validation.prototype.setCode = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 6;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Validation.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Validation.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -6651,7 +7001,8 @@ proto.dictionary.Reference.toObject = function(includeInstance, msg) {
     validationtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
     referencetable: (f = msg.getReferencetable()) && proto.dictionary.ReferenceTable.toObject(includeInstance, f),
     valuesList: jspb.Message.toObjectList(msg.getValuesList(),
-    proto.dictionary.ReferenceValue.toObject, includeInstance)
+    proto.dictionary.ReferenceValue.toObject, includeInstance),
+    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -6713,6 +7064,10 @@ proto.dictionary.Reference.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.dictionary.ReferenceValue;
       reader.readMessage(value,proto.dictionary.ReferenceValue.deserializeBinaryFromReader);
       msg.addValues(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -6785,6 +7140,13 @@ proto.dictionary.Reference.serializeBinaryToWriter = function(message, writer) {
       6,
       f,
       proto.dictionary.ReferenceValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
     );
   }
 };
@@ -6917,6 +7279,23 @@ proto.dictionary.Reference.prototype.clearValuesList = function() {
 };
 
 
+/**
+ * optional bool isActive = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Reference.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Reference.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
 
 
 
@@ -6951,7 +7330,8 @@ proto.dictionary.ReferenceValue.toObject = function(includeInstance, msg) {
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, "")
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -7007,6 +7387,10 @@ proto.dictionary.ReferenceValue.deserializeBinaryFromReader = function(msg, read
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -7069,6 +7453,13 @@ proto.dictionary.ReferenceValue.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -7150,6 +7541,23 @@ proto.dictionary.ReferenceValue.prototype.setDescription = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 6;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.ReferenceValue.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.ReferenceValue.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
 
 
 
@@ -7188,7 +7596,8 @@ proto.dictionary.ReferenceTable.toObject = function(includeInstance, msg) {
     isdisplayidentifier: jspb.Message.getFieldWithDefault(msg, 6, false),
     isvaluedisplayed: jspb.Message.getFieldWithDefault(msg, 7, false),
     displaysql: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    whereclause: jspb.Message.getFieldWithDefault(msg, 9, "")
+    whereclause: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    isactive: jspb.Message.getFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -7260,6 +7669,10 @@ proto.dictionary.ReferenceTable.deserializeBinaryFromReader = function(msg, read
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setWhereclause(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -7350,6 +7763,13 @@ proto.dictionary.ReferenceTable.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -7495,6 +7915,23 @@ proto.dictionary.ReferenceTable.prototype.setWhereclause = function(value) {
 };
 
 
+/**
+ * optional bool isActive = 10;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.ReferenceTable.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.ReferenceTable.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -7547,7 +7984,8 @@ proto.dictionary.Menu.toObject = function(includeInstance, msg) {
     processuuid: jspb.Message.getFieldWithDefault(msg, 14, ""),
     smartbrowseruuid: jspb.Message.getFieldWithDefault(msg, 15, ""),
     childsList: jspb.Message.toObjectList(msg.getChildsList(),
-    proto.dictionary.Menu.toObject, includeInstance)
+    proto.dictionary.Menu.toObject, includeInstance),
+    isactive: jspb.Message.getFieldWithDefault(msg, 17, false)
   };
 
   if (includeInstance) {
@@ -7644,6 +8082,10 @@ proto.dictionary.Menu.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.dictionary.Menu;
       reader.readMessage(value,proto.dictionary.Menu.deserializeBinaryFromReader);
       msg.addChilds(value);
+      break;
+    case 17:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsactive(value);
       break;
     default:
       reader.skipField();
@@ -7778,6 +8220,13 @@ proto.dictionary.Menu.serializeBinaryToWriter = function(message, writer) {
       16,
       f,
       proto.dictionary.Menu.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsactive();
+  if (f) {
+    writer.writeBool(
+      17,
+      f
     );
   }
 };
@@ -8030,6 +8479,23 @@ proto.dictionary.Menu.prototype.addChilds = function(opt_value, opt_index) {
  */
 proto.dictionary.Menu.prototype.clearChildsList = function() {
   this.setChildsList([]);
+};
+
+
+/**
+ * optional bool isActive = 17;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Menu.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Menu.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
