@@ -526,5 +526,60 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestProcess =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Browser>}
+ */
+const methodInfo_DictionaryService_RequestBrowser = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.dictionary.Browser,
+  /** @param {!proto.dictionary.EntityRequest} request */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Browser.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.dictionary.Browser)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Browser>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.dictionary.DictionaryServiceClient.prototype.requestBrowser =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestBrowser',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestBrowser,
+      callback);
+};
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.dictionary.Browser>}
+ *     A native promise that resolves to the response
+ */
+proto.dictionary.DictionaryServicePromiseClient.prototype.requestBrowser =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/RequestBrowser',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_RequestBrowser);
+};
+
+
 module.exports = proto.dictionary;
 

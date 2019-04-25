@@ -117,10 +117,21 @@ dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
 ```
 ### Request a Process
 ```javascript
-//  Request Field
+//  Request Process
 dictionary.requestProcess('a42adc88-fb40-11e8-a479-7a0060f0aa01')
 .then(process => {
   console.log("Process: " + process);
+})
+.catch(err => {
+  console.log("Error " + err.code + ": " + err.message);
+});
+```
+### Request a Smart Browser
+```javascript
+//  Request Smart Browser
+dictionary.requestBrowser('8aaef794-fb40-11e8-a479-7a0060f0aa01')
+.then(browser => {
+  console.log("Smart Browser: " + browser);
 })
 .catch(err => {
   console.log("Error " + err.code + ": " + err.message);

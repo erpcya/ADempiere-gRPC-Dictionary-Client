@@ -114,6 +114,15 @@ class Dictionary {
   requestProcess(uuid) {
     return this.getService().requestProcess(this.getRequest(uuid));
   }
+
+  /**
+   * Get and request a Smart Browser with fields
+   * @return {Object} Object field and attributes.
+   * @param {string} uuid Universally Unique IDentifier
+   */
+  requestBrowser(uuid) {
+    return this.getService().RequestBrowser(this.getRequest(uuid));
+  }
 }
 
 module.exports = Dictionary;
