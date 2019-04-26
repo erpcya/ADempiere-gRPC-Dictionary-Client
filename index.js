@@ -121,7 +121,7 @@ class Dictionary {
    * @param {string} uuid Universally Unique IDentifier
    */
   requestBrowser(uuid) {
-    return this.getService().RequestBrowser(this.getRequest(uuid));
+    return this.getService().requestBrowser(this.getRequest(uuid));
   }
 }
 
