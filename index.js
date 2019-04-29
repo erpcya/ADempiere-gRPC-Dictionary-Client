@@ -18,12 +18,12 @@ class Dictionary {
   /**
    * Constructor, No authentication required
    * @param {string} host
-   * @param {string} clientVersion
+   * @param {string} sessionUuid
    * @param {string} language
    */
-  constructor(host, clientVersion, language = 'en_US') {
+  constructor(host, sessionUuid, language = 'en_US') {
     this.host = host;
-    this.clientVersion = clientVersion;
+    this.sessionUuid = sessionUuid;
     this.language = language;
   }
 
@@ -61,7 +61,7 @@ class Dictionary {
   getRequest(uuid) {
     const { ApplicationRequest, EntityRequest } = require('./src/grpc/proto/dictionary_pb.js');
     let applicationRequest = new ApplicationRequest();
-    applicationRequest.setUuid(this.clientVersion);
+    applicationRequest.setSessionuuid(this.sessionUuid);
     applicationRequest.setLanguage(this.language);
     let request = new EntityRequest();
     request.setUuid(uuid);

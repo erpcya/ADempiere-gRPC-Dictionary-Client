@@ -393,9 +393,8 @@ proto.dictionary.ApplicationRequest.prototype.toObject = function(opt_includeIns
  */
 proto.dictionary.ApplicationRequest.toObject = function(includeInstance, msg) {
   var obj = {
-    uuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    clientversion: jspb.Message.getFieldWithDefault(msg, 3, "")
+    sessionuuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    language: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -434,15 +433,11 @@ proto.dictionary.ApplicationRequest.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUuid(value);
+      msg.setSessionuuid(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setLanguage(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setClientversion(value);
       break;
     default:
       reader.skipField();
@@ -473,7 +468,7 @@ proto.dictionary.ApplicationRequest.prototype.serializeBinary = function() {
  */
 proto.dictionary.ApplicationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUuid();
+  f = message.getSessionuuid();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -487,27 +482,20 @@ proto.dictionary.ApplicationRequest.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getClientversion();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string uuid = 1;
+ * optional string sessionUuid = 1;
  * @return {string}
  */
-proto.dictionary.ApplicationRequest.prototype.getUuid = function() {
+proto.dictionary.ApplicationRequest.prototype.getSessionuuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ApplicationRequest.prototype.setUuid = function(value) {
+proto.dictionary.ApplicationRequest.prototype.setSessionuuid = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -524,21 +512,6 @@ proto.dictionary.ApplicationRequest.prototype.getLanguage = function() {
 /** @param {string} value */
 proto.dictionary.ApplicationRequest.prototype.setLanguage = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string clientVersion = 3;
- * @return {string}
- */
-proto.dictionary.ApplicationRequest.prototype.getClientversion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.dictionary.ApplicationRequest.prototype.setClientversion = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
