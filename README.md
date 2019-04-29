@@ -21,12 +21,12 @@ yarn add @adempiere/grpc-dictionary-client
 ### Declare Dictionary
 ```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary(GRPC_HOST, 'Version Epale');
+let dictionary = new Dictionary(GRPC_HOST, 'Session UUID');
 ```
 ### Declare Dictionary with specific language
 ```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary(GRPC_HOST, 'Version Epale', 'es_VE');
+let dictionary = new Dictionary(GRPC_HOST, 'Session UUID', 'es_VE');
 ```
 
 ### Request a simple Menu
