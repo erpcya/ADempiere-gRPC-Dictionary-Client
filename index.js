@@ -28,20 +28,6 @@ class Dictionary {
   }
 
   /**
-   * Get and request a Menu, the child are optional
-   * @param {string} uuid Universally Unique IDentifier
-   * @param {boolean} withChild Indicate if you will also extract the children
-   * @return {Object} Object Menu and attributes, and sub menus if its required.
-   */
-  requestMenu(uuid, withChild = false) {
-    if(withChild) {
-      return this.getService().requestMenuAndChild(this.getRequest(uuid));
-    } else {
-      return this.getService().requestMenu(this.getRequest(uuid));
-    }
-  }
-
-  /**
    * Load gRPC Connection
    * @return {Object} Return request for get data
    */
