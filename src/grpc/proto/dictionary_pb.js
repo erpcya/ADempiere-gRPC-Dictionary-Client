@@ -23,7 +23,7 @@ goog.exportSymbol('proto.dictionary.Form', null, global);
 goog.exportSymbol('proto.dictionary.MessageText', null, global);
 goog.exportSymbol('proto.dictionary.Process', null, global);
 goog.exportSymbol('proto.dictionary.Reference', null, global);
-goog.exportSymbol('proto.dictionary.ReportType', null, global);
+goog.exportSymbol('proto.dictionary.ReportExportType', null, global);
 goog.exportSymbol('proto.dictionary.Tab', null, global);
 goog.exportSymbol('proto.dictionary.Window', null, global);
 goog.exportSymbol('proto.dictionary.ZoomWindow', null, global);
@@ -352,16 +352,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.dictionary.ReportType = function(opt_data) {
+proto.dictionary.ReportExportType = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.dictionary.ReportType, jspb.Message);
+goog.inherits(proto.dictionary.ReportExportType, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.dictionary.ReportType.displayName = 'proto.dictionary.ReportType';
+  proto.dictionary.ReportExportType.displayName = 'proto.dictionary.ReportExportType';
 }
 
 
@@ -5161,8 +5161,8 @@ proto.dictionary.Process.toObject = function(includeInstance, msg) {
     parametersList: jspb.Message.toObjectList(msg.getParametersList(),
     proto.dictionary.Field.toObject, includeInstance),
     isactive: jspb.Message.getFieldWithDefault(msg, 12, false),
-    reporttypesList: jspb.Message.toObjectList(msg.getReporttypesList(),
-    proto.dictionary.ReportType.toObject, includeInstance)
+    reportexporttypesList: jspb.Message.toObjectList(msg.getReportexporttypesList(),
+    proto.dictionary.ReportExportType.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5249,9 +5249,9 @@ proto.dictionary.Process.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIsactive(value);
       break;
     case 13:
-      var value = new proto.dictionary.ReportType;
-      reader.readMessage(value,proto.dictionary.ReportType.deserializeBinaryFromReader);
-      msg.addReporttypes(value);
+      var value = new proto.dictionary.ReportExportType;
+      reader.readMessage(value,proto.dictionary.ReportExportType.deserializeBinaryFromReader);
+      msg.addReportexporttypes(value);
       break;
     default:
       reader.skipField();
@@ -5367,12 +5367,12 @@ proto.dictionary.Process.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getReporttypesList();
+  f = message.getReportexporttypesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       13,
       f,
-      proto.dictionary.ReportType.serializeBinaryToWriter
+      proto.dictionary.ReportExportType.serializeBinaryToWriter
     );
   }
 };
@@ -5584,36 +5584,36 @@ proto.dictionary.Process.prototype.setIsactive = function(value) {
 
 
 /**
- * repeated ReportType reportTypes = 13;
- * @return {!Array<!proto.dictionary.ReportType>}
+ * repeated ReportExportType reportExportTypes = 13;
+ * @return {!Array<!proto.dictionary.ReportExportType>}
  */
-proto.dictionary.Process.prototype.getReporttypesList = function() {
-  return /** @type{!Array<!proto.dictionary.ReportType>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.ReportType, 13));
+proto.dictionary.Process.prototype.getReportexporttypesList = function() {
+  return /** @type{!Array<!proto.dictionary.ReportExportType>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.ReportExportType, 13));
 };
 
 
-/** @param {!Array<!proto.dictionary.ReportType>} value */
-proto.dictionary.Process.prototype.setReporttypesList = function(value) {
+/** @param {!Array<!proto.dictionary.ReportExportType>} value */
+proto.dictionary.Process.prototype.setReportexporttypesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
 
 /**
- * @param {!proto.dictionary.ReportType=} opt_value
+ * @param {!proto.dictionary.ReportExportType=} opt_value
  * @param {number=} opt_index
- * @return {!proto.dictionary.ReportType}
+ * @return {!proto.dictionary.ReportExportType}
  */
-proto.dictionary.Process.prototype.addReporttypes = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.dictionary.ReportType, opt_index);
+proto.dictionary.Process.prototype.addReportexporttypes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.dictionary.ReportExportType, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
  */
-proto.dictionary.Process.prototype.clearReporttypesList = function() {
-  this.setReporttypesList([]);
+proto.dictionary.Process.prototype.clearReportexporttypesList = function() {
+  this.setReportexporttypesList([]);
 };
 
 
@@ -7221,8 +7221,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.dictionary.ReportType.prototype.toObject = function(opt_includeInstance) {
-  return proto.dictionary.ReportType.toObject(opt_includeInstance, this);
+proto.dictionary.ReportExportType.prototype.toObject = function(opt_includeInstance) {
+  return proto.dictionary.ReportExportType.toObject(opt_includeInstance, this);
 };
 
 
@@ -7231,11 +7231,11 @@ proto.dictionary.ReportType.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.dictionary.ReportType} msg The msg instance to transform.
+ * @param {!proto.dictionary.ReportExportType} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ReportType.toObject = function(includeInstance, msg) {
+proto.dictionary.ReportExportType.toObject = function(includeInstance, msg) {
   var obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -7253,23 +7253,23 @@ proto.dictionary.ReportType.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.dictionary.ReportType}
+ * @return {!proto.dictionary.ReportExportType}
  */
-proto.dictionary.ReportType.deserializeBinary = function(bytes) {
+proto.dictionary.ReportExportType.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.dictionary.ReportType;
-  return proto.dictionary.ReportType.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.dictionary.ReportExportType;
+  return proto.dictionary.ReportExportType.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.dictionary.ReportType} msg The message object to deserialize into.
+ * @param {!proto.dictionary.ReportExportType} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.dictionary.ReportType}
+ * @return {!proto.dictionary.ReportExportType}
  */
-proto.dictionary.ReportType.deserializeBinaryFromReader = function(msg, reader) {
+proto.dictionary.ReportExportType.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7301,9 +7301,9 @@ proto.dictionary.ReportType.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.dictionary.ReportType.prototype.serializeBinary = function() {
+proto.dictionary.ReportExportType.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.dictionary.ReportType.serializeBinaryToWriter(this, writer);
+  proto.dictionary.ReportExportType.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7311,11 +7311,11 @@ proto.dictionary.ReportType.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.dictionary.ReportType} message
+ * @param {!proto.dictionary.ReportExportType} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.dictionary.ReportType.serializeBinaryToWriter = function(message, writer) {
+proto.dictionary.ReportExportType.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -7345,13 +7345,13 @@ proto.dictionary.ReportType.serializeBinaryToWriter = function(message, writer) 
  * optional string name = 1;
  * @return {string}
  */
-proto.dictionary.ReportType.prototype.getName = function() {
+proto.dictionary.ReportExportType.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ReportType.prototype.setName = function(value) {
+proto.dictionary.ReportExportType.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7360,13 +7360,13 @@ proto.dictionary.ReportType.prototype.setName = function(value) {
  * optional string description = 2;
  * @return {string}
  */
-proto.dictionary.ReportType.prototype.getDescription = function() {
+proto.dictionary.ReportExportType.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ReportType.prototype.setDescription = function(value) {
+proto.dictionary.ReportExportType.prototype.setDescription = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7375,13 +7375,13 @@ proto.dictionary.ReportType.prototype.setDescription = function(value) {
  * optional string type = 3;
  * @return {string}
  */
-proto.dictionary.ReportType.prototype.getType = function() {
+proto.dictionary.ReportExportType.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.ReportType.prototype.setType = function(value) {
+proto.dictionary.ReportExportType.prototype.setType = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
