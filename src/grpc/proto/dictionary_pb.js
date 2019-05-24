@@ -5939,7 +5939,7 @@ proto.dictionary.Form.prototype.setIsactive = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Browser.repeatedFields_ = [19];
+proto.dictionary.Browser.repeatedFields_ = [21];
 
 
 
@@ -5977,19 +5977,21 @@ proto.dictionary.Browser.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     help: jspb.Message.getFieldWithDefault(msg, 6, ""),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    whereclause: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    isupdateable: jspb.Message.getFieldWithDefault(msg, 10, false),
-    isdeleteable: jspb.Message.getFieldWithDefault(msg, 11, false),
-    isselectedbydefault: jspb.Message.getFieldWithDefault(msg, 12, false),
-    iscollapsiblebydefault: jspb.Message.getFieldWithDefault(msg, 13, false),
-    isexecutedquerybydefault: jspb.Message.getFieldWithDefault(msg, 14, false),
-    isshowtotal: jspb.Message.getFieldWithDefault(msg, 15, false),
-    viewuuid: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    query: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    whereclause: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    orderbyclause: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    isupdateable: jspb.Message.getFieldWithDefault(msg, 12, false),
+    isdeleteable: jspb.Message.getFieldWithDefault(msg, 13, false),
+    isselectedbydefault: jspb.Message.getFieldWithDefault(msg, 14, false),
+    iscollapsiblebydefault: jspb.Message.getFieldWithDefault(msg, 15, false),
+    isexecutedquerybydefault: jspb.Message.getFieldWithDefault(msg, 16, false),
+    isshowtotal: jspb.Message.getFieldWithDefault(msg, 17, false),
+    viewuuid: jspb.Message.getFieldWithDefault(msg, 18, ""),
     window: (f = msg.getWindow()) && proto.dictionary.Window.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.dictionary.Field.toObject, includeInstance),
-    isactive: jspb.Message.getFieldWithDefault(msg, 20, false)
+    isactive: jspb.Message.getFieldWithDefault(msg, 22, false)
   };
 
   if (includeInstance) {
@@ -6056,52 +6058,60 @@ proto.dictionary.Browser.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWhereclause(value);
+      msg.setQuery(value);
       break;
     case 10:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsupdateable(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWhereclause(value);
       break;
     case 11:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsdeleteable(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderbyclause(value);
       break;
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsselectedbydefault(value);
+      msg.setIsupdateable(value);
       break;
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIscollapsiblebydefault(value);
+      msg.setIsdeleteable(value);
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsexecutedquerybydefault(value);
+      msg.setIsselectedbydefault(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsshowtotal(value);
+      msg.setIscollapsiblebydefault(value);
       break;
     case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsexecutedquerybydefault(value);
+      break;
+    case 17:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsshowtotal(value);
+      break;
+    case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setViewuuid(value);
       break;
-    case 17:
+    case 19:
       var value = new proto.dictionary.Window;
       reader.readMessage(value,proto.dictionary.Window.deserializeBinaryFromReader);
       msg.setWindow(value);
       break;
-    case 18:
+    case 20:
       var value = new proto.dictionary.Process;
       reader.readMessage(value,proto.dictionary.Process.deserializeBinaryFromReader);
       msg.setProcess(value);
       break;
-    case 19:
+    case 21:
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
-    case 20:
+    case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsactive(value);
       break;
@@ -6183,66 +6193,80 @@ proto.dictionary.Browser.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getWhereclause();
+  f = message.getQuery();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getIsupdateable();
-  if (f) {
-    writer.writeBool(
+  f = message.getWhereclause();
+  if (f.length > 0) {
+    writer.writeString(
       10,
       f
     );
   }
-  f = message.getIsdeleteable();
-  if (f) {
-    writer.writeBool(
+  f = message.getOrderbyclause();
+  if (f.length > 0) {
+    writer.writeString(
       11,
       f
     );
   }
-  f = message.getIsselectedbydefault();
+  f = message.getIsupdateable();
   if (f) {
     writer.writeBool(
       12,
       f
     );
   }
-  f = message.getIscollapsiblebydefault();
+  f = message.getIsdeleteable();
   if (f) {
     writer.writeBool(
       13,
       f
     );
   }
-  f = message.getIsexecutedquerybydefault();
+  f = message.getIsselectedbydefault();
   if (f) {
     writer.writeBool(
       14,
       f
     );
   }
-  f = message.getIsshowtotal();
+  f = message.getIscollapsiblebydefault();
   if (f) {
     writer.writeBool(
       15,
       f
     );
   }
+  f = message.getIsexecutedquerybydefault();
+  if (f) {
+    writer.writeBool(
+      16,
+      f
+    );
+  }
+  f = message.getIsshowtotal();
+  if (f) {
+    writer.writeBool(
+      17,
+      f
+    );
+  }
   f = message.getViewuuid();
   if (f.length > 0) {
     writer.writeString(
-      16,
+      18,
       f
     );
   }
   f = message.getWindow();
   if (f != null) {
     writer.writeMessage(
-      17,
+      19,
       f,
       proto.dictionary.Window.serializeBinaryToWriter
     );
@@ -6250,7 +6274,7 @@ proto.dictionary.Browser.serializeBinaryToWriter = function(message, writer) {
   f = message.getProcess();
   if (f != null) {
     writer.writeMessage(
-      18,
+      20,
       f,
       proto.dictionary.Process.serializeBinaryToWriter
     );
@@ -6258,7 +6282,7 @@ proto.dictionary.Browser.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      19,
+      21,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
     );
@@ -6266,7 +6290,7 @@ proto.dictionary.Browser.serializeBinaryToWriter = function(message, writer) {
   f = message.getIsactive();
   if (f) {
     writer.writeBool(
-      20,
+      22,
       f
     );
   }
@@ -6379,150 +6403,180 @@ proto.dictionary.Browser.prototype.setAccesslevel = function(value) {
 
 
 /**
- * optional string whereClause = 9;
+ * optional string query = 9;
  * @return {string}
  */
-proto.dictionary.Browser.prototype.getWhereclause = function() {
+proto.dictionary.Browser.prototype.getQuery = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Browser.prototype.setWhereclause = function(value) {
+proto.dictionary.Browser.prototype.setQuery = function(value) {
   jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional bool isUpdateable = 10;
+ * optional string whereClause = 10;
+ * @return {string}
+ */
+proto.dictionary.Browser.prototype.getWhereclause = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Browser.prototype.setWhereclause = function(value) {
+  jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string orderByClause = 11;
+ * @return {string}
+ */
+proto.dictionary.Browser.prototype.getOrderbyclause = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Browser.prototype.setOrderbyclause = function(value) {
+  jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional bool isUpdateable = 12;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsupdateable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
-};
-
-
-/** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIsupdateable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 10, value);
-};
-
-
-/**
- * optional bool IsDeleteable = 11;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.dictionary.Browser.prototype.getIsdeleteable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
-};
-
-
-/** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIsdeleteable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 11, value);
-};
-
-
-/**
- * optional bool IsSelectedByDefault = 12;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.dictionary.Browser.prototype.getIsselectedbydefault = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIsselectedbydefault = function(value) {
+proto.dictionary.Browser.prototype.setIsupdateable = function(value) {
   jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional bool IsCollapsibleByDefault = 13;
+ * optional bool IsDeleteable = 13;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Browser.prototype.getIscollapsiblebydefault = function() {
+proto.dictionary.Browser.prototype.getIsdeleteable = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIscollapsiblebydefault = function(value) {
+proto.dictionary.Browser.prototype.setIsdeleteable = function(value) {
   jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional bool IsExecutedQueryByDefault = 14;
+ * optional bool IsSelectedByDefault = 14;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Browser.prototype.getIsexecutedquerybydefault = function() {
+proto.dictionary.Browser.prototype.getIsselectedbydefault = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIsexecutedquerybydefault = function(value) {
+proto.dictionary.Browser.prototype.setIsselectedbydefault = function(value) {
   jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
 /**
- * optional bool IsShowTotal = 15;
+ * optional bool IsCollapsibleByDefault = 15;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.dictionary.Browser.prototype.getIsshowtotal = function() {
+proto.dictionary.Browser.prototype.getIscollapsiblebydefault = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Browser.prototype.setIsshowtotal = function(value) {
+proto.dictionary.Browser.prototype.setIscollapsiblebydefault = function(value) {
   jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
 /**
- * optional string viewUuid = 16;
+ * optional bool IsExecutedQueryByDefault = 16;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Browser.prototype.getIsexecutedquerybydefault = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Browser.prototype.setIsexecutedquerybydefault = function(value) {
+  jspb.Message.setProto3BooleanField(this, 16, value);
+};
+
+
+/**
+ * optional bool IsShowTotal = 17;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dictionary.Browser.prototype.getIsshowtotal = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Browser.prototype.setIsshowtotal = function(value) {
+  jspb.Message.setProto3BooleanField(this, 17, value);
+};
+
+
+/**
+ * optional string viewUuid = 18;
  * @return {string}
  */
 proto.dictionary.Browser.prototype.getViewuuid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Browser.prototype.setViewuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 16, value);
+  jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
 /**
- * optional Window window = 17;
+ * optional Window window = 19;
  * @return {?proto.dictionary.Window}
  */
 proto.dictionary.Browser.prototype.getWindow = function() {
   return /** @type{?proto.dictionary.Window} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Window, 17));
+    jspb.Message.getWrapperField(this, proto.dictionary.Window, 19));
 };
 
 
 /** @param {?proto.dictionary.Window|undefined} value */
 proto.dictionary.Browser.prototype.setWindow = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -6539,23 +6593,23 @@ proto.dictionary.Browser.prototype.clearWindow = function() {
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.hasWindow = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional Process process = 18;
+ * optional Process process = 20;
  * @return {?proto.dictionary.Process}
  */
 proto.dictionary.Browser.prototype.getProcess = function() {
   return /** @type{?proto.dictionary.Process} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Process, 18));
+    jspb.Message.getWrapperField(this, proto.dictionary.Process, 20));
 };
 
 
 /** @param {?proto.dictionary.Process|undefined} value */
 proto.dictionary.Browser.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 18, value);
+  jspb.Message.setWrapperField(this, 20, value);
 };
 
 
@@ -6572,23 +6626,23 @@ proto.dictionary.Browser.prototype.clearProcess = function() {
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.hasProcess = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * repeated Field fields = 19;
+ * repeated Field fields = 21;
  * @return {!Array<!proto.dictionary.Field>}
  */
 proto.dictionary.Browser.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.dictionary.Field>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 19));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 21));
 };
 
 
 /** @param {!Array<!proto.dictionary.Field>} value */
 proto.dictionary.Browser.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 19, value);
+  jspb.Message.setRepeatedWrapperField(this, 21, value);
 };
 
 
@@ -6598,7 +6652,7 @@ proto.dictionary.Browser.prototype.setFieldsList = function(value) {
  * @return {!proto.dictionary.Field}
  */
 proto.dictionary.Browser.prototype.addFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 19, opt_value, proto.dictionary.Field, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 21, opt_value, proto.dictionary.Field, opt_index);
 };
 
 
@@ -6611,19 +6665,19 @@ proto.dictionary.Browser.prototype.clearFieldsList = function() {
 
 
 /**
- * optional bool isActive = 20;
+ * optional bool isActive = 22;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 22, false));
 };
 
 
 /** @param {boolean} value */
 proto.dictionary.Browser.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 20, value);
+  jspb.Message.setProto3BooleanField(this, 22, value);
 };
 
 
