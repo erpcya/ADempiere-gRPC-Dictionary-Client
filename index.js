@@ -63,9 +63,9 @@ class Dictionary {
    */
   requestWindow(uuid, withTabs = false) {
     if(withTabs) {
-      return this.getService().requestWindowAndTabs(this.getRequest(uuid));
+      return this.getService().getWindowAndTabs(this.getRequest(uuid));
     } else {
-      return this.getService().requestWindow(this.getRequest(uuid));
+      return this.getService().getWindow(this.getRequest(uuid));
     }
   }
 
@@ -77,9 +77,9 @@ class Dictionary {
    */
   requestTab(uuid, withFields = false) {
     if(withFields) {
-      return this.getService().requestTabAndFields(this.getRequest(uuid));
+      return this.getService().getTabAndFields(this.getRequest(uuid));
     } else {
-      return this.getService().requestTab(this.getRequest(uuid));
+      return this.getService().getTab(this.getRequest(uuid));
     }
   }
 
@@ -89,7 +89,7 @@ class Dictionary {
    * @param {string} uuid Universally Unique IDentifier
    */
   requestField(uuid) {
-    return this.getService().requestField(this.getRequest(uuid));
+    return this.getService().getField(this.getRequest(uuid));
   }
 
   /**
@@ -98,7 +98,7 @@ class Dictionary {
    * @param {string} uuid Universally Unique IDentifier
    */
   requestProcess(uuid) {
-    return this.getService().requestProcess(this.getRequest(uuid));
+    return this.getService().getProcess(this.getRequest(uuid));
   }
 
   /**
@@ -107,7 +107,7 @@ class Dictionary {
    * @param {string} uuid Universally Unique IDentifier
    */
   requestBrowser(uuid) {
-    return this.getService().requestBrowser(this.getRequest(uuid));
+    return this.getService().getBrowser(this.getRequest(uuid));
   }
 }
 

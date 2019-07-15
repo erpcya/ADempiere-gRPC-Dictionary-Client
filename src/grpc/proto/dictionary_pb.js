@@ -368,13 +368,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.ApplicationRequest.prototype.toObject = function(opt_includeInstance) {
@@ -384,15 +386,15 @@ proto.dictionary.ApplicationRequest.prototype.toObject = function(opt_includeIns
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.ApplicationRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.ApplicationRequest.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     sessionuuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     language: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
@@ -520,13 +522,15 @@ proto.dictionary.ApplicationRequest.prototype.setLanguage = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.EntityRequest.prototype.toObject = function(opt_includeInstance) {
@@ -536,15 +540,15 @@ proto.dictionary.EntityRequest.prototype.toObject = function(opt_includeInstance
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.EntityRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.EntityRequest.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     applicationrequest: (f = msg.getApplicationrequest()) && proto.dictionary.ApplicationRequest.toObject(includeInstance, f)
@@ -726,13 +730,15 @@ proto.dictionary.Window.repeatedFields_ = [9];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Window.prototype.toObject = function(opt_includeInstance) {
@@ -742,22 +748,22 @@ proto.dictionary.Window.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Window} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Window.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 6, false),
-    issotrx: jspb.Message.getFieldWithDefault(msg, 7, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    issotrx: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     tabsList: jspb.Message.toObjectList(msg.getTabsList(),
     proto.dictionary.Tab.toObject, includeInstance)
@@ -1009,12 +1015,10 @@ proto.dictionary.Window.prototype.setHelp = function(value) {
 
 /**
  * optional bool isActive = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Window.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -1026,12 +1030,10 @@ proto.dictionary.Window.prototype.setIsactive = function(value) {
 
 /**
  * optional bool isSOTrx = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Window.prototype.getIssotrx = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -1120,13 +1122,15 @@ proto.dictionary.Tab.repeatedFields_ = [28,29];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Tab.prototype.toObject = function(opt_includeInstance) {
@@ -1136,15 +1140,15 @@ proto.dictionary.Tab.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Tab} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Tab.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -1153,18 +1157,18 @@ proto.dictionary.Tab.toObject = function(includeInstance, msg) {
     tablename: jspb.Message.getFieldWithDefault(msg, 6, ""),
     sequence: jspb.Message.getFieldWithDefault(msg, 7, 0),
     tablevel: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    isactive: jspb.Message.getFieldWithDefault(msg, 9, false),
-    issinglerow: jspb.Message.getFieldWithDefault(msg, 10, false),
-    isadvancedtab: jspb.Message.getFieldWithDefault(msg, 11, false),
-    ishastree: jspb.Message.getFieldWithDefault(msg, 12, false),
-    isinfotab: jspb.Message.getFieldWithDefault(msg, 13, false),
-    issorttab: jspb.Message.getFieldWithDefault(msg, 14, false),
-    istranslationtab: jspb.Message.getFieldWithDefault(msg, 15, false),
-    isreadonly: jspb.Message.getFieldWithDefault(msg, 16, false),
-    isinsertrecord: jspb.Message.getFieldWithDefault(msg, 17, false),
-    isview: jspb.Message.getFieldWithDefault(msg, 18, false),
-    isdeleteable: jspb.Message.getFieldWithDefault(msg, 19, false),
-    isdocument: jspb.Message.getFieldWithDefault(msg, 20, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    issinglerow: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isadvancedtab: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    ishastree: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    isinfotab: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    issorttab: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    istranslationtab: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    isreadonly: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    isinsertrecord: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    isview: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    isdeleteable: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    isdocument: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 21, 0),
     linkcolumnname: jspb.Message.getFieldWithDefault(msg, 22, ""),
     parentcolumnname: jspb.Message.getFieldWithDefault(msg, 23, ""),
@@ -1705,12 +1709,10 @@ proto.dictionary.Tab.prototype.setTablevel = function(value) {
 
 /**
  * optional bool isActive = 9;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -1722,12 +1724,10 @@ proto.dictionary.Tab.prototype.setIsactive = function(value) {
 
 /**
  * optional bool isSingleRow = 10;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIssinglerow = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -1739,12 +1739,10 @@ proto.dictionary.Tab.prototype.setIssinglerow = function(value) {
 
 /**
  * optional bool isAdvancedTab = 11;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsadvancedtab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -1756,12 +1754,10 @@ proto.dictionary.Tab.prototype.setIsadvancedtab = function(value) {
 
 /**
  * optional bool isHasTree = 12;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIshastree = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -1773,12 +1769,10 @@ proto.dictionary.Tab.prototype.setIshastree = function(value) {
 
 /**
  * optional bool isInfoTab = 13;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsinfotab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
@@ -1790,12 +1784,10 @@ proto.dictionary.Tab.prototype.setIsinfotab = function(value) {
 
 /**
  * optional bool isSortTab = 14;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIssorttab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -1807,12 +1799,10 @@ proto.dictionary.Tab.prototype.setIssorttab = function(value) {
 
 /**
  * optional bool isTranslationTab = 15;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIstranslationtab = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
@@ -1824,12 +1814,10 @@ proto.dictionary.Tab.prototype.setIstranslationtab = function(value) {
 
 /**
  * optional bool isReadOnly = 16;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsreadonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
@@ -1841,12 +1829,10 @@ proto.dictionary.Tab.prototype.setIsreadonly = function(value) {
 
 /**
  * optional bool isInsertRecord = 17;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsinsertrecord = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
@@ -1858,12 +1844,10 @@ proto.dictionary.Tab.prototype.setIsinsertrecord = function(value) {
 
 /**
  * optional bool isView = 18;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsview = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
 
@@ -1875,12 +1859,10 @@ proto.dictionary.Tab.prototype.setIsview = function(value) {
 
 /**
  * optional bool isDeleteable = 19;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsdeleteable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
@@ -1892,12 +1874,10 @@ proto.dictionary.Tab.prototype.setIsdeleteable = function(value) {
 
 /**
  * optional bool isDocument = 20;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.getIsdocument = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
 };
 
 
@@ -2136,13 +2116,15 @@ proto.dictionary.Tab.prototype.hasFieldgroup = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Field.prototype.toObject = function(opt_includeInstance) {
@@ -2152,15 +2134,15 @@ proto.dictionary.Field.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Field} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Field.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -2168,25 +2150,25 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     sequence: jspb.Message.getFieldWithDefault(msg, 6, 0),
     columnname: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    isdisplayed: jspb.Message.getFieldWithDefault(msg, 8, false),
-    isdisplayedgrid: jspb.Message.getFieldWithDefault(msg, 9, false),
-    isreadonly: jspb.Message.getFieldWithDefault(msg, 10, false),
-    isallowcopy: jspb.Message.getFieldWithDefault(msg, 11, false),
-    isencrypted: jspb.Message.getFieldWithDefault(msg, 12, false),
-    issameline: jspb.Message.getFieldWithDefault(msg, 13, false),
-    isheading: jspb.Message.getFieldWithDefault(msg, 14, false),
-    isfieldonly: jspb.Message.getFieldWithDefault(msg, 15, false),
-    isquickentry: jspb.Message.getFieldWithDefault(msg, 16, false),
-    ismandatory: jspb.Message.getFieldWithDefault(msg, 17, false),
-    iskey: jspb.Message.getFieldWithDefault(msg, 18, false),
-    isparent: jspb.Message.getFieldWithDefault(msg, 19, false),
-    isupdateable: jspb.Message.getFieldWithDefault(msg, 20, false),
-    isidentifier: jspb.Message.getFieldWithDefault(msg, 21, false),
-    isallowlogging: jspb.Message.getFieldWithDefault(msg, 22, false),
-    isselectioncolumn: jspb.Message.getFieldWithDefault(msg, 23, false),
-    isrange: jspb.Message.getFieldWithDefault(msg, 24, false),
-    isalwaysupdateable: jspb.Message.getFieldWithDefault(msg, 25, false),
-    istranslated: jspb.Message.getFieldWithDefault(msg, 26, false),
+    isdisplayed: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    isdisplayedgrid: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    isreadonly: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isallowcopy: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    isencrypted: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    issameline: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    isheading: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    isfieldonly: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    isquickentry: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    ismandatory: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    iskey: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    isparent: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    isupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+    isidentifier: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+    isallowlogging: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    isselectioncolumn: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+    isrange: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    isalwaysupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+    istranslated: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
     identifiersequence: jspb.Message.getFieldWithDefault(msg, 77, 0),
     displaylogic: jspb.Message.getFieldWithDefault(msg, 28, ""),
     displaytype: jspb.Message.getFieldWithDefault(msg, 29, 0),
@@ -2204,12 +2186,12 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     fielddefinition: (f = msg.getFielddefinition()) && proto.dictionary.FieldDefinition.toObject(includeInstance, f),
     reference: (f = msg.getReference()) && proto.dictionary.Reference.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
-    isquerycriteria: jspb.Message.getFieldWithDefault(msg, 44, false),
-    isorderby: jspb.Message.getFieldWithDefault(msg, 45, false),
+    isquerycriteria: jspb.Message.getBooleanFieldWithDefault(msg, 44, false),
+    isorderby: jspb.Message.getBooleanFieldWithDefault(msg, 45, false),
     seqnogrid: jspb.Message.getFieldWithDefault(msg, 46, 0),
     sortno: jspb.Message.getFieldWithDefault(msg, 47, 0),
-    isinfoonly: jspb.Message.getFieldWithDefault(msg, 48, false),
-    isactive: jspb.Message.getFieldWithDefault(msg, 49, false),
+    isinfoonly: jspb.Message.getBooleanFieldWithDefault(msg, 48, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 49, false),
     defaultvalueto: jspb.Message.getFieldWithDefault(msg, 50, "")
   };
 
@@ -2946,12 +2928,10 @@ proto.dictionary.Field.prototype.setColumnname = function(value) {
 
 /**
  * optional bool isDisplayed = 8;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsdisplayed = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -2963,12 +2943,10 @@ proto.dictionary.Field.prototype.setIsdisplayed = function(value) {
 
 /**
  * optional bool isDisplayedGrid = 9;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsdisplayedgrid = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -2980,12 +2958,10 @@ proto.dictionary.Field.prototype.setIsdisplayedgrid = function(value) {
 
 /**
  * optional bool isReadOnly = 10;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsreadonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -2997,12 +2973,10 @@ proto.dictionary.Field.prototype.setIsreadonly = function(value) {
 
 /**
  * optional bool isAllowCopy = 11;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsallowcopy = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -3014,12 +2988,10 @@ proto.dictionary.Field.prototype.setIsallowcopy = function(value) {
 
 /**
  * optional bool isEncrypted = 12;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsencrypted = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -3031,12 +3003,10 @@ proto.dictionary.Field.prototype.setIsencrypted = function(value) {
 
 /**
  * optional bool isSameLine = 13;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIssameline = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
@@ -3048,12 +3018,10 @@ proto.dictionary.Field.prototype.setIssameline = function(value) {
 
 /**
  * optional bool isHeading = 14;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsheading = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -3065,12 +3033,10 @@ proto.dictionary.Field.prototype.setIsheading = function(value) {
 
 /**
  * optional bool isFieldOnly = 15;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsfieldonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
@@ -3082,12 +3048,10 @@ proto.dictionary.Field.prototype.setIsfieldonly = function(value) {
 
 /**
  * optional bool isQuickEntry = 16;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsquickentry = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
@@ -3099,12 +3063,10 @@ proto.dictionary.Field.prototype.setIsquickentry = function(value) {
 
 /**
  * optional bool isMandatory = 17;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsmandatory = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
@@ -3116,12 +3078,10 @@ proto.dictionary.Field.prototype.setIsmandatory = function(value) {
 
 /**
  * optional bool isKey = 18;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIskey = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
 
@@ -3133,12 +3093,10 @@ proto.dictionary.Field.prototype.setIskey = function(value) {
 
 /**
  * optional bool isParent = 19;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsparent = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
@@ -3150,12 +3108,10 @@ proto.dictionary.Field.prototype.setIsparent = function(value) {
 
 /**
  * optional bool isUpdateable = 20;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsupdateable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
 };
 
 
@@ -3167,12 +3123,10 @@ proto.dictionary.Field.prototype.setIsupdateable = function(value) {
 
 /**
  * optional bool isIdentifier = 21;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsidentifier = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 21, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
 };
 
 
@@ -3184,12 +3138,10 @@ proto.dictionary.Field.prototype.setIsidentifier = function(value) {
 
 /**
  * optional bool isAllowLogging = 22;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsallowlogging = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 22, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
 };
 
 
@@ -3201,12 +3153,10 @@ proto.dictionary.Field.prototype.setIsallowlogging = function(value) {
 
 /**
  * optional bool isSelectionColumn = 23;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsselectioncolumn = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 23, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
 };
 
 
@@ -3218,12 +3168,10 @@ proto.dictionary.Field.prototype.setIsselectioncolumn = function(value) {
 
 /**
  * optional bool isRange = 24;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsrange = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 24, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
 };
 
 
@@ -3235,12 +3183,10 @@ proto.dictionary.Field.prototype.setIsrange = function(value) {
 
 /**
  * optional bool isAlwaysUpdateable = 25;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsalwaysupdateable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 25, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
 };
 
 
@@ -3252,12 +3198,10 @@ proto.dictionary.Field.prototype.setIsalwaysupdateable = function(value) {
 
 /**
  * optional bool isTranslated = 26;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIstranslated = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 26, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
 };
 
 
@@ -3614,12 +3558,10 @@ proto.dictionary.Field.prototype.hasProcess = function() {
 
 /**
  * optional bool isQueryCriteria = 44;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsquerycriteria = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 44, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 44, false));
 };
 
 
@@ -3631,12 +3573,10 @@ proto.dictionary.Field.prototype.setIsquerycriteria = function(value) {
 
 /**
  * optional bool isOrderBy = 45;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsorderby = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 45, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 45, false));
 };
 
 
@@ -3678,12 +3618,10 @@ proto.dictionary.Field.prototype.setSortno = function(value) {
 
 /**
  * optional bool isInfoOnly = 48;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsinfoonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 48, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 48, false));
 };
 
 
@@ -3695,12 +3633,10 @@ proto.dictionary.Field.prototype.setIsinfoonly = function(value) {
 
 /**
  * optional bool isActive = 49;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 49, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 49, false));
 };
 
 
@@ -3730,13 +3666,15 @@ proto.dictionary.Field.prototype.setDefaultvalueto = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.ContextInfo.prototype.toObject = function(opt_includeInstance) {
@@ -3746,22 +3684,22 @@ proto.dictionary.ContextInfo.prototype.toObject = function(opt_includeInstance) 
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.ContextInfo} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.ContextInfo.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     messagetext: (f = msg.getMessagetext()) && proto.dictionary.MessageText.toObject(includeInstance, f),
     sqlstatement: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -4019,12 +3957,10 @@ proto.dictionary.ContextInfo.prototype.setSqlstatement = function(value) {
 
 /**
  * optional bool isActive = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.ContextInfo.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -4039,13 +3975,15 @@ proto.dictionary.ContextInfo.prototype.setIsactive = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.MessageText.prototype.toObject = function(opt_includeInstance) {
@@ -4055,22 +3993,22 @@ proto.dictionary.MessageText.prototype.toObject = function(opt_includeInstance) 
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.MessageText} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.MessageText.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     msgtype: jspb.Message.getFieldWithDefault(msg, 4, ""),
     msgtext: jspb.Message.getFieldWithDefault(msg, 5, ""),
     msgtip: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -4308,12 +4246,10 @@ proto.dictionary.MessageText.prototype.setMsgtip = function(value) {
 
 /**
  * optional bool isActive = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.MessageText.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -4328,13 +4264,15 @@ proto.dictionary.MessageText.prototype.setIsactive = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.FieldGroup.prototype.toObject = function(opt_includeInstance) {
@@ -4344,20 +4282,20 @@ proto.dictionary.FieldGroup.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.FieldGroup} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.FieldGroup.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 5, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -4543,12 +4481,10 @@ proto.dictionary.FieldGroup.prototype.setFieldgrouptype = function(value) {
 
 /**
  * optional bool isActive = 5;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.FieldGroup.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -4570,13 +4506,15 @@ proto.dictionary.FieldDefinition.repeatedFields_ = [6];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.FieldDefinition.prototype.toObject = function(opt_includeInstance) {
@@ -4586,15 +4524,15 @@ proto.dictionary.FieldDefinition.prototype.toObject = function(opt_includeInstan
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.FieldDefinition} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.FieldDefinition.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -4602,7 +4540,7 @@ proto.dictionary.FieldDefinition.toObject = function(includeInstance, msg) {
     fieldgrouptype: jspb.Message.getFieldWithDefault(msg, 5, ""),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.dictionary.FieldCondition.toObject, includeInstance),
-    isactive: jspb.Message.getFieldWithDefault(msg, 7, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -4861,12 +4799,10 @@ proto.dictionary.FieldDefinition.prototype.clearConditionsList = function() {
 
 /**
  * optional bool isActive = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.FieldDefinition.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -4881,13 +4817,15 @@ proto.dictionary.FieldDefinition.prototype.setIsactive = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.FieldCondition.prototype.toObject = function(opt_includeInstance) {
@@ -4897,20 +4835,20 @@ proto.dictionary.FieldCondition.prototype.toObject = function(opt_includeInstanc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.FieldCondition} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.FieldCondition.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     condition: jspb.Message.getFieldWithDefault(msg, 3, ""),
     stylesheet: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 5, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -5096,12 +5034,10 @@ proto.dictionary.FieldCondition.prototype.setStylesheet = function(value) {
 
 /**
  * optional bool isActive = 5;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.FieldCondition.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -5123,13 +5059,15 @@ proto.dictionary.Process.repeatedFields_ = [11,13];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Process.prototype.toObject = function(opt_includeInstance) {
@@ -5139,28 +5077,28 @@ proto.dictionary.Process.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Process} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Process.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     help: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    isreport: jspb.Message.getFieldWithDefault(msg, 7, false),
+    isreport: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 8, 0),
     showhelp: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    isdirectprint: jspb.Message.getFieldWithDefault(msg, 10, false),
+    isdirectprint: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     parametersList: jspb.Message.toObjectList(msg.getParametersList(),
     proto.dictionary.Field.toObject, includeInstance),
-    isactive: jspb.Message.getFieldWithDefault(msg, 12, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     reportexporttypesList: jspb.Message.toObjectList(msg.getReportexporttypesList(),
     proto.dictionary.ReportExportType.toObject, includeInstance)
   };
@@ -5470,12 +5408,10 @@ proto.dictionary.Process.prototype.setHelp = function(value) {
 
 /**
  * optional bool isReport = 7;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Process.prototype.getIsreport = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -5517,12 +5453,10 @@ proto.dictionary.Process.prototype.setShowhelp = function(value) {
 
 /**
  * optional bool isDirectPrint = 10;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Process.prototype.getIsdirectprint = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -5568,12 +5502,10 @@ proto.dictionary.Process.prototype.clearParametersList = function() {
 
 /**
  * optional bool isActive = 12;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Process.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -5622,13 +5554,15 @@ proto.dictionary.Process.prototype.clearReportexporttypesList = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Form.prototype.toObject = function(opt_includeInstance) {
@@ -5638,15 +5572,15 @@ proto.dictionary.Form.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Form} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Form.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -5654,7 +5588,7 @@ proto.dictionary.Form.toObject = function(includeInstance, msg) {
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 6, 0),
     classname: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    isactive: jspb.Message.getFieldWithDefault(msg, 8, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -5918,12 +5852,10 @@ proto.dictionary.Form.prototype.setClassname = function(value) {
 
 /**
  * optional bool isActive = 8;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Form.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -5945,13 +5877,15 @@ proto.dictionary.Browser.repeatedFields_ = [21];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Browser.prototype.toObject = function(opt_includeInstance) {
@@ -5961,15 +5895,15 @@ proto.dictionary.Browser.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Browser} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Browser.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -5980,18 +5914,18 @@ proto.dictionary.Browser.toObject = function(includeInstance, msg) {
     query: jspb.Message.getFieldWithDefault(msg, 9, ""),
     whereclause: jspb.Message.getFieldWithDefault(msg, 10, ""),
     orderbyclause: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    isupdateable: jspb.Message.getFieldWithDefault(msg, 12, false),
-    isdeleteable: jspb.Message.getFieldWithDefault(msg, 13, false),
-    isselectedbydefault: jspb.Message.getFieldWithDefault(msg, 14, false),
-    iscollapsiblebydefault: jspb.Message.getFieldWithDefault(msg, 15, false),
-    isexecutedquerybydefault: jspb.Message.getFieldWithDefault(msg, 16, false),
-    isshowtotal: jspb.Message.getFieldWithDefault(msg, 17, false),
+    isupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    isdeleteable: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    isselectedbydefault: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    iscollapsiblebydefault: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    isexecutedquerybydefault: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    isshowtotal: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
     viewuuid: jspb.Message.getFieldWithDefault(msg, 18, ""),
     window: (f = msg.getWindow()) && proto.dictionary.Window.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
     fieldsList: jspb.Message.toObjectList(msg.getFieldsList(),
     proto.dictionary.Field.toObject, includeInstance),
-    isactive: jspb.Message.getFieldWithDefault(msg, 22, false)
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
   };
 
   if (includeInstance) {
@@ -6449,12 +6383,10 @@ proto.dictionary.Browser.prototype.setOrderbyclause = function(value) {
 
 /**
  * optional bool isUpdateable = 12;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsupdateable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -6466,12 +6398,10 @@ proto.dictionary.Browser.prototype.setIsupdateable = function(value) {
 
 /**
  * optional bool IsDeleteable = 13;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsdeleteable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
@@ -6483,12 +6413,10 @@ proto.dictionary.Browser.prototype.setIsdeleteable = function(value) {
 
 /**
  * optional bool IsSelectedByDefault = 14;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsselectedbydefault = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -6500,12 +6428,10 @@ proto.dictionary.Browser.prototype.setIsselectedbydefault = function(value) {
 
 /**
  * optional bool IsCollapsibleByDefault = 15;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIscollapsiblebydefault = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
@@ -6517,12 +6443,10 @@ proto.dictionary.Browser.prototype.setIscollapsiblebydefault = function(value) {
 
 /**
  * optional bool IsExecutedQueryByDefault = 16;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsexecutedquerybydefault = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
@@ -6534,12 +6458,10 @@ proto.dictionary.Browser.prototype.setIsexecutedquerybydefault = function(value)
 
 /**
  * optional bool IsShowTotal = 17;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsshowtotal = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
@@ -6666,12 +6588,10 @@ proto.dictionary.Browser.prototype.clearFieldsList = function() {
 
 /**
  * optional bool isActive = 22;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.Browser.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 22, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
 };
 
 
@@ -6686,13 +6606,15 @@ proto.dictionary.Browser.prototype.setIsactive = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.ZoomWindow.prototype.toObject = function(opt_includeInstance) {
@@ -6702,21 +6624,21 @@ proto.dictionary.ZoomWindow.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.ZoomWindow} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.ZoomWindow.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    issotrx: jspb.Message.getFieldWithDefault(msg, 5, false),
-    isactive: jspb.Message.getFieldWithDefault(msg, 6, false)
+    issotrx: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -6913,12 +6835,10 @@ proto.dictionary.ZoomWindow.prototype.setDescription = function(value) {
 
 /**
  * optional bool isSOTrx = 5;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.ZoomWindow.prototype.getIssotrx = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -6930,12 +6850,10 @@ proto.dictionary.ZoomWindow.prototype.setIssotrx = function(value) {
 
 /**
  * optional bool isActive = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dictionary.ZoomWindow.prototype.getIsactive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -6957,13 +6875,15 @@ proto.dictionary.Reference.repeatedFields_ = [7];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.Reference.prototype.toObject = function(opt_includeInstance) {
@@ -6973,15 +6893,15 @@ proto.dictionary.Reference.prototype.toObject = function(opt_includeInstance) {
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.Reference} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.Reference.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     tablename: jspb.Message.getFieldWithDefault(msg, 1, ""),
     keycolumnname: jspb.Message.getFieldWithDefault(msg, 2, ""),
     displaycolumnname: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -7266,13 +7186,15 @@ proto.dictionary.Reference.prototype.clearWindowsList = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.dictionary.ReportExportType.prototype.toObject = function(opt_includeInstance) {
@@ -7282,15 +7204,15 @@ proto.dictionary.ReportExportType.prototype.toObject = function(opt_includeInsta
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.dictionary.ReportExportType} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.dictionary.ReportExportType.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     type: jspb.Message.getFieldWithDefault(msg, 3, "")

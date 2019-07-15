@@ -92,7 +92,7 @@ proto.dictionary.DictionaryServicePromiseClient =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Window>}
  */
-const methodInfo_DictionaryService_RequestWindow = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetWindow = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -112,13 +112,13 @@ const methodInfo_DictionaryService_RequestWindow = new grpc.web.AbstractClientBa
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Window>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestWindow =
+proto.dictionary.DictionaryServiceClient.prototype.getWindow =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestWindow',
+      '/dictionary.DictionaryService/GetWindow',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestWindow,
+      methodInfo_DictionaryService_GetWindow,
       callback);
 };
 
@@ -131,13 +131,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindow =
  * @return {!Promise<!proto.dictionary.Window>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindow =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getWindow =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestWindow',
+      '/dictionary.DictionaryService/GetWindow',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestWindow);
+      methodInfo_DictionaryService_GetWindow);
 };
 
 
@@ -147,7 +147,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindow =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Window>}
  */
-const methodInfo_DictionaryService_RequestWindowAndTabs = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetWindowAndTabs = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -167,13 +167,13 @@ const methodInfo_DictionaryService_RequestWindowAndTabs = new grpc.web.AbstractC
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Window>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestWindowAndTabs =
+proto.dictionary.DictionaryServiceClient.prototype.getWindowAndTabs =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestWindowAndTabs',
+      '/dictionary.DictionaryService/GetWindowAndTabs',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestWindowAndTabs,
+      methodInfo_DictionaryService_GetWindowAndTabs,
       callback);
 };
 
@@ -186,13 +186,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestWindowAndTabs =
  * @return {!Promise<!proto.dictionary.Window>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindowAndTabs =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getWindowAndTabs =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestWindowAndTabs',
+      '/dictionary.DictionaryService/GetWindowAndTabs',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestWindowAndTabs);
+      methodInfo_DictionaryService_GetWindowAndTabs);
 };
 
 
@@ -202,7 +202,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestWindowAndTabs =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Tab>}
  */
-const methodInfo_DictionaryService_RequestTab = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetTab = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -222,13 +222,13 @@ const methodInfo_DictionaryService_RequestTab = new grpc.web.AbstractClientBase.
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Tab>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestTab =
+proto.dictionary.DictionaryServiceClient.prototype.getTab =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestTab',
+      '/dictionary.DictionaryService/GetTab',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestTab,
+      methodInfo_DictionaryService_GetTab,
       callback);
 };
 
@@ -241,13 +241,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTab =
  * @return {!Promise<!proto.dictionary.Tab>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestTab =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getTab =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestTab',
+      '/dictionary.DictionaryService/GetTab',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestTab);
+      methodInfo_DictionaryService_GetTab);
 };
 
 
@@ -257,7 +257,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestTab =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Tab>}
  */
-const methodInfo_DictionaryService_RequestTabAndFields = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetTabAndFields = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -277,13 +277,13 @@ const methodInfo_DictionaryService_RequestTabAndFields = new grpc.web.AbstractCl
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Tab>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestTabAndFields =
+proto.dictionary.DictionaryServiceClient.prototype.getTabAndFields =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestTabAndFields',
+      '/dictionary.DictionaryService/GetTabAndFields',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestTabAndFields,
+      methodInfo_DictionaryService_GetTabAndFields,
       callback);
 };
 
@@ -296,13 +296,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestTabAndFields =
  * @return {!Promise<!proto.dictionary.Tab>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestTabAndFields =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getTabAndFields =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestTabAndFields',
+      '/dictionary.DictionaryService/GetTabAndFields',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestTabAndFields);
+      methodInfo_DictionaryService_GetTabAndFields);
 };
 
 
@@ -312,7 +312,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestTabAndFields =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Field>}
  */
-const methodInfo_DictionaryService_RequestField = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetField = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Field,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -332,13 +332,13 @@ const methodInfo_DictionaryService_RequestField = new grpc.web.AbstractClientBas
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Field>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestField =
+proto.dictionary.DictionaryServiceClient.prototype.getField =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestField',
+      '/dictionary.DictionaryService/GetField',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestField,
+      methodInfo_DictionaryService_GetField,
       callback);
 };
 
@@ -351,13 +351,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestField =
  * @return {!Promise<!proto.dictionary.Field>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestField =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getField =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestField',
+      '/dictionary.DictionaryService/GetField',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestField);
+      methodInfo_DictionaryService_GetField);
 };
 
 
@@ -367,7 +367,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestField =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Process>}
  */
-const methodInfo_DictionaryService_RequestProcess = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetProcess = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Process,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -387,13 +387,13 @@ const methodInfo_DictionaryService_RequestProcess = new grpc.web.AbstractClientB
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Process>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestProcess =
+proto.dictionary.DictionaryServiceClient.prototype.getProcess =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestProcess',
+      '/dictionary.DictionaryService/GetProcess',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestProcess,
+      methodInfo_DictionaryService_GetProcess,
       callback);
 };
 
@@ -406,13 +406,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestProcess =
  * @return {!Promise<!proto.dictionary.Process>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestProcess =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getProcess =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestProcess',
+      '/dictionary.DictionaryService/GetProcess',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestProcess);
+      methodInfo_DictionaryService_GetProcess);
 };
 
 
@@ -422,7 +422,7 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.requestProcess =
  *   !proto.dictionary.EntityRequest,
  *   !proto.dictionary.Browser>}
  */
-const methodInfo_DictionaryService_RequestBrowser = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_DictionaryService_GetBrowser = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Browser,
   /** @param {!proto.dictionary.EntityRequest} request */
   function(request) {
@@ -442,13 +442,13 @@ const methodInfo_DictionaryService_RequestBrowser = new grpc.web.AbstractClientB
  * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Browser>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.dictionary.DictionaryServiceClient.prototype.requestBrowser =
+proto.dictionary.DictionaryServiceClient.prototype.getBrowser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestBrowser',
+      '/dictionary.DictionaryService/GetBrowser',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestBrowser,
+      methodInfo_DictionaryService_GetBrowser,
       callback);
 };
 
@@ -461,13 +461,13 @@ proto.dictionary.DictionaryServiceClient.prototype.requestBrowser =
  * @return {!Promise<!proto.dictionary.Browser>}
  *     A native promise that resolves to the response
  */
-proto.dictionary.DictionaryServicePromiseClient.prototype.requestBrowser =
+proto.dictionary.DictionaryServicePromiseClient.prototype.getBrowser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/dictionary.DictionaryService/RequestBrowser',
+      '/dictionary.DictionaryService/GetBrowser',
       request,
       metadata || {},
-      methodInfo_DictionaryService_RequestBrowser);
+      methodInfo_DictionaryService_GetBrowser);
 };
 
 
