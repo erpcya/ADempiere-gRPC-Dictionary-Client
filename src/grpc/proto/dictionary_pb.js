@@ -724,7 +724,7 @@ proto.dictionary.EntityRequest.prototype.hasApplicationrequest = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Window.repeatedFields_ = [9];
+proto.dictionary.Window.repeatedFields_ = [10];
 
 
 
@@ -764,6 +764,7 @@ proto.dictionary.Window.toObject = function(includeInstance, msg) {
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     isactive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     issotrx: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    windowtype: jspb.Message.getFieldWithDefault(msg, 8, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     tabsList: jspb.Message.toObjectList(msg.getTabsList(),
     proto.dictionary.Tab.toObject, includeInstance)
@@ -832,11 +833,15 @@ proto.dictionary.Window.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIssotrx(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWindowtype(value);
+      break;
+    case 9:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.dictionary.Tab;
       reader.readMessage(value,proto.dictionary.Tab.deserializeBinaryFromReader);
       msg.addTabs(value);
@@ -919,10 +924,17 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getWindowtype();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -930,7 +942,7 @@ proto.dictionary.Window.serializeBinaryToWriter = function(message, writer) {
   f = message.getTabsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.dictionary.Tab.serializeBinaryToWriter
     );
@@ -1044,18 +1056,33 @@ proto.dictionary.Window.prototype.setIssotrx = function(value) {
 
 
 /**
- * optional ContextInfo contextInfo = 8;
+ * optional string windowType = 8;
+ * @return {string}
+ */
+proto.dictionary.Window.prototype.getWindowtype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Window.prototype.setWindowtype = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional ContextInfo contextInfo = 9;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Window.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 8));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 9));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Window.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -1072,23 +1099,23 @@ proto.dictionary.Window.prototype.clearContextinfo = function() {
  * @return {boolean}
  */
 proto.dictionary.Window.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * repeated Tab tabs = 9;
+ * repeated Tab tabs = 10;
  * @return {!Array<!proto.dictionary.Tab>}
  */
 proto.dictionary.Window.prototype.getTabsList = function() {
   return /** @type{!Array<!proto.dictionary.Tab>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Tab, 10));
 };
 
 
 /** @param {!Array<!proto.dictionary.Tab>} value */
 proto.dictionary.Window.prototype.setTabsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
+  jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -1098,7 +1125,7 @@ proto.dictionary.Window.prototype.setTabsList = function(value) {
  * @return {!proto.dictionary.Tab}
  */
 proto.dictionary.Window.prototype.addTabs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.dictionary.Tab, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.dictionary.Tab, opt_index);
 };
 
 
