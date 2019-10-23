@@ -2327,7 +2327,8 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     sortno: jspb.Message.getFieldWithDefault(msg, 47, 0),
     isinfoonly: jspb.Message.getBooleanFieldWithDefault(msg, 48, false),
     isactive: jspb.Message.getBooleanFieldWithDefault(msg, 49, false),
-    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 50, "")
+    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 50, ""),
+    fieldlength: jspb.Message.getFieldWithDefault(msg, 51, 0)
   };
 
   if (includeInstance) {
@@ -2568,6 +2569,10 @@ proto.dictionary.Field.deserializeBinaryFromReader = function(msg, reader) {
     case 50:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultvalueto(value);
+      break;
+    case 51:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFieldlength(value);
       break;
     default:
       reader.skipField();
@@ -2950,6 +2955,13 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       50,
+      f
+    );
+  }
+  f = message.getFieldlength();
+  if (f !== 0) {
+    writer.writeInt32(
+      51,
       f
     );
   }
@@ -3793,6 +3805,21 @@ proto.dictionary.Field.prototype.getDefaultvalueto = function() {
 /** @param {string} value */
 proto.dictionary.Field.prototype.setDefaultvalueto = function(value) {
   jspb.Message.setProto3StringField(this, 50, value);
+};
+
+
+/**
+ * optional int32 fieldLength = 51;
+ * @return {number}
+ */
+proto.dictionary.Field.prototype.getFieldlength = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 51, 0));
+};
+
+
+/** @param {number} value */
+proto.dictionary.Field.prototype.setFieldlength = function(value) {
+  jspb.Message.setProto3IntField(this, 51, value);
 };
 
 
