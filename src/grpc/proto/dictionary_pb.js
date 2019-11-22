@@ -1143,7 +1143,7 @@ proto.dictionary.Window.prototype.clearTabsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.dictionary.Tab.repeatedFields_ = [32,33];
+proto.dictionary.Tab.repeatedFields_ = [34,35];
 
 
 
@@ -1199,13 +1199,15 @@ proto.dictionary.Tab.toObject = function(includeInstance, msg) {
     ischangelog: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 22, 0),
     linkcolumnname: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    displaylogic: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    commitwarning: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    query: jspb.Message.getFieldWithDefault(msg, 27, ""),
-    whereclause: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    orderbyclause: jspb.Message.getFieldWithDefault(msg, 29, ""),
-    parenttabuuid: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    sortordercolumnname: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    sortyesnocolumnname: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    parentcolumnname: jspb.Message.getFieldWithDefault(msg, 26, ""),
+    displaylogic: jspb.Message.getFieldWithDefault(msg, 27, ""),
+    commitwarning: jspb.Message.getFieldWithDefault(msg, 28, ""),
+    query: jspb.Message.getFieldWithDefault(msg, 29, ""),
+    whereclause: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    orderbyclause: jspb.Message.getFieldWithDefault(msg, 31, ""),
+    parenttabuuid: jspb.Message.getFieldWithDefault(msg, 32, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     processesList: jspb.Message.toObjectList(msg.getProcessesList(),
     proto.dictionary.Process.toObject, includeInstance),
@@ -1342,48 +1344,56 @@ proto.dictionary.Tab.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
-      msg.setParentcolumnname(value);
+      msg.setSortordercolumnname(value);
       break;
     case 25:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDisplaylogic(value);
+      msg.setSortyesnocolumnname(value);
       break;
     case 26:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCommitwarning(value);
+      msg.setParentcolumnname(value);
       break;
     case 27:
       var value = /** @type {string} */ (reader.readString());
-      msg.setQuery(value);
+      msg.setDisplaylogic(value);
       break;
     case 28:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWhereclause(value);
+      msg.setCommitwarning(value);
       break;
     case 29:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrderbyclause(value);
+      msg.setQuery(value);
       break;
     case 30:
       var value = /** @type {string} */ (reader.readString());
-      msg.setParenttabuuid(value);
+      msg.setWhereclause(value);
       break;
     case 31:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderbyclause(value);
+      break;
+    case 32:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParenttabuuid(value);
+      break;
+    case 33:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 32:
+    case 34:
       var value = new proto.dictionary.Process;
       reader.readMessage(value,proto.dictionary.Process.deserializeBinaryFromReader);
       msg.addProcesses(value);
       break;
-    case 33:
+    case 35:
       var value = new proto.dictionary.Field;
       reader.readMessage(value,proto.dictionary.Field.deserializeBinaryFromReader);
       msg.addFields(value);
       break;
-    case 34:
+    case 36:
       var value = new proto.dictionary.FieldGroup;
       reader.readMessage(value,proto.dictionary.FieldGroup.deserializeBinaryFromReader);
       msg.setFieldgroup(value);
@@ -1578,59 +1588,73 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getParentcolumnname();
+  f = message.getSortordercolumnname();
   if (f.length > 0) {
     writer.writeString(
       24,
       f
     );
   }
-  f = message.getDisplaylogic();
+  f = message.getSortyesnocolumnname();
   if (f.length > 0) {
     writer.writeString(
       25,
       f
     );
   }
-  f = message.getCommitwarning();
+  f = message.getParentcolumnname();
   if (f.length > 0) {
     writer.writeString(
       26,
       f
     );
   }
-  f = message.getQuery();
+  f = message.getDisplaylogic();
   if (f.length > 0) {
     writer.writeString(
       27,
       f
     );
   }
-  f = message.getWhereclause();
+  f = message.getCommitwarning();
   if (f.length > 0) {
     writer.writeString(
       28,
       f
     );
   }
-  f = message.getOrderbyclause();
+  f = message.getQuery();
   if (f.length > 0) {
     writer.writeString(
       29,
       f
     );
   }
-  f = message.getParenttabuuid();
+  f = message.getWhereclause();
   if (f.length > 0) {
     writer.writeString(
       30,
       f
     );
   }
+  f = message.getOrderbyclause();
+  if (f.length > 0) {
+    writer.writeString(
+      31,
+      f
+    );
+  }
+  f = message.getParenttabuuid();
+  if (f.length > 0) {
+    writer.writeString(
+      32,
+      f
+    );
+  }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      31,
+      33,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -1638,7 +1662,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getProcessesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      32,
+      34,
       f,
       proto.dictionary.Process.serializeBinaryToWriter
     );
@@ -1646,7 +1670,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      33,
+      35,
       f,
       proto.dictionary.Field.serializeBinaryToWriter
     );
@@ -1654,7 +1678,7 @@ proto.dictionary.Tab.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldgroup();
   if (f != null) {
     writer.writeMessage(
-      34,
+      36,
       f,
       proto.dictionary.FieldGroup.serializeBinaryToWriter
     );
@@ -2008,123 +2032,153 @@ proto.dictionary.Tab.prototype.setLinkcolumnname = function(value) {
 
 
 /**
- * optional string parentColumnName = 24;
+ * optional string sortOrderColumnName = 24;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getParentcolumnname = function() {
+proto.dictionary.Tab.prototype.getSortordercolumnname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
+proto.dictionary.Tab.prototype.setSortordercolumnname = function(value) {
   jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
 /**
- * optional string displayLogic = 25;
+ * optional string sortYesNoColumnName = 25;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getDisplaylogic = function() {
+proto.dictionary.Tab.prototype.getSortyesnocolumnname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
+proto.dictionary.Tab.prototype.setSortyesnocolumnname = function(value) {
   jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * optional string commitWarning = 26;
+ * optional string parentColumnName = 26;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getCommitwarning = function() {
+proto.dictionary.Tab.prototype.getParentcolumnname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
+proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
   jspb.Message.setProto3StringField(this, 26, value);
 };
 
 
 /**
- * optional string query = 27;
+ * optional string displayLogic = 27;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getQuery = function() {
+proto.dictionary.Tab.prototype.getDisplaylogic = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 27, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setQuery = function(value) {
+proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
   jspb.Message.setProto3StringField(this, 27, value);
 };
 
 
 /**
- * optional string whereClause = 28;
+ * optional string commitWarning = 28;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getWhereclause = function() {
+proto.dictionary.Tab.prototype.getCommitwarning = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setWhereclause = function(value) {
+proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
   jspb.Message.setProto3StringField(this, 28, value);
 };
 
 
 /**
- * optional string orderByClause = 29;
+ * optional string query = 29;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getOrderbyclause = function() {
+proto.dictionary.Tab.prototype.getQuery = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 29, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
+proto.dictionary.Tab.prototype.setQuery = function(value) {
   jspb.Message.setProto3StringField(this, 29, value);
 };
 
 
 /**
- * optional string parentTabUuid = 30;
+ * optional string whereClause = 30;
  * @return {string}
  */
-proto.dictionary.Tab.prototype.getParenttabuuid = function() {
+proto.dictionary.Tab.prototype.getWhereclause = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Tab.prototype.setParenttabuuid = function(value) {
+proto.dictionary.Tab.prototype.setWhereclause = function(value) {
   jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 31;
+ * optional string orderByClause = 31;
+ * @return {string}
+ */
+proto.dictionary.Tab.prototype.getOrderbyclause = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
+  jspb.Message.setProto3StringField(this, 31, value);
+};
+
+
+/**
+ * optional string parentTabUuid = 32;
+ * @return {string}
+ */
+proto.dictionary.Tab.prototype.getParenttabuuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Tab.prototype.setParenttabuuid = function(value) {
+  jspb.Message.setProto3StringField(this, 32, value);
+};
+
+
+/**
+ * optional ContextInfo contextInfo = 33;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Tab.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 31));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 33));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Tab.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 31, value);
+  jspb.Message.setWrapperField(this, 33, value);
 };
 
 
@@ -2141,23 +2195,23 @@ proto.dictionary.Tab.prototype.clearContextinfo = function() {
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 31) != null;
+  return jspb.Message.getField(this, 33) != null;
 };
 
 
 /**
- * repeated Process processes = 32;
+ * repeated Process processes = 34;
  * @return {!Array<!proto.dictionary.Process>}
  */
 proto.dictionary.Tab.prototype.getProcessesList = function() {
   return /** @type{!Array<!proto.dictionary.Process>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Process, 32));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Process, 34));
 };
 
 
 /** @param {!Array<!proto.dictionary.Process>} value */
 proto.dictionary.Tab.prototype.setProcessesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 32, value);
+  jspb.Message.setRepeatedWrapperField(this, 34, value);
 };
 
 
@@ -2167,7 +2221,7 @@ proto.dictionary.Tab.prototype.setProcessesList = function(value) {
  * @return {!proto.dictionary.Process}
  */
 proto.dictionary.Tab.prototype.addProcesses = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 32, opt_value, proto.dictionary.Process, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 34, opt_value, proto.dictionary.Process, opt_index);
 };
 
 
@@ -2180,18 +2234,18 @@ proto.dictionary.Tab.prototype.clearProcessesList = function() {
 
 
 /**
- * repeated Field fields = 33;
+ * repeated Field fields = 35;
  * @return {!Array<!proto.dictionary.Field>}
  */
 proto.dictionary.Tab.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.dictionary.Field>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 33));
+    jspb.Message.getRepeatedWrapperField(this, proto.dictionary.Field, 35));
 };
 
 
 /** @param {!Array<!proto.dictionary.Field>} value */
 proto.dictionary.Tab.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 33, value);
+  jspb.Message.setRepeatedWrapperField(this, 35, value);
 };
 
 
@@ -2201,7 +2255,7 @@ proto.dictionary.Tab.prototype.setFieldsList = function(value) {
  * @return {!proto.dictionary.Field}
  */
 proto.dictionary.Tab.prototype.addFields = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 33, opt_value, proto.dictionary.Field, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 35, opt_value, proto.dictionary.Field, opt_index);
 };
 
 
@@ -2214,18 +2268,18 @@ proto.dictionary.Tab.prototype.clearFieldsList = function() {
 
 
 /**
- * optional FieldGroup fieldGroup = 34;
+ * optional FieldGroup fieldGroup = 36;
  * @return {?proto.dictionary.FieldGroup}
  */
 proto.dictionary.Tab.prototype.getFieldgroup = function() {
   return /** @type{?proto.dictionary.FieldGroup} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 34));
+    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 36));
 };
 
 
 /** @param {?proto.dictionary.FieldGroup|undefined} value */
 proto.dictionary.Tab.prototype.setFieldgroup = function(value) {
-  jspb.Message.setWrapperField(this, 34, value);
+  jspb.Message.setWrapperField(this, 36, value);
 };
 
 
@@ -2242,7 +2296,7 @@ proto.dictionary.Tab.prototype.clearFieldgroup = function() {
  * @return {boolean}
  */
 proto.dictionary.Tab.prototype.hasFieldgroup = function() {
-  return jspb.Message.getField(this, 34) != null;
+  return jspb.Message.getField(this, 36) != null;
 };
 
 
