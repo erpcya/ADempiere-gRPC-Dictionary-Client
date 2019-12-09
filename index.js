@@ -577,8 +577,12 @@ class Dictionary {
 	    whereClause: browserToConvert.getWhereclause(),
       orderByClause: browserToConvert.getOrderbyclause(),
     	// External Reference
-      window: browserToConvert.getWindow(),
-      process: this.convertProcess(browserToConvert.getProcess()),
+      window: this.convertWindow(
+        browserToConvert.getWindow(), true
+      ),
+      process: this.convertProcess(
+        browserToConvert.getProcess()
+      ),
       //
       fieldsList: fieldsList
     };
