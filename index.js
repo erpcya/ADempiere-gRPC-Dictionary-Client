@@ -306,6 +306,7 @@ class Dictionary {
       description: fieldToConvert.getDescription(),
       help: fieldToConvert.getHelp(),
       columnName: fieldToConvert.getColumnname(),
+      elementName: fieldToConvert.getElementname(),
       isActive: fieldToConvert.getIsactive(),
       // displayed attributes
       fieldGroup: this.convertFieldGroup(
