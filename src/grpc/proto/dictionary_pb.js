@@ -2339,50 +2339,51 @@ proto.dictionary.Field.toObject = function(includeInstance, msg) {
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     sequence: jspb.Message.getFieldWithDefault(msg, 6, 0),
     columnname: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    isdisplayed: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    isdisplayedgrid: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    isreadonly: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    isallowcopy: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    isencrypted: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    issameline: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    isheading: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    isfieldonly: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    isquickentry: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    ismandatory: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
-    iskey: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    isparent: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    isupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
-    isidentifier: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    isallowlogging: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    isselectioncolumn: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
-    isrange: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-    isalwaysupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
-    istranslated: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
-    identifiersequence: jspb.Message.getFieldWithDefault(msg, 77, 0),
-    displaylogic: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    displaytype: jspb.Message.getFieldWithDefault(msg, 29, 0),
-    defaultvalue: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    readonlylogic: jspb.Message.getFieldWithDefault(msg, 31, ""),
-    mandatorylogic: jspb.Message.getFieldWithDefault(msg, 32, ""),
-    callout: jspb.Message.getFieldWithDefault(msg, 33, ""),
-    columnsql: jspb.Message.getFieldWithDefault(msg, 34, ""),
-    vformat: jspb.Message.getFieldWithDefault(msg, 35, ""),
-    valuemin: jspb.Message.getFieldWithDefault(msg, 36, ""),
-    valuemax: jspb.Message.getFieldWithDefault(msg, 37, ""),
-    formatpattern: jspb.Message.getFieldWithDefault(msg, 38, ""),
+    elementname: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    isdisplayed: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    isdisplayedgrid: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isreadonly: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    isallowcopy: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    isencrypted: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    issameline: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    isheading: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    isfieldonly: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    isquickentry: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    ismandatory: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    iskey: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    isparent: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
+    isupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+    isidentifier: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
+    isallowlogging: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
+    isselectioncolumn: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    isrange: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
+    isalwaysupdateable: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
+    istranslated: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
+    identifiersequence: jspb.Message.getFieldWithDefault(msg, 78, 0),
+    displaylogic: jspb.Message.getFieldWithDefault(msg, 29, ""),
+    displaytype: jspb.Message.getFieldWithDefault(msg, 30, 0),
+    defaultvalue: jspb.Message.getFieldWithDefault(msg, 31, ""),
+    readonlylogic: jspb.Message.getFieldWithDefault(msg, 32, ""),
+    mandatorylogic: jspb.Message.getFieldWithDefault(msg, 33, ""),
+    callout: jspb.Message.getFieldWithDefault(msg, 34, ""),
+    columnsql: jspb.Message.getFieldWithDefault(msg, 35, ""),
+    vformat: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    valuemin: jspb.Message.getFieldWithDefault(msg, 37, ""),
+    valuemax: jspb.Message.getFieldWithDefault(msg, 38, ""),
+    formatpattern: jspb.Message.getFieldWithDefault(msg, 39, ""),
     contextinfo: (f = msg.getContextinfo()) && proto.dictionary.ContextInfo.toObject(includeInstance, f),
     fieldgroup: (f = msg.getFieldgroup()) && proto.dictionary.FieldGroup.toObject(includeInstance, f),
     fielddefinition: (f = msg.getFielddefinition()) && proto.dictionary.FieldDefinition.toObject(includeInstance, f),
     reference: (f = msg.getReference()) && proto.dictionary.Reference.toObject(includeInstance, f),
     process: (f = msg.getProcess()) && proto.dictionary.Process.toObject(includeInstance, f),
-    isquerycriteria: jspb.Message.getBooleanFieldWithDefault(msg, 44, false),
-    isorderby: jspb.Message.getBooleanFieldWithDefault(msg, 45, false),
-    seqnogrid: jspb.Message.getFieldWithDefault(msg, 46, 0),
-    sortno: jspb.Message.getFieldWithDefault(msg, 47, 0),
-    isinfoonly: jspb.Message.getBooleanFieldWithDefault(msg, 48, false),
-    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 49, false),
-    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 50, ""),
-    fieldlength: jspb.Message.getFieldWithDefault(msg, 51, 0)
+    isquerycriteria: jspb.Message.getBooleanFieldWithDefault(msg, 45, false),
+    isorderby: jspb.Message.getBooleanFieldWithDefault(msg, 46, false),
+    seqnogrid: jspb.Message.getFieldWithDefault(msg, 47, 0),
+    sortno: jspb.Message.getFieldWithDefault(msg, 48, 0),
+    isinfoonly: jspb.Message.getBooleanFieldWithDefault(msg, 49, false),
+    isactive: jspb.Message.getBooleanFieldWithDefault(msg, 50, false),
+    defaultvalueto: jspb.Message.getFieldWithDefault(msg, 51, ""),
+    fieldlength: jspb.Message.getFieldWithDefault(msg, 52, 0)
   };
 
   if (includeInstance) {
@@ -2448,183 +2449,187 @@ proto.dictionary.Field.deserializeBinaryFromReader = function(msg, reader) {
       msg.setColumnname(value);
       break;
     case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsdisplayed(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setElementname(value);
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsdisplayedgrid(value);
+      msg.setIsdisplayed(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsreadonly(value);
+      msg.setIsdisplayedgrid(value);
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsallowcopy(value);
+      msg.setIsreadonly(value);
       break;
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsencrypted(value);
+      msg.setIsallowcopy(value);
       break;
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIssameline(value);
+      msg.setIsencrypted(value);
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsheading(value);
+      msg.setIssameline(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsfieldonly(value);
+      msg.setIsheading(value);
       break;
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsquickentry(value);
+      msg.setIsfieldonly(value);
       break;
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsmandatory(value);
+      msg.setIsquickentry(value);
       break;
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIskey(value);
+      msg.setIsmandatory(value);
       break;
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsparent(value);
+      msg.setIskey(value);
       break;
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsupdateable(value);
+      msg.setIsparent(value);
       break;
     case 21:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsidentifier(value);
+      msg.setIsupdateable(value);
       break;
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsallowlogging(value);
+      msg.setIsidentifier(value);
       break;
     case 23:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsselectioncolumn(value);
+      msg.setIsallowlogging(value);
       break;
     case 24:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsrange(value);
+      msg.setIsselectioncolumn(value);
       break;
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsalwaysupdateable(value);
+      msg.setIsrange(value);
       break;
     case 26:
       var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsalwaysupdateable(value);
+      break;
+    case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setIstranslated(value);
       break;
-    case 77:
+    case 78:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setIdentifiersequence(value);
       break;
-    case 28:
+    case 29:
       var value = /** @type {string} */ (reader.readString());
       msg.setDisplaylogic(value);
       break;
-    case 29:
+    case 30:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDisplaytype(value);
       break;
-    case 30:
+    case 31:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultvalue(value);
       break;
-    case 31:
+    case 32:
       var value = /** @type {string} */ (reader.readString());
       msg.setReadonlylogic(value);
       break;
-    case 32:
+    case 33:
       var value = /** @type {string} */ (reader.readString());
       msg.setMandatorylogic(value);
       break;
-    case 33:
+    case 34:
       var value = /** @type {string} */ (reader.readString());
       msg.setCallout(value);
       break;
-    case 34:
+    case 35:
       var value = /** @type {string} */ (reader.readString());
       msg.setColumnsql(value);
       break;
-    case 35:
+    case 36:
       var value = /** @type {string} */ (reader.readString());
       msg.setVformat(value);
       break;
-    case 36:
+    case 37:
       var value = /** @type {string} */ (reader.readString());
       msg.setValuemin(value);
       break;
-    case 37:
+    case 38:
       var value = /** @type {string} */ (reader.readString());
       msg.setValuemax(value);
       break;
-    case 38:
+    case 39:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormatpattern(value);
       break;
-    case 39:
+    case 40:
       var value = new proto.dictionary.ContextInfo;
       reader.readMessage(value,proto.dictionary.ContextInfo.deserializeBinaryFromReader);
       msg.setContextinfo(value);
       break;
-    case 40:
+    case 41:
       var value = new proto.dictionary.FieldGroup;
       reader.readMessage(value,proto.dictionary.FieldGroup.deserializeBinaryFromReader);
       msg.setFieldgroup(value);
       break;
-    case 41:
+    case 42:
       var value = new proto.dictionary.FieldDefinition;
       reader.readMessage(value,proto.dictionary.FieldDefinition.deserializeBinaryFromReader);
       msg.setFielddefinition(value);
       break;
-    case 42:
+    case 43:
       var value = new proto.dictionary.Reference;
       reader.readMessage(value,proto.dictionary.Reference.deserializeBinaryFromReader);
       msg.setReference(value);
       break;
-    case 43:
+    case 44:
       var value = new proto.dictionary.Process;
       reader.readMessage(value,proto.dictionary.Process.deserializeBinaryFromReader);
       msg.setProcess(value);
       break;
-    case 44:
+    case 45:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsquerycriteria(value);
       break;
-    case 45:
+    case 46:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsorderby(value);
       break;
-    case 46:
+    case 47:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSeqnogrid(value);
       break;
-    case 47:
+    case 48:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSortno(value);
       break;
-    case 48:
+    case 49:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsinfoonly(value);
       break;
-    case 49:
+    case 50:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsactive(value);
       break;
-    case 50:
+    case 51:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefaultvalueto(value);
       break;
-    case 51:
+    case 52:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setFieldlength(value);
       break;
@@ -2706,227 +2711,234 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIsdisplayed();
-  if (f) {
-    writer.writeBool(
+  f = message.getElementname();
+  if (f.length > 0) {
+    writer.writeString(
       8,
       f
     );
   }
-  f = message.getIsdisplayedgrid();
+  f = message.getIsdisplayed();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
-  f = message.getIsreadonly();
+  f = message.getIsdisplayedgrid();
   if (f) {
     writer.writeBool(
       10,
       f
     );
   }
-  f = message.getIsallowcopy();
+  f = message.getIsreadonly();
   if (f) {
     writer.writeBool(
       11,
       f
     );
   }
-  f = message.getIsencrypted();
+  f = message.getIsallowcopy();
   if (f) {
     writer.writeBool(
       12,
       f
     );
   }
-  f = message.getIssameline();
+  f = message.getIsencrypted();
   if (f) {
     writer.writeBool(
       13,
       f
     );
   }
-  f = message.getIsheading();
+  f = message.getIssameline();
   if (f) {
     writer.writeBool(
       14,
       f
     );
   }
-  f = message.getIsfieldonly();
+  f = message.getIsheading();
   if (f) {
     writer.writeBool(
       15,
       f
     );
   }
-  f = message.getIsquickentry();
+  f = message.getIsfieldonly();
   if (f) {
     writer.writeBool(
       16,
       f
     );
   }
-  f = message.getIsmandatory();
+  f = message.getIsquickentry();
   if (f) {
     writer.writeBool(
       17,
       f
     );
   }
-  f = message.getIskey();
+  f = message.getIsmandatory();
   if (f) {
     writer.writeBool(
       18,
       f
     );
   }
-  f = message.getIsparent();
+  f = message.getIskey();
   if (f) {
     writer.writeBool(
       19,
       f
     );
   }
-  f = message.getIsupdateable();
+  f = message.getIsparent();
   if (f) {
     writer.writeBool(
       20,
       f
     );
   }
-  f = message.getIsidentifier();
+  f = message.getIsupdateable();
   if (f) {
     writer.writeBool(
       21,
       f
     );
   }
-  f = message.getIsallowlogging();
+  f = message.getIsidentifier();
   if (f) {
     writer.writeBool(
       22,
       f
     );
   }
-  f = message.getIsselectioncolumn();
+  f = message.getIsallowlogging();
   if (f) {
     writer.writeBool(
       23,
       f
     );
   }
-  f = message.getIsrange();
+  f = message.getIsselectioncolumn();
   if (f) {
     writer.writeBool(
       24,
       f
     );
   }
-  f = message.getIsalwaysupdateable();
+  f = message.getIsrange();
   if (f) {
     writer.writeBool(
       25,
       f
     );
   }
-  f = message.getIstranslated();
+  f = message.getIsalwaysupdateable();
   if (f) {
     writer.writeBool(
       26,
       f
     );
   }
+  f = message.getIstranslated();
+  if (f) {
+    writer.writeBool(
+      27,
+      f
+    );
+  }
   f = message.getIdentifiersequence();
   if (f !== 0) {
     writer.writeInt32(
-      77,
+      78,
       f
     );
   }
   f = message.getDisplaylogic();
   if (f.length > 0) {
     writer.writeString(
-      28,
+      29,
       f
     );
   }
   f = message.getDisplaytype();
   if (f !== 0) {
     writer.writeInt32(
-      29,
+      30,
       f
     );
   }
   f = message.getDefaultvalue();
   if (f.length > 0) {
     writer.writeString(
-      30,
+      31,
       f
     );
   }
   f = message.getReadonlylogic();
   if (f.length > 0) {
     writer.writeString(
-      31,
+      32,
       f
     );
   }
   f = message.getMandatorylogic();
   if (f.length > 0) {
     writer.writeString(
-      32,
+      33,
       f
     );
   }
   f = message.getCallout();
   if (f.length > 0) {
     writer.writeString(
-      33,
+      34,
       f
     );
   }
   f = message.getColumnsql();
   if (f.length > 0) {
     writer.writeString(
-      34,
+      35,
       f
     );
   }
   f = message.getVformat();
   if (f.length > 0) {
     writer.writeString(
-      35,
+      36,
       f
     );
   }
   f = message.getValuemin();
   if (f.length > 0) {
     writer.writeString(
-      36,
+      37,
       f
     );
   }
   f = message.getValuemax();
   if (f.length > 0) {
     writer.writeString(
-      37,
+      38,
       f
     );
   }
   f = message.getFormatpattern();
   if (f.length > 0) {
     writer.writeString(
-      38,
+      39,
       f
     );
   }
   f = message.getContextinfo();
   if (f != null) {
     writer.writeMessage(
-      39,
+      40,
       f,
       proto.dictionary.ContextInfo.serializeBinaryToWriter
     );
@@ -2934,7 +2946,7 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   f = message.getFieldgroup();
   if (f != null) {
     writer.writeMessage(
-      40,
+      41,
       f,
       proto.dictionary.FieldGroup.serializeBinaryToWriter
     );
@@ -2942,7 +2954,7 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   f = message.getFielddefinition();
   if (f != null) {
     writer.writeMessage(
-      41,
+      42,
       f,
       proto.dictionary.FieldDefinition.serializeBinaryToWriter
     );
@@ -2950,7 +2962,7 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   f = message.getReference();
   if (f != null) {
     writer.writeMessage(
-      42,
+      43,
       f,
       proto.dictionary.Reference.serializeBinaryToWriter
     );
@@ -2958,7 +2970,7 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   f = message.getProcess();
   if (f != null) {
     writer.writeMessage(
-      43,
+      44,
       f,
       proto.dictionary.Process.serializeBinaryToWriter
     );
@@ -2966,56 +2978,56 @@ proto.dictionary.Field.serializeBinaryToWriter = function(message, writer) {
   f = message.getIsquerycriteria();
   if (f) {
     writer.writeBool(
-      44,
+      45,
       f
     );
   }
   f = message.getIsorderby();
   if (f) {
     writer.writeBool(
-      45,
+      46,
       f
     );
   }
   f = message.getSeqnogrid();
   if (f !== 0) {
     writer.writeInt32(
-      46,
+      47,
       f
     );
   }
   f = message.getSortno();
   if (f !== 0) {
     writer.writeInt32(
-      47,
+      48,
       f
     );
   }
   f = message.getIsinfoonly();
   if (f) {
     writer.writeBool(
-      48,
+      49,
       f
     );
   }
   f = message.getIsactive();
   if (f) {
     writer.writeBool(
-      49,
+      50,
       f
     );
   }
   f = message.getDefaultvalueto();
   if (f.length > 0) {
     writer.writeString(
-      50,
+      51,
       f
     );
   }
   f = message.getFieldlength();
   if (f !== 0) {
     writer.writeInt32(
-      51,
+      52,
       f
     );
   }
@@ -3128,483 +3140,498 @@ proto.dictionary.Field.prototype.setColumnname = function(value) {
 
 
 /**
- * optional bool isDisplayed = 8;
- * @return {boolean}
+ * optional string elementName = 8;
+ * @return {string}
  */
-proto.dictionary.Field.prototype.getIsdisplayed = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+proto.dictionary.Field.prototype.getElementname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
-/** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsdisplayed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 8, value);
+/** @param {string} value */
+proto.dictionary.Field.prototype.setElementname = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional bool isDisplayedGrid = 9;
+ * optional bool isDisplayed = 9;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsdisplayedgrid = function() {
+proto.dictionary.Field.prototype.getIsdisplayed = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsdisplayedgrid = function(value) {
+proto.dictionary.Field.prototype.setIsdisplayed = function(value) {
   jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool isReadOnly = 10;
+ * optional bool isDisplayedGrid = 10;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsreadonly = function() {
+proto.dictionary.Field.prototype.getIsdisplayedgrid = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsreadonly = function(value) {
+proto.dictionary.Field.prototype.setIsdisplayedgrid = function(value) {
   jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool isAllowCopy = 11;
+ * optional bool isReadOnly = 11;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsallowcopy = function() {
+proto.dictionary.Field.prototype.getIsreadonly = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsallowcopy = function(value) {
+proto.dictionary.Field.prototype.setIsreadonly = function(value) {
   jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * optional bool isEncrypted = 12;
+ * optional bool isAllowCopy = 12;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsencrypted = function() {
+proto.dictionary.Field.prototype.getIsallowcopy = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsencrypted = function(value) {
+proto.dictionary.Field.prototype.setIsallowcopy = function(value) {
   jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional bool isSameLine = 13;
+ * optional bool isEncrypted = 13;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIssameline = function() {
+proto.dictionary.Field.prototype.getIsencrypted = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIssameline = function(value) {
+proto.dictionary.Field.prototype.setIsencrypted = function(value) {
   jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional bool isHeading = 14;
+ * optional bool isSameLine = 14;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsheading = function() {
+proto.dictionary.Field.prototype.getIssameline = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsheading = function(value) {
+proto.dictionary.Field.prototype.setIssameline = function(value) {
   jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
 /**
- * optional bool isFieldOnly = 15;
+ * optional bool isHeading = 15;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsfieldonly = function() {
+proto.dictionary.Field.prototype.getIsheading = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsfieldonly = function(value) {
+proto.dictionary.Field.prototype.setIsheading = function(value) {
   jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
 /**
- * optional bool isQuickEntry = 16;
+ * optional bool isFieldOnly = 16;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsquickentry = function() {
+proto.dictionary.Field.prototype.getIsfieldonly = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsquickentry = function(value) {
+proto.dictionary.Field.prototype.setIsfieldonly = function(value) {
   jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
 /**
- * optional bool isMandatory = 17;
+ * optional bool isQuickEntry = 17;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsmandatory = function() {
+proto.dictionary.Field.prototype.getIsquickentry = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsmandatory = function(value) {
+proto.dictionary.Field.prototype.setIsquickentry = function(value) {
   jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
 /**
- * optional bool isKey = 18;
+ * optional bool isMandatory = 18;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIskey = function() {
+proto.dictionary.Field.prototype.getIsmandatory = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIskey = function(value) {
+proto.dictionary.Field.prototype.setIsmandatory = function(value) {
   jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
 /**
- * optional bool isParent = 19;
+ * optional bool isKey = 19;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsparent = function() {
+proto.dictionary.Field.prototype.getIskey = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsparent = function(value) {
+proto.dictionary.Field.prototype.setIskey = function(value) {
   jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
 /**
- * optional bool isUpdateable = 20;
+ * optional bool isParent = 20;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsupdateable = function() {
+proto.dictionary.Field.prototype.getIsparent = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsupdateable = function(value) {
+proto.dictionary.Field.prototype.setIsparent = function(value) {
   jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
 /**
- * optional bool isIdentifier = 21;
+ * optional bool isUpdateable = 21;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsidentifier = function() {
+proto.dictionary.Field.prototype.getIsupdateable = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsidentifier = function(value) {
+proto.dictionary.Field.prototype.setIsupdateable = function(value) {
   jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 
 /**
- * optional bool isAllowLogging = 22;
+ * optional bool isIdentifier = 22;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsallowlogging = function() {
+proto.dictionary.Field.prototype.getIsidentifier = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsallowlogging = function(value) {
+proto.dictionary.Field.prototype.setIsidentifier = function(value) {
   jspb.Message.setProto3BooleanField(this, 22, value);
 };
 
 
 /**
- * optional bool isSelectionColumn = 23;
+ * optional bool isAllowLogging = 23;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsselectioncolumn = function() {
+proto.dictionary.Field.prototype.getIsallowlogging = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsselectioncolumn = function(value) {
+proto.dictionary.Field.prototype.setIsallowlogging = function(value) {
   jspb.Message.setProto3BooleanField(this, 23, value);
 };
 
 
 /**
- * optional bool isRange = 24;
+ * optional bool isSelectionColumn = 24;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsrange = function() {
+proto.dictionary.Field.prototype.getIsselectioncolumn = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsrange = function(value) {
+proto.dictionary.Field.prototype.setIsselectioncolumn = function(value) {
   jspb.Message.setProto3BooleanField(this, 24, value);
 };
 
 
 /**
- * optional bool isAlwaysUpdateable = 25;
+ * optional bool isRange = 25;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsalwaysupdateable = function() {
+proto.dictionary.Field.prototype.getIsrange = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsalwaysupdateable = function(value) {
+proto.dictionary.Field.prototype.setIsrange = function(value) {
   jspb.Message.setProto3BooleanField(this, 25, value);
 };
 
 
 /**
- * optional bool isTranslated = 26;
+ * optional bool isAlwaysUpdateable = 26;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIstranslated = function() {
+proto.dictionary.Field.prototype.getIsalwaysupdateable = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIstranslated = function(value) {
+proto.dictionary.Field.prototype.setIsalwaysupdateable = function(value) {
   jspb.Message.setProto3BooleanField(this, 26, value);
 };
 
 
 /**
- * optional int32 identifierSequence = 77;
+ * optional bool isTranslated = 27;
+ * @return {boolean}
+ */
+proto.dictionary.Field.prototype.getIstranslated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Field.prototype.setIstranslated = function(value) {
+  jspb.Message.setProto3BooleanField(this, 27, value);
+};
+
+
+/**
+ * optional int32 identifierSequence = 78;
  * @return {number}
  */
 proto.dictionary.Field.prototype.getIdentifiersequence = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 77, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 78, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Field.prototype.setIdentifiersequence = function(value) {
-  jspb.Message.setProto3IntField(this, 77, value);
+  jspb.Message.setProto3IntField(this, 78, value);
 };
 
 
 /**
- * optional string displayLogic = 28;
+ * optional string displayLogic = 29;
  * @return {string}
  */
 proto.dictionary.Field.prototype.getDisplaylogic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 29, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Field.prototype.setDisplaylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 28, value);
+  jspb.Message.setProto3StringField(this, 29, value);
 };
 
 
 /**
- * optional int32 displayType = 29;
+ * optional int32 displayType = 30;
  * @return {number}
  */
 proto.dictionary.Field.prototype.getDisplaytype = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 29, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 30, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Field.prototype.setDisplaytype = function(value) {
-  jspb.Message.setProto3IntField(this, 29, value);
+  jspb.Message.setProto3IntField(this, 30, value);
 };
 
 
 /**
- * optional string defaultValue = 30;
+ * optional string defaultValue = 31;
  * @return {string}
  */
 proto.dictionary.Field.prototype.getDefaultvalue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
-};
-
-
-/** @param {string} value */
-proto.dictionary.Field.prototype.setDefaultvalue = function(value) {
-  jspb.Message.setProto3StringField(this, 30, value);
-};
-
-
-/**
- * optional string readOnlyLogic = 31;
- * @return {string}
- */
-proto.dictionary.Field.prototype.getReadonlylogic = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setReadonlylogic = function(value) {
+proto.dictionary.Field.prototype.setDefaultvalue = function(value) {
   jspb.Message.setProto3StringField(this, 31, value);
 };
 
 
 /**
- * optional string mandatoryLogic = 32;
+ * optional string readOnlyLogic = 32;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getMandatorylogic = function() {
+proto.dictionary.Field.prototype.getReadonlylogic = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setMandatorylogic = function(value) {
+proto.dictionary.Field.prototype.setReadonlylogic = function(value) {
   jspb.Message.setProto3StringField(this, 32, value);
 };
 
 
 /**
- * optional string callout = 33;
+ * optional string mandatoryLogic = 33;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getCallout = function() {
+proto.dictionary.Field.prototype.getMandatorylogic = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setCallout = function(value) {
+proto.dictionary.Field.prototype.setMandatorylogic = function(value) {
   jspb.Message.setProto3StringField(this, 33, value);
 };
 
 
 /**
- * optional string columnSQL = 34;
+ * optional string callout = 34;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getColumnsql = function() {
+proto.dictionary.Field.prototype.getCallout = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 34, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setColumnsql = function(value) {
+proto.dictionary.Field.prototype.setCallout = function(value) {
   jspb.Message.setProto3StringField(this, 34, value);
 };
 
 
 /**
- * optional string vFormat = 35;
+ * optional string columnSQL = 35;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getVformat = function() {
+proto.dictionary.Field.prototype.getColumnsql = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 35, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setVformat = function(value) {
+proto.dictionary.Field.prototype.setColumnsql = function(value) {
   jspb.Message.setProto3StringField(this, 35, value);
 };
 
 
 /**
- * optional string valueMin = 36;
+ * optional string vFormat = 36;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getValuemin = function() {
+proto.dictionary.Field.prototype.getVformat = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setValuemin = function(value) {
+proto.dictionary.Field.prototype.setVformat = function(value) {
   jspb.Message.setProto3StringField(this, 36, value);
 };
 
 
 /**
- * optional string valueMax = 37;
+ * optional string valueMin = 37;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getValuemax = function() {
+proto.dictionary.Field.prototype.getValuemin = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setValuemax = function(value) {
+proto.dictionary.Field.prototype.setValuemin = function(value) {
   jspb.Message.setProto3StringField(this, 37, value);
 };
 
 
 /**
- * optional string formatPattern = 38;
+ * optional string valueMax = 38;
  * @return {string}
  */
-proto.dictionary.Field.prototype.getFormatpattern = function() {
+proto.dictionary.Field.prototype.getValuemax = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 38, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Field.prototype.setFormatpattern = function(value) {
+proto.dictionary.Field.prototype.setValuemax = function(value) {
   jspb.Message.setProto3StringField(this, 38, value);
 };
 
 
 /**
- * optional ContextInfo contextInfo = 39;
+ * optional string formatPattern = 39;
+ * @return {string}
+ */
+proto.dictionary.Field.prototype.getFormatpattern = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 39, ""));
+};
+
+
+/** @param {string} value */
+proto.dictionary.Field.prototype.setFormatpattern = function(value) {
+  jspb.Message.setProto3StringField(this, 39, value);
+};
+
+
+/**
+ * optional ContextInfo contextInfo = 40;
  * @return {?proto.dictionary.ContextInfo}
  */
 proto.dictionary.Field.prototype.getContextinfo = function() {
   return /** @type{?proto.dictionary.ContextInfo} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 39));
+    jspb.Message.getWrapperField(this, proto.dictionary.ContextInfo, 40));
 };
 
 
 /** @param {?proto.dictionary.ContextInfo|undefined} value */
 proto.dictionary.Field.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 39, value);
+  jspb.Message.setWrapperField(this, 40, value);
 };
 
 
@@ -3621,23 +3648,23 @@ proto.dictionary.Field.prototype.clearContextinfo = function() {
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.hasContextinfo = function() {
-  return jspb.Message.getField(this, 39) != null;
+  return jspb.Message.getField(this, 40) != null;
 };
 
 
 /**
- * optional FieldGroup fieldGroup = 40;
+ * optional FieldGroup fieldGroup = 41;
  * @return {?proto.dictionary.FieldGroup}
  */
 proto.dictionary.Field.prototype.getFieldgroup = function() {
   return /** @type{?proto.dictionary.FieldGroup} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 40));
+    jspb.Message.getWrapperField(this, proto.dictionary.FieldGroup, 41));
 };
 
 
 /** @param {?proto.dictionary.FieldGroup|undefined} value */
 proto.dictionary.Field.prototype.setFieldgroup = function(value) {
-  jspb.Message.setWrapperField(this, 40, value);
+  jspb.Message.setWrapperField(this, 41, value);
 };
 
 
@@ -3654,23 +3681,23 @@ proto.dictionary.Field.prototype.clearFieldgroup = function() {
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.hasFieldgroup = function() {
-  return jspb.Message.getField(this, 40) != null;
+  return jspb.Message.getField(this, 41) != null;
 };
 
 
 /**
- * optional FieldDefinition fieldDefinition = 41;
+ * optional FieldDefinition fieldDefinition = 42;
  * @return {?proto.dictionary.FieldDefinition}
  */
 proto.dictionary.Field.prototype.getFielddefinition = function() {
   return /** @type{?proto.dictionary.FieldDefinition} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.FieldDefinition, 41));
+    jspb.Message.getWrapperField(this, proto.dictionary.FieldDefinition, 42));
 };
 
 
 /** @param {?proto.dictionary.FieldDefinition|undefined} value */
 proto.dictionary.Field.prototype.setFielddefinition = function(value) {
-  jspb.Message.setWrapperField(this, 41, value);
+  jspb.Message.setWrapperField(this, 42, value);
 };
 
 
@@ -3687,23 +3714,23 @@ proto.dictionary.Field.prototype.clearFielddefinition = function() {
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.hasFielddefinition = function() {
-  return jspb.Message.getField(this, 41) != null;
+  return jspb.Message.getField(this, 42) != null;
 };
 
 
 /**
- * optional Reference reference = 42;
+ * optional Reference reference = 43;
  * @return {?proto.dictionary.Reference}
  */
 proto.dictionary.Field.prototype.getReference = function() {
   return /** @type{?proto.dictionary.Reference} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Reference, 42));
+    jspb.Message.getWrapperField(this, proto.dictionary.Reference, 43));
 };
 
 
 /** @param {?proto.dictionary.Reference|undefined} value */
 proto.dictionary.Field.prototype.setReference = function(value) {
-  jspb.Message.setWrapperField(this, 42, value);
+  jspb.Message.setWrapperField(this, 43, value);
 };
 
 
@@ -3720,23 +3747,23 @@ proto.dictionary.Field.prototype.clearReference = function() {
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.hasReference = function() {
-  return jspb.Message.getField(this, 42) != null;
+  return jspb.Message.getField(this, 43) != null;
 };
 
 
 /**
- * optional Process process = 43;
+ * optional Process process = 44;
  * @return {?proto.dictionary.Process}
  */
 proto.dictionary.Field.prototype.getProcess = function() {
   return /** @type{?proto.dictionary.Process} */ (
-    jspb.Message.getWrapperField(this, proto.dictionary.Process, 43));
+    jspb.Message.getWrapperField(this, proto.dictionary.Process, 44));
 };
 
 
 /** @param {?proto.dictionary.Process|undefined} value */
 proto.dictionary.Field.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 43, value);
+  jspb.Message.setWrapperField(this, 44, value);
 };
 
 
@@ -3753,127 +3780,127 @@ proto.dictionary.Field.prototype.clearProcess = function() {
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.hasProcess = function() {
-  return jspb.Message.getField(this, 43) != null;
+  return jspb.Message.getField(this, 44) != null;
 };
 
 
 /**
- * optional bool isQueryCriteria = 44;
+ * optional bool isQueryCriteria = 45;
  * @return {boolean}
  */
 proto.dictionary.Field.prototype.getIsquerycriteria = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 44, false));
-};
-
-
-/** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsquerycriteria = function(value) {
-  jspb.Message.setProto3BooleanField(this, 44, value);
-};
-
-
-/**
- * optional bool isOrderBy = 45;
- * @return {boolean}
- */
-proto.dictionary.Field.prototype.getIsorderby = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 45, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsorderby = function(value) {
+proto.dictionary.Field.prototype.setIsquerycriteria = function(value) {
   jspb.Message.setProto3BooleanField(this, 45, value);
 };
 
 
 /**
- * optional int32 seqNoGrid = 46;
- * @return {number}
+ * optional bool isOrderBy = 46;
+ * @return {boolean}
  */
-proto.dictionary.Field.prototype.getSeqnogrid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 46, 0));
+proto.dictionary.Field.prototype.getIsorderby = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 46, false));
 };
 
 
-/** @param {number} value */
-proto.dictionary.Field.prototype.setSeqnogrid = function(value) {
-  jspb.Message.setProto3IntField(this, 46, value);
+/** @param {boolean} value */
+proto.dictionary.Field.prototype.setIsorderby = function(value) {
+  jspb.Message.setProto3BooleanField(this, 46, value);
 };
 
 
 /**
- * optional int32 sortNo = 47;
+ * optional int32 seqNoGrid = 47;
  * @return {number}
  */
-proto.dictionary.Field.prototype.getSortno = function() {
+proto.dictionary.Field.prototype.getSeqnogrid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 47, 0));
 };
 
 
 /** @param {number} value */
-proto.dictionary.Field.prototype.setSortno = function(value) {
+proto.dictionary.Field.prototype.setSeqnogrid = function(value) {
   jspb.Message.setProto3IntField(this, 47, value);
 };
 
 
 /**
- * optional bool isInfoOnly = 48;
- * @return {boolean}
+ * optional int32 sortNo = 48;
+ * @return {number}
  */
-proto.dictionary.Field.prototype.getIsinfoonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 48, false));
+proto.dictionary.Field.prototype.getSortno = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 48, 0));
 };
 
 
-/** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsinfoonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 48, value);
+/** @param {number} value */
+proto.dictionary.Field.prototype.setSortno = function(value) {
+  jspb.Message.setProto3IntField(this, 48, value);
 };
 
 
 /**
- * optional bool isActive = 49;
+ * optional bool isInfoOnly = 49;
  * @return {boolean}
  */
-proto.dictionary.Field.prototype.getIsactive = function() {
+proto.dictionary.Field.prototype.getIsinfoonly = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 49, false));
 };
 
 
 /** @param {boolean} value */
-proto.dictionary.Field.prototype.setIsactive = function(value) {
+proto.dictionary.Field.prototype.setIsinfoonly = function(value) {
   jspb.Message.setProto3BooleanField(this, 49, value);
 };
 
 
 /**
- * optional string defaultValueTo = 50;
+ * optional bool isActive = 50;
+ * @return {boolean}
+ */
+proto.dictionary.Field.prototype.getIsactive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 50, false));
+};
+
+
+/** @param {boolean} value */
+proto.dictionary.Field.prototype.setIsactive = function(value) {
+  jspb.Message.setProto3BooleanField(this, 50, value);
+};
+
+
+/**
+ * optional string defaultValueTo = 51;
  * @return {string}
  */
 proto.dictionary.Field.prototype.getDefaultvalueto = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 50, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 51, ""));
 };
 
 
 /** @param {string} value */
 proto.dictionary.Field.prototype.setDefaultvalueto = function(value) {
-  jspb.Message.setProto3StringField(this, 50, value);
+  jspb.Message.setProto3StringField(this, 51, value);
 };
 
 
 /**
- * optional int32 fieldLength = 51;
+ * optional int32 fieldLength = 52;
  * @return {number}
  */
 proto.dictionary.Field.prototype.getFieldlength = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 51, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 52, 0));
 };
 
 
 /** @param {number} value */
 proto.dictionary.Field.prototype.setFieldlength = function(value) {
-  jspb.Message.setProto3IntField(this, 51, value);
+  jspb.Message.setProto3IntField(this, 52, value);
 };
 
 
