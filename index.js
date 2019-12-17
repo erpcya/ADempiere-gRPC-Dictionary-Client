@@ -152,7 +152,7 @@ class Dictionary {
     if (isWithProcess) {
       processesList = tabToConvert.getProcessesList()
         .map(procesItem => {
-          return this.convertProcess(procesItem);
+          return this.convertProcess(procesItem, false);
         });
     }
 
@@ -306,6 +306,7 @@ class Dictionary {
       description: fieldToConvert.getDescription(),
       help: fieldToConvert.getHelp(),
       columnName: fieldToConvert.getColumnname(),
+      elementName: fieldToConvert.getElementname(),
       isActive: fieldToConvert.getIsactive(),
       // displayed attributes
       fieldGroup: this.convertFieldGroup(
@@ -481,7 +482,7 @@ class Dictionary {
       });
   }
 
-  convertProcess(processToConvert) {
+  convertProcess(processToConvert, isConvertedFields = true) {
     if (processToConvert === undefined || processToConvert === null) {
       return undefined;
     }
@@ -490,11 +491,14 @@ class Dictionary {
       processId: processToConvert.getId(),
     };
 
-    //  Convert from gRPC
-    const parametersList = processToConvert.getParametersList()
-      .map(fieldItem => {
-        return this.convertField(fieldItem, additionalAttributes);
-      });
+    //  Convert fiels list from gRPC
+    let parametersList;
+    if (isConvertedFields) {
+      parametersList = processToConvert.getParametersList()
+        .map(fieldItem => {
+          return this.convertField(fieldItem, additionalAttributes);
+        });
+    }
 
     //  Get export list
     const reportExportTypeList = processToConvert.getReportexporttypesList()
@@ -581,7 +585,8 @@ class Dictionary {
         browserToConvert.getWindow(), true
       ),
       process: this.convertProcess(
-        browserToConvert.getProcess()
+        browserToConvert.getProcess(),
+        false
       ),
       //
       fieldsList: fieldsList
