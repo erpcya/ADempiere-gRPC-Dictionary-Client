@@ -366,7 +366,7 @@ class Dictionary {
         fieldToConvert.getContextinfo()
       ),
       fieldDefinition: this.convertFieldDefinition(
-        fieldToConvert.get
+        fieldToConvert.getFielddefinition()
       )
     };
   }
@@ -433,7 +433,7 @@ class Dictionary {
         fieldGroupType: fieldDefinitionToConvert.getFieldgrouptype(),
         conditionsList: fieldDefinitionToConvert.getConditionsList()
           .map(itemCondition => {
-            this.connvertFieldCondition(itemCondition)
+            return this.connvertFieldCondition(itemCondition)
           })
       };
     }
