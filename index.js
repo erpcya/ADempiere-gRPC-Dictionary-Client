@@ -55,6 +55,31 @@ class Dictionary {
     return request;
   }
 
+  // Get Field request based on patameters
+  getFieldRequest({
+    fieldUuid,
+  	columnUuid,
+  	elementUuid,
+  	// TableName + ColumnName
+  	tableName,
+  	columnName,
+  	elementColumnName
+  }) {
+    const { ApplicationRequest, FieldRequest } = require('./src/grpc/proto/dictionary_pb.js');
+    let applicationRequest = new ApplicationRequest();
+    applicationRequest.setSessionuuid(this.sessionUuid);
+    applicationRequest.setLanguage(this.language);
+    let request = new FieldRequest();
+    request.setFielduuid(fieldUuid);
+    request.setColumnuuid(columnUuid);
+    request.setElementuuid(elementUuid);
+    request.setTablename(tableName);
+    request.setColumnname(columnName);
+    request.setElementname(elementColumnName);
+    request.setApplicationrequest(applicationRequest);
+    return request;
+  }
+
   /**
    * Get and request a Window, the Tabs are optional
    * @param {string} uuid Universally Unique IDentifier
@@ -213,8 +238,25 @@ class Dictionary {
    * @param {string} uuid Universally Unique IDentifier
    * @return {object} Object field and attributes.
    */
-  requestField({ uuid, isConvertedMetadata = false }) {
-    return this.getService().getField(this.getRequest(uuid))
+  requestField({
+    fieldUuid,
+  	columnUuid,
+  	elementUuid,
+  	// TableName + ColumnName
+  	tableName,
+  	columnName,
+  	elementColumnName,
+    isConvertedMetadata = true
+  }) {
+    return this.getService().getField(this.getFieldRequest({
+      fieldUuid: fieldUuid,
+    	columnUuid: columnUuid,
+    	elementUuid: elementUuid,
+    	// TableName + ColumnName
+    	tableName: tableName,
+    	columnName: columnName,
+    	elementColumnName: elementColumnName
+    }))
       .then(responseField => {
         if (isConvertedMetadata) {
           return this.convertField(responseField);

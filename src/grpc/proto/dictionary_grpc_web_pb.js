@@ -309,12 +309,12 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.getTabAndFields =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.FieldRequest,
  *   !proto.dictionary.Field>}
  */
 const methodInfo_DictionaryService_GetField = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Field,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /** @param {!proto.dictionary.FieldRequest} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -323,7 +323,7 @@ const methodInfo_DictionaryService_GetField = new grpc.web.AbstractClientBase.Me
 
 
 /**
- * @param {!proto.dictionary.EntityRequest} request The
+ * @param {!proto.dictionary.FieldRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -344,7 +344,7 @@ proto.dictionary.DictionaryServiceClient.prototype.getField =
 
 
 /**
- * @param {!proto.dictionary.EntityRequest} request The
+ * @param {!proto.dictionary.FieldRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -358,6 +358,116 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.getField =
       request,
       metadata || {},
       methodInfo_DictionaryService_GetField);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.dictionary.ReferenceRequest,
+ *   !proto.dictionary.Reference>}
+ */
+const methodInfo_DictionaryService_GetReference = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.dictionary.Reference,
+  /** @param {!proto.dictionary.ReferenceRequest} request */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Reference.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.dictionary.ReferenceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.dictionary.Reference)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Reference>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.dictionary.DictionaryServiceClient.prototype.getReference =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetReference',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetReference,
+      callback);
+};
+
+
+/**
+ * @param {!proto.dictionary.ReferenceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.dictionary.Reference>}
+ *     A native promise that resolves to the response
+ */
+proto.dictionary.DictionaryServicePromiseClient.prototype.getReference =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetReference',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetReference);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.dictionary.ValidationRuleRequest,
+ *   !proto.dictionary.ValidationRule>}
+ */
+const methodInfo_DictionaryService_GetValidationRule = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.dictionary.ValidationRule,
+  /** @param {!proto.dictionary.ValidationRuleRequest} request */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.ValidationRule.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.dictionary.ValidationRuleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.dictionary.ValidationRule)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.dictionary.ValidationRule>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.dictionary.DictionaryServiceClient.prototype.getValidationRule =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetValidationRule',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetValidationRule,
+      callback);
+};
+
+
+/**
+ * @param {!proto.dictionary.ValidationRuleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.dictionary.ValidationRule>}
+ *     A native promise that resolves to the response
+ */
+proto.dictionary.DictionaryServicePromiseClient.prototype.getValidationRule =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetValidationRule',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetValidationRule);
 };
 
 
