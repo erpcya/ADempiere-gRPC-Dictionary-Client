@@ -6837,7 +6837,7 @@ proto.dictionary.Form.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     help: jspb.Message.getFieldWithDefault(msg, 5, ""),
     accesslevel: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    classname: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    filename: jspb.Message.getFieldWithDefault(msg, 7, ""),
     isactive: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
@@ -6901,7 +6901,7 @@ proto.dictionary.Form.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClassname(value);
+      msg.setFilename(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -6978,7 +6978,7 @@ proto.dictionary.Form.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getClassname();
+  f = message.getFilename();
   if (f.length > 0) {
     writer.writeString(
       7,
@@ -7086,16 +7086,16 @@ proto.dictionary.Form.prototype.setAccesslevel = function(value) {
 
 
 /**
- * optional string className = 7;
+ * optional string fileName = 7;
  * @return {string}
  */
-proto.dictionary.Form.prototype.getClassname = function() {
+proto.dictionary.Form.prototype.getFilename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.dictionary.Form.prototype.setClassname = function(value) {
+proto.dictionary.Form.prototype.setFilename = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
 };
 

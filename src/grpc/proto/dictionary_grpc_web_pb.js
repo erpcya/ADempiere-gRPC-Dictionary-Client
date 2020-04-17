@@ -581,5 +581,60 @@ proto.dictionary.DictionaryServicePromiseClient.prototype.getBrowser =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Form>}
+ */
+const methodInfo_DictionaryService_GetForm = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.dictionary.Form,
+  /** @param {!proto.dictionary.EntityRequest} request */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Form.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.dictionary.Form)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.dictionary.Form>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.dictionary.DictionaryServiceClient.prototype.getForm =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetForm',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetForm,
+      callback);
+};
+
+
+/**
+ * @param {!proto.dictionary.EntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.dictionary.Form>}
+ *     A native promise that resolves to the response
+ */
+proto.dictionary.DictionaryServicePromiseClient.prototype.getForm =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/dictionary.DictionaryService/GetForm',
+      request,
+      metadata || {},
+      methodInfo_DictionaryService_GetForm);
+};
+
+
 module.exports = proto.dictionary;
 
