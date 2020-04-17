@@ -1,7 +1,7 @@
 /*************************************************************************************
- * Product: ADempiere gRPC Dictionary Client                       		               *
+ * Product: ADempiere gRPC Dictionary Client                                         *
  * Copyright (C) 2012-2018 E.R.P. Consultores y Asociados, C.A.                      *
- * Contributor(s): Yamel Senih ysenih@erpya.com				  		                         *
+ * Contributor(s): Yamel Senih ysenih@erpya.com                                      *
  * This program is free software: you can redistribute it and/or modify              *
  * it under the terms of the GNU General Public License as published by              *
  * the Free Software Foundation, either version 3 of the License, or                 *
@@ -39,45 +39,100 @@ class Dictionary {
     return requestService;
   }
 
+  getApplicationRequest() {
+    const { ApplicationRequest } = require('./src/grpc/proto/dictionary_pb.js');
+    const applicationRequest = new ApplicationRequest();
+    applicationRequest.setSessionuuid(this.sessionUuid);
+    applicationRequest.setLanguage(this.language);
+    return applicationRequest;
+  }
+
   /**
    * Get Client Request
    * @param {string} uuid Universally Unique IDentifier
    * @return {object} Return request for get data
    */
   getRequest(uuid) {
-    const { ApplicationRequest, EntityRequest } = require('./src/grpc/proto/dictionary_pb.js');
-    let applicationRequest = new ApplicationRequest();
-    applicationRequest.setSessionuuid(this.sessionUuid);
-    applicationRequest.setLanguage(this.language);
-    let request = new EntityRequest();
+    const { EntityRequest } = require('./src/grpc/proto/dictionary_pb.js');
+    const request = new EntityRequest();
     request.setUuid(uuid);
-    request.setApplicationrequest(applicationRequest);
+    request.setApplicationrequest(this.getApplicationRequest());
     return request;
   }
 
-  // Get Field request based on patameters
+  /**
+   * Get Field request based on patameters
+   * @param {string} fieldUuid
+   * @param {string} columnUuid
+   * @param {string} elementUuid
+   * @param {string} tableName
+   * @param {string} columnName
+   * @param {string} elementColumnName
+   */
   getFieldRequest({
     fieldUuid,
-  	columnUuid,
-  	elementUuid,
-  	// TableName + ColumnName
-  	tableName,
-  	columnName,
-  	elementColumnName
+    columnUuid,
+    elementUuid,
+    // TableName + ColumnName
+    tableName,
+    columnName,
+    elementColumnName
   }) {
-    const { ApplicationRequest, FieldRequest } = require('./src/grpc/proto/dictionary_pb.js');
-    let applicationRequest = new ApplicationRequest();
-    applicationRequest.setSessionuuid(this.sessionUuid);
-    applicationRequest.setLanguage(this.language);
-    let request = new FieldRequest();
+    const { FieldRequest } = require('./src/grpc/proto/dictionary_pb.js');
+
+    const request = new FieldRequest();
     request.setFielduuid(fieldUuid);
     request.setColumnuuid(columnUuid);
     request.setElementuuid(elementUuid);
     request.setTablename(tableName);
     request.setColumnname(columnName);
-    request.setElementname(elementColumnName);
-    request.setApplicationrequest(applicationRequest);
+    request.setElementcolumnname(elementColumnName);
+    request.setApplicationrequest(this.getApplicationRequest());
+
     return request;
+  }
+
+  /**
+   * Reference Request
+   * @param {string} referenceUuid
+   * @param {string} columnName
+   * @returns {promise}
+   */
+  requestReference({ referenceUuid, columnName }) {
+    const { ReferenceRequest } = require('./src/grpc/proto/dictionary_pb.js');
+
+    const request = new ReferenceRequest();
+    request.setReferenceuuid(referenceUuid);
+    request.setColumnname(columnName);
+    request.setApplicationrequest(this.getApplicationRequest());
+
+    return this.getService().getReference(request)
+      .then(responseReference => {
+        return this.convertReference(responseReference);
+      });
+  }
+
+  /**
+   * Validation Rule Request
+   * @param {string} validationRuleUuid
+   */
+  requestValidationRule({ validationRuleUuid }) {
+    const { ValidationRuleRequest } = require('./src/grpc/proto/dictionary_pb.js');
+
+    const request = new ValidationRuleRequest();
+    request.setValidationruleuuid(validationRuleUuid);
+    request.setApplicationrequest(this.getApplicationRequest());
+
+    return this.getService().getValidationRule(request)
+      .then(responseValidation => {
+        return {
+          validationRuleUuid: responseValidation.getValidationruleuuid(),
+          validationCode: responseValidation.getValidationcode(),
+          name: responseValidation.getName(),
+          description: responseValidation.getDescription(),
+          type: responseValidation.getType()
+        };
+      });
   }
 
   /**
@@ -240,22 +295,22 @@ class Dictionary {
    */
   requestField({
     fieldUuid,
-  	columnUuid,
-  	elementUuid,
-  	// TableName + ColumnName
-  	tableName,
-  	columnName,
-  	elementColumnName,
+    columnUuid,
+    elementUuid,
+    // TableName + ColumnName
+    tableName,
+    columnName,
+    elementColumnName,
     isConvertedMetadata = true
   }) {
     return this.getService().getField(this.getFieldRequest({
       fieldUuid: fieldUuid,
-    	columnUuid: columnUuid,
-    	elementUuid: elementUuid,
-    	// TableName + ColumnName
-    	tableName: tableName,
-    	columnName: columnName,
-    	elementColumnName: elementColumnName
+      columnUuid: columnUuid,
+      elementUuid: elementUuid,
+      // TableName + ColumnName
+      tableName: tableName,
+      columnName: columnName,
+      elementColumnName: elementColumnName
     }))
       .then(responseField => {
         if (isConvertedMetadata) {
@@ -385,7 +440,7 @@ class Dictionary {
       isAllowLogging: fieldToConvert.getIsallowlogging(),
       isTranslated: fieldToConvert.getIstranslated(),
       //
-	    columnSQL: fieldToConvert.getColumnsql(),
+      columnSQL: fieldToConvert.getColumnsql(),
       //
       isDisplayed: fieldToConvert.getIsdisplayed(),
       isDisplayedGrid: fieldToConvert.getIsdisplayedgrid(),
@@ -400,7 +455,7 @@ class Dictionary {
       displayLogic: fieldToConvert.getDisplaylogic(),
       mandatoryLogic: fieldToConvert.getMandatorylogic(),
       readOnlyLogic: fieldToConvert.getReadonlylogic(),
-	    // External Info
+      // External Info
       reference: this.convertReference(
         fieldToConvert.getReference()
       ),
@@ -612,17 +667,17 @@ class Dictionary {
       accessLevel: browserToConvert.getAccesslevel(),
       isActive: browserToConvert.getIsactive(),
       //
-	    isUpdateable: browserToConvert.getIsupdateable(),
+      isUpdateable: browserToConvert.getIsupdateable(),
       IsDeleteable: browserToConvert.getIsdeleteable(),
-	    IsSelectedByDefault: browserToConvert.getIsselectedbydefault(),
-	    IsCollapsibleByDefault: browserToConvert.getIscollapsiblebydefault(),
-	    IsExecutedQueryByDefault: browserToConvert.getIsexecutedquerybydefault(),
-	    IsShowTotal: browserToConvert.getIsshowtotal(),
+      IsSelectedByDefault: browserToConvert.getIsselectedbydefault(),
+      IsCollapsibleByDefault: browserToConvert.getIscollapsiblebydefault(),
+      IsExecutedQueryByDefault: browserToConvert.getIsexecutedquerybydefault(),
+      IsShowTotal: browserToConvert.getIsshowtotal(),
       // search query
-	    query: browserToConvert.getQuery(),
-	    whereClause: browserToConvert.getWhereclause(),
+      query: browserToConvert.getQuery(),
+      whereClause: browserToConvert.getWhereclause(),
       orderByClause: browserToConvert.getOrderbyclause(),
-    	// External Reference
+      // External Reference
       window: this.convertWindow(
         browserToConvert.getWindow(), true
       ),
