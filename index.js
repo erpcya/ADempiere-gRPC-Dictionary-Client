@@ -689,6 +689,38 @@ class Dictionary {
       fieldsList: fieldsList
     };
   }
+
+  requestForm({ uuid, id }) {
+    return this.getService().getForm(this.getRequest(uuid))
+      .then(responseForm => {
+        return this.convertForm(responseForm);
+      });
+  }
+
+  convertForm(formToConvert) {
+    if (formToConvert) {
+      return {
+        id: formToConvert.getId(),
+        uuid: formToConvert.getUuid(),
+        name: formToConvert.getName(),
+        description: formToConvert.getDescription(),
+        help: formToConvert.getHelp(),
+        accessLevel: formToConvert.getAccesslevel(),
+        fileName: formToConvert.getFilename(),
+        isActive: formToConvert.getIsactive()
+      };
+    }
+    return {
+        id: undefined,
+        uuid: undefined,
+        name: undefined,
+        description: undefined,
+        help: undefined,
+        accessLevel: undefined,
+        fileName: undefined,
+        isActive: undefined
+    };
+  }
 }
 
 module.exports = Dictionary;
