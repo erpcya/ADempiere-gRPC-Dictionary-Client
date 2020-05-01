@@ -33,8 +33,8 @@ class Dictionary {
    */
   getService() {
     const grpc_promise = require('grpc-promise');
-    const { DictionaryServicePromiseClient } = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
-    const requestService = new DictionaryServicePromiseClient(this.host);
+    const { DictionaryPromiseClient } = require('./src/grpc/proto/dictionary_grpc_web_pb.js');
+    const requestService = new DictionaryPromiseClient(this.host);
     grpc_promise.promisifyAll(requestService);
     return requestService;
   }
