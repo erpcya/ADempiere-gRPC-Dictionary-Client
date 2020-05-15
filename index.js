@@ -21,7 +21,7 @@ class Dictionary {
    * @param {string} sessionUuid
    * @param {string} language
    */
-  constructor(host, sessionUuid, language = 'en_US') {
+  constructor({ host, sessionUuid, language = 'en_US' }) {
     this.host = host;
     this.sessionUuid = sessionUuid;
     this.language = language;
@@ -232,7 +232,7 @@ class Dictionary {
     if (isWithProcess) {
       processesList = tabToConvert.getProcessesList()
         .map(procesItem => {
-          return this.convertProcess(procesItem, false);
+          return this.convertProcess(procesItem, true);
         });
     }
 

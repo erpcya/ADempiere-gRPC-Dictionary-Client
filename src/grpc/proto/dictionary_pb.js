@@ -1,3 +1,4 @@
+// source: proto/dictionary.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -584,9 +585,12 @@ proto.dictionary.ApplicationRequest.prototype.getSessionuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ApplicationRequest} returns this
+ */
 proto.dictionary.ApplicationRequest.prototype.setSessionuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -599,9 +603,12 @@ proto.dictionary.ApplicationRequest.prototype.getLanguage = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ApplicationRequest} returns this
+ */
 proto.dictionary.ApplicationRequest.prototype.setLanguage = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -752,9 +759,12 @@ proto.dictionary.EntityRequest.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.EntityRequest} returns this
+ */
 proto.dictionary.EntityRequest.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -767,9 +777,12 @@ proto.dictionary.EntityRequest.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.EntityRequest} returns this
+ */
 proto.dictionary.EntityRequest.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -783,17 +796,21 @@ proto.dictionary.EntityRequest.prototype.getApplicationrequest = function() {
 };
 
 
-/** @param {?proto.dictionary.ApplicationRequest|undefined} value */
+/**
+ * @param {?proto.dictionary.ApplicationRequest|undefined} value
+ * @return {!proto.dictionary.EntityRequest} returns this
+*/
 proto.dictionary.EntityRequest.prototype.setApplicationrequest = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.EntityRequest} returns this
  */
 proto.dictionary.EntityRequest.prototype.clearApplicationrequest = function() {
-  this.setApplicationrequest(undefined);
+  return this.setApplicationrequest(undefined);
 };
 
 
@@ -1002,17 +1019,21 @@ proto.dictionary.FieldRequest.prototype.getApplicationrequest = function() {
 };
 
 
-/** @param {?proto.dictionary.ApplicationRequest|undefined} value */
+/**
+ * @param {?proto.dictionary.ApplicationRequest|undefined} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+*/
 proto.dictionary.FieldRequest.prototype.setApplicationrequest = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.FieldRequest} returns this
  */
 proto.dictionary.FieldRequest.prototype.clearApplicationrequest = function() {
-  this.setApplicationrequest(undefined);
+  return this.setApplicationrequest(undefined);
 };
 
 
@@ -1034,9 +1055,12 @@ proto.dictionary.FieldRequest.prototype.getFielduuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setFielduuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1049,9 +1073,12 @@ proto.dictionary.FieldRequest.prototype.getColumnuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setColumnuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1064,9 +1091,12 @@ proto.dictionary.FieldRequest.prototype.getElementuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setElementuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1079,9 +1109,12 @@ proto.dictionary.FieldRequest.prototype.getTablename = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setTablename = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1094,9 +1127,12 @@ proto.dictionary.FieldRequest.prototype.getColumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setColumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1109,9 +1145,12 @@ proto.dictionary.FieldRequest.prototype.getElementcolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldRequest} returns this
+ */
 proto.dictionary.FieldRequest.prototype.setElementcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1263,17 +1302,21 @@ proto.dictionary.ReferenceRequest.prototype.getApplicationrequest = function() {
 };
 
 
-/** @param {?proto.dictionary.ApplicationRequest|undefined} value */
+/**
+ * @param {?proto.dictionary.ApplicationRequest|undefined} value
+ * @return {!proto.dictionary.ReferenceRequest} returns this
+*/
 proto.dictionary.ReferenceRequest.prototype.setApplicationrequest = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.ReferenceRequest} returns this
  */
 proto.dictionary.ReferenceRequest.prototype.clearApplicationrequest = function() {
-  this.setApplicationrequest(undefined);
+  return this.setApplicationrequest(undefined);
 };
 
 
@@ -1295,9 +1338,12 @@ proto.dictionary.ReferenceRequest.prototype.getReferenceuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ReferenceRequest} returns this
+ */
 proto.dictionary.ReferenceRequest.prototype.setReferenceuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1310,9 +1356,12 @@ proto.dictionary.ReferenceRequest.prototype.getColumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ReferenceRequest} returns this
+ */
 proto.dictionary.ReferenceRequest.prototype.setColumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1452,17 +1501,21 @@ proto.dictionary.ValidationRuleRequest.prototype.getApplicationrequest = functio
 };
 
 
-/** @param {?proto.dictionary.ApplicationRequest|undefined} value */
+/**
+ * @param {?proto.dictionary.ApplicationRequest|undefined} value
+ * @return {!proto.dictionary.ValidationRuleRequest} returns this
+*/
 proto.dictionary.ValidationRuleRequest.prototype.setApplicationrequest = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.ValidationRuleRequest} returns this
  */
 proto.dictionary.ValidationRuleRequest.prototype.clearApplicationrequest = function() {
-  this.setApplicationrequest(undefined);
+  return this.setApplicationrequest(undefined);
 };
 
 
@@ -1484,9 +1537,12 @@ proto.dictionary.ValidationRuleRequest.prototype.getValidationruleuuid = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRuleRequest} returns this
+ */
 proto.dictionary.ValidationRuleRequest.prototype.setValidationruleuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1659,9 +1715,12 @@ proto.dictionary.ValidationRule.prototype.getValidationruleuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRule} returns this
+ */
 proto.dictionary.ValidationRule.prototype.setValidationruleuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1674,9 +1733,12 @@ proto.dictionary.ValidationRule.prototype.getValidationcode = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRule} returns this
+ */
 proto.dictionary.ValidationRule.prototype.setValidationcode = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1689,9 +1751,12 @@ proto.dictionary.ValidationRule.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRule} returns this
+ */
 proto.dictionary.ValidationRule.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1704,9 +1769,12 @@ proto.dictionary.ValidationRule.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRule} returns this
+ */
 proto.dictionary.ValidationRule.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1719,9 +1787,12 @@ proto.dictionary.ValidationRule.prototype.getType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ValidationRule} returns this
+ */
 proto.dictionary.ValidationRule.prototype.setType = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1966,9 +2037,12 @@ proto.dictionary.Window.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1981,9 +2055,12 @@ proto.dictionary.Window.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1996,9 +2073,12 @@ proto.dictionary.Window.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2011,9 +2091,12 @@ proto.dictionary.Window.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2026,9 +2109,12 @@ proto.dictionary.Window.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -2041,9 +2127,12 @@ proto.dictionary.Window.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -2056,9 +2145,12 @@ proto.dictionary.Window.prototype.getIssotrx = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setIssotrx = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -2071,9 +2163,12 @@ proto.dictionary.Window.prototype.getWindowtype = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Window} returns this
+ */
 proto.dictionary.Window.prototype.setWindowtype = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -2087,17 +2182,21 @@ proto.dictionary.Window.prototype.getContextinfo = function() {
 };
 
 
-/** @param {?proto.dictionary.ContextInfo|undefined} value */
+/**
+ * @param {?proto.dictionary.ContextInfo|undefined} value
+ * @return {!proto.dictionary.Window} returns this
+*/
 proto.dictionary.Window.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Window} returns this
  */
 proto.dictionary.Window.prototype.clearContextinfo = function() {
-  this.setContextinfo(undefined);
+  return this.setContextinfo(undefined);
 };
 
 
@@ -2120,9 +2219,12 @@ proto.dictionary.Window.prototype.getTabsList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.Tab>} value */
+/**
+ * @param {!Array<!proto.dictionary.Tab>} value
+ * @return {!proto.dictionary.Window} returns this
+*/
 proto.dictionary.Window.prototype.setTabsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -2138,9 +2240,10 @@ proto.dictionary.Window.prototype.addTabs = function(opt_value, opt_index) {
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Window} returns this
  */
 proto.dictionary.Window.prototype.clearTabsList = function() {
-  this.setTabsList([]);
+  return this.setTabsList([]);
 };
 
 
@@ -2702,9 +2805,12 @@ proto.dictionary.Tab.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2717,9 +2823,12 @@ proto.dictionary.Tab.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2732,9 +2841,12 @@ proto.dictionary.Tab.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2747,9 +2859,12 @@ proto.dictionary.Tab.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -2762,9 +2877,12 @@ proto.dictionary.Tab.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -2777,9 +2895,12 @@ proto.dictionary.Tab.prototype.getTablename = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setTablename = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -2792,9 +2913,12 @@ proto.dictionary.Tab.prototype.getSequence = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setSequence = function(value) {
-  jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -2807,9 +2931,12 @@ proto.dictionary.Tab.prototype.getTablevel = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setTablevel = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -2822,9 +2949,12 @@ proto.dictionary.Tab.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -2837,9 +2967,12 @@ proto.dictionary.Tab.prototype.getIssinglerow = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIssinglerow = function(value) {
-  jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -2852,9 +2985,12 @@ proto.dictionary.Tab.prototype.getIsadvancedtab = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsadvancedtab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
@@ -2867,9 +3003,12 @@ proto.dictionary.Tab.prototype.getIshastree = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIshastree = function(value) {
-  jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -2882,9 +3021,12 @@ proto.dictionary.Tab.prototype.getIsinfotab = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsinfotab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 13, value);
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -2897,9 +3039,12 @@ proto.dictionary.Tab.prototype.getIssorttab = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIssorttab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 14, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -2912,9 +3057,12 @@ proto.dictionary.Tab.prototype.getIstranslationtab = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIstranslationtab = function(value) {
-  jspb.Message.setProto3BooleanField(this, 15, value);
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -2927,9 +3075,12 @@ proto.dictionary.Tab.prototype.getIsreadonly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsreadonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 16, value);
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
@@ -2942,9 +3093,12 @@ proto.dictionary.Tab.prototype.getIsinsertrecord = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsinsertrecord = function(value) {
-  jspb.Message.setProto3BooleanField(this, 17, value);
+  return jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
@@ -2957,9 +3111,12 @@ proto.dictionary.Tab.prototype.getIsview = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsview = function(value) {
-  jspb.Message.setProto3BooleanField(this, 18, value);
+  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
@@ -2972,9 +3129,12 @@ proto.dictionary.Tab.prototype.getIsdeleteable = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsdeleteable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 19, value);
+  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
@@ -2987,9 +3147,12 @@ proto.dictionary.Tab.prototype.getIsdocument = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIsdocument = function(value) {
-  jspb.Message.setProto3BooleanField(this, 20, value);
+  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
@@ -3002,9 +3165,12 @@ proto.dictionary.Tab.prototype.getIschangelog = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setIschangelog = function(value) {
-  jspb.Message.setProto3BooleanField(this, 21, value);
+  return jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 
@@ -3017,9 +3183,12 @@ proto.dictionary.Tab.prototype.getAccesslevel = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 22, value);
+  return jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
@@ -3032,9 +3201,12 @@ proto.dictionary.Tab.prototype.getLinkcolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setLinkcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 23, value);
+  return jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
@@ -3047,9 +3219,12 @@ proto.dictionary.Tab.prototype.getSortordercolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setSortordercolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 24, value);
+  return jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
@@ -3062,9 +3237,12 @@ proto.dictionary.Tab.prototype.getSortyesnocolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setSortyesnocolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 25, value);
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
@@ -3077,9 +3255,12 @@ proto.dictionary.Tab.prototype.getParentcolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setParentcolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 26, value);
+  return jspb.Message.setProto3StringField(this, 26, value);
 };
 
 
@@ -3092,9 +3273,12 @@ proto.dictionary.Tab.prototype.getDisplaylogic = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setDisplaylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 27, value);
+  return jspb.Message.setProto3StringField(this, 27, value);
 };
 
 
@@ -3107,9 +3291,12 @@ proto.dictionary.Tab.prototype.getCommitwarning = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setCommitwarning = function(value) {
-  jspb.Message.setProto3StringField(this, 28, value);
+  return jspb.Message.setProto3StringField(this, 28, value);
 };
 
 
@@ -3122,9 +3309,12 @@ proto.dictionary.Tab.prototype.getQuery = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setQuery = function(value) {
-  jspb.Message.setProto3StringField(this, 29, value);
+  return jspb.Message.setProto3StringField(this, 29, value);
 };
 
 
@@ -3137,9 +3327,12 @@ proto.dictionary.Tab.prototype.getWhereclause = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setWhereclause = function(value) {
-  jspb.Message.setProto3StringField(this, 30, value);
+  return jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
@@ -3152,9 +3345,12 @@ proto.dictionary.Tab.prototype.getOrderbyclause = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setOrderbyclause = function(value) {
-  jspb.Message.setProto3StringField(this, 31, value);
+  return jspb.Message.setProto3StringField(this, 31, value);
 };
 
 
@@ -3167,9 +3363,12 @@ proto.dictionary.Tab.prototype.getParenttabuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Tab} returns this
+ */
 proto.dictionary.Tab.prototype.setParenttabuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 32, value);
+  return jspb.Message.setProto3StringField(this, 32, value);
 };
 
 
@@ -3183,17 +3382,21 @@ proto.dictionary.Tab.prototype.getContextinfo = function() {
 };
 
 
-/** @param {?proto.dictionary.ContextInfo|undefined} value */
+/**
+ * @param {?proto.dictionary.ContextInfo|undefined} value
+ * @return {!proto.dictionary.Tab} returns this
+*/
 proto.dictionary.Tab.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 33, value);
+  return jspb.Message.setWrapperField(this, 33, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Tab} returns this
  */
 proto.dictionary.Tab.prototype.clearContextinfo = function() {
-  this.setContextinfo(undefined);
+  return this.setContextinfo(undefined);
 };
 
 
@@ -3216,9 +3419,12 @@ proto.dictionary.Tab.prototype.getProcessesList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.Process>} value */
+/**
+ * @param {!Array<!proto.dictionary.Process>} value
+ * @return {!proto.dictionary.Tab} returns this
+*/
 proto.dictionary.Tab.prototype.setProcessesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 34, value);
+  return jspb.Message.setRepeatedWrapperField(this, 34, value);
 };
 
 
@@ -3234,9 +3440,10 @@ proto.dictionary.Tab.prototype.addProcesses = function(opt_value, opt_index) {
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Tab} returns this
  */
 proto.dictionary.Tab.prototype.clearProcessesList = function() {
-  this.setProcessesList([]);
+  return this.setProcessesList([]);
 };
 
 
@@ -3250,9 +3457,12 @@ proto.dictionary.Tab.prototype.getFieldsList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.Field>} value */
+/**
+ * @param {!Array<!proto.dictionary.Field>} value
+ * @return {!proto.dictionary.Tab} returns this
+*/
 proto.dictionary.Tab.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 35, value);
+  return jspb.Message.setRepeatedWrapperField(this, 35, value);
 };
 
 
@@ -3268,9 +3478,10 @@ proto.dictionary.Tab.prototype.addFields = function(opt_value, opt_index) {
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Tab} returns this
  */
 proto.dictionary.Tab.prototype.clearFieldsList = function() {
-  this.setFieldsList([]);
+  return this.setFieldsList([]);
 };
 
 
@@ -3284,17 +3495,21 @@ proto.dictionary.Tab.prototype.getFieldgroup = function() {
 };
 
 
-/** @param {?proto.dictionary.FieldGroup|undefined} value */
+/**
+ * @param {?proto.dictionary.FieldGroup|undefined} value
+ * @return {!proto.dictionary.Tab} returns this
+*/
 proto.dictionary.Tab.prototype.setFieldgroup = function(value) {
-  jspb.Message.setWrapperField(this, 36, value);
+  return jspb.Message.setWrapperField(this, 36, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Tab} returns this
  */
 proto.dictionary.Tab.prototype.clearFieldgroup = function() {
-  this.setFieldgroup(undefined);
+  return this.setFieldgroup(undefined);
 };
 
 
@@ -4050,9 +4265,12 @@ proto.dictionary.Field.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -4065,9 +4283,12 @@ proto.dictionary.Field.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4080,9 +4301,12 @@ proto.dictionary.Field.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4095,9 +4319,12 @@ proto.dictionary.Field.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4110,9 +4337,12 @@ proto.dictionary.Field.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -4125,9 +4355,12 @@ proto.dictionary.Field.prototype.getSequence = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setSequence = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -4140,9 +4373,12 @@ proto.dictionary.Field.prototype.getColumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setColumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -4155,9 +4391,12 @@ proto.dictionary.Field.prototype.getElementname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setElementname = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -4170,9 +4409,12 @@ proto.dictionary.Field.prototype.getIsdisplayed = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsdisplayed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -4185,9 +4427,12 @@ proto.dictionary.Field.prototype.getIsdisplayedgrid = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsdisplayedgrid = function(value) {
-  jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -4200,9 +4445,12 @@ proto.dictionary.Field.prototype.getIsreadonly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsreadonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
@@ -4215,9 +4463,12 @@ proto.dictionary.Field.prototype.getIsallowcopy = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsallowcopy = function(value) {
-  jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -4230,9 +4481,12 @@ proto.dictionary.Field.prototype.getIsencrypted = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsencrypted = function(value) {
-  jspb.Message.setProto3BooleanField(this, 13, value);
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -4245,9 +4499,12 @@ proto.dictionary.Field.prototype.getIssameline = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIssameline = function(value) {
-  jspb.Message.setProto3BooleanField(this, 14, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -4260,9 +4517,12 @@ proto.dictionary.Field.prototype.getIsheading = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsheading = function(value) {
-  jspb.Message.setProto3BooleanField(this, 15, value);
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -4275,9 +4535,12 @@ proto.dictionary.Field.prototype.getIsfieldonly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsfieldonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 16, value);
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
@@ -4290,9 +4553,12 @@ proto.dictionary.Field.prototype.getIsquickentry = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsquickentry = function(value) {
-  jspb.Message.setProto3BooleanField(this, 17, value);
+  return jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
@@ -4305,9 +4571,12 @@ proto.dictionary.Field.prototype.getIsmandatory = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsmandatory = function(value) {
-  jspb.Message.setProto3BooleanField(this, 18, value);
+  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 
@@ -4320,9 +4589,12 @@ proto.dictionary.Field.prototype.getIskey = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIskey = function(value) {
-  jspb.Message.setProto3BooleanField(this, 19, value);
+  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
@@ -4335,9 +4607,12 @@ proto.dictionary.Field.prototype.getIsparent = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsparent = function(value) {
-  jspb.Message.setProto3BooleanField(this, 20, value);
+  return jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
@@ -4350,9 +4625,12 @@ proto.dictionary.Field.prototype.getIsupdateable = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsupdateable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 21, value);
+  return jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 
@@ -4365,9 +4643,12 @@ proto.dictionary.Field.prototype.getIsidentifier = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsidentifier = function(value) {
-  jspb.Message.setProto3BooleanField(this, 22, value);
+  return jspb.Message.setProto3BooleanField(this, 22, value);
 };
 
 
@@ -4380,9 +4661,12 @@ proto.dictionary.Field.prototype.getIsallowlogging = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsallowlogging = function(value) {
-  jspb.Message.setProto3BooleanField(this, 23, value);
+  return jspb.Message.setProto3BooleanField(this, 23, value);
 };
 
 
@@ -4395,9 +4679,12 @@ proto.dictionary.Field.prototype.getIsselectioncolumn = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsselectioncolumn = function(value) {
-  jspb.Message.setProto3BooleanField(this, 24, value);
+  return jspb.Message.setProto3BooleanField(this, 24, value);
 };
 
 
@@ -4410,9 +4697,12 @@ proto.dictionary.Field.prototype.getIsrange = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsrange = function(value) {
-  jspb.Message.setProto3BooleanField(this, 25, value);
+  return jspb.Message.setProto3BooleanField(this, 25, value);
 };
 
 
@@ -4425,9 +4715,12 @@ proto.dictionary.Field.prototype.getIsalwaysupdateable = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsalwaysupdateable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 26, value);
+  return jspb.Message.setProto3BooleanField(this, 26, value);
 };
 
 
@@ -4440,9 +4733,12 @@ proto.dictionary.Field.prototype.getIstranslated = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIstranslated = function(value) {
-  jspb.Message.setProto3BooleanField(this, 27, value);
+  return jspb.Message.setProto3BooleanField(this, 27, value);
 };
 
 
@@ -4455,9 +4751,12 @@ proto.dictionary.Field.prototype.getIdentifiersequence = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIdentifiersequence = function(value) {
-  jspb.Message.setProto3IntField(this, 78, value);
+  return jspb.Message.setProto3IntField(this, 78, value);
 };
 
 
@@ -4470,9 +4769,12 @@ proto.dictionary.Field.prototype.getDisplaylogic = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setDisplaylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 29, value);
+  return jspb.Message.setProto3StringField(this, 29, value);
 };
 
 
@@ -4485,9 +4787,12 @@ proto.dictionary.Field.prototype.getDisplaytype = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setDisplaytype = function(value) {
-  jspb.Message.setProto3IntField(this, 30, value);
+  return jspb.Message.setProto3IntField(this, 30, value);
 };
 
 
@@ -4500,9 +4805,12 @@ proto.dictionary.Field.prototype.getDefaultvalue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setDefaultvalue = function(value) {
-  jspb.Message.setProto3StringField(this, 31, value);
+  return jspb.Message.setProto3StringField(this, 31, value);
 };
 
 
@@ -4515,9 +4823,12 @@ proto.dictionary.Field.prototype.getReadonlylogic = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setReadonlylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 32, value);
+  return jspb.Message.setProto3StringField(this, 32, value);
 };
 
 
@@ -4530,9 +4841,12 @@ proto.dictionary.Field.prototype.getMandatorylogic = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setMandatorylogic = function(value) {
-  jspb.Message.setProto3StringField(this, 33, value);
+  return jspb.Message.setProto3StringField(this, 33, value);
 };
 
 
@@ -4545,9 +4859,12 @@ proto.dictionary.Field.prototype.getCallout = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setCallout = function(value) {
-  jspb.Message.setProto3StringField(this, 34, value);
+  return jspb.Message.setProto3StringField(this, 34, value);
 };
 
 
@@ -4560,9 +4877,12 @@ proto.dictionary.Field.prototype.getColumnsql = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setColumnsql = function(value) {
-  jspb.Message.setProto3StringField(this, 35, value);
+  return jspb.Message.setProto3StringField(this, 35, value);
 };
 
 
@@ -4575,9 +4895,12 @@ proto.dictionary.Field.prototype.getVformat = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setVformat = function(value) {
-  jspb.Message.setProto3StringField(this, 36, value);
+  return jspb.Message.setProto3StringField(this, 36, value);
 };
 
 
@@ -4590,9 +4913,12 @@ proto.dictionary.Field.prototype.getValuemin = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setValuemin = function(value) {
-  jspb.Message.setProto3StringField(this, 37, value);
+  return jspb.Message.setProto3StringField(this, 37, value);
 };
 
 
@@ -4605,9 +4931,12 @@ proto.dictionary.Field.prototype.getValuemax = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setValuemax = function(value) {
-  jspb.Message.setProto3StringField(this, 38, value);
+  return jspb.Message.setProto3StringField(this, 38, value);
 };
 
 
@@ -4620,9 +4949,12 @@ proto.dictionary.Field.prototype.getFormatpattern = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setFormatpattern = function(value) {
-  jspb.Message.setProto3StringField(this, 39, value);
+  return jspb.Message.setProto3StringField(this, 39, value);
 };
 
 
@@ -4636,17 +4968,21 @@ proto.dictionary.Field.prototype.getContextinfo = function() {
 };
 
 
-/** @param {?proto.dictionary.ContextInfo|undefined} value */
+/**
+ * @param {?proto.dictionary.ContextInfo|undefined} value
+ * @return {!proto.dictionary.Field} returns this
+*/
 proto.dictionary.Field.prototype.setContextinfo = function(value) {
-  jspb.Message.setWrapperField(this, 40, value);
+  return jspb.Message.setWrapperField(this, 40, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Field} returns this
  */
 proto.dictionary.Field.prototype.clearContextinfo = function() {
-  this.setContextinfo(undefined);
+  return this.setContextinfo(undefined);
 };
 
 
@@ -4669,17 +5005,21 @@ proto.dictionary.Field.prototype.getFieldgroup = function() {
 };
 
 
-/** @param {?proto.dictionary.FieldGroup|undefined} value */
+/**
+ * @param {?proto.dictionary.FieldGroup|undefined} value
+ * @return {!proto.dictionary.Field} returns this
+*/
 proto.dictionary.Field.prototype.setFieldgroup = function(value) {
-  jspb.Message.setWrapperField(this, 41, value);
+  return jspb.Message.setWrapperField(this, 41, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Field} returns this
  */
 proto.dictionary.Field.prototype.clearFieldgroup = function() {
-  this.setFieldgroup(undefined);
+  return this.setFieldgroup(undefined);
 };
 
 
@@ -4702,17 +5042,21 @@ proto.dictionary.Field.prototype.getFielddefinition = function() {
 };
 
 
-/** @param {?proto.dictionary.FieldDefinition|undefined} value */
+/**
+ * @param {?proto.dictionary.FieldDefinition|undefined} value
+ * @return {!proto.dictionary.Field} returns this
+*/
 proto.dictionary.Field.prototype.setFielddefinition = function(value) {
-  jspb.Message.setWrapperField(this, 42, value);
+  return jspb.Message.setWrapperField(this, 42, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Field} returns this
  */
 proto.dictionary.Field.prototype.clearFielddefinition = function() {
-  this.setFielddefinition(undefined);
+  return this.setFielddefinition(undefined);
 };
 
 
@@ -4735,17 +5079,21 @@ proto.dictionary.Field.prototype.getReference = function() {
 };
 
 
-/** @param {?proto.dictionary.Reference|undefined} value */
+/**
+ * @param {?proto.dictionary.Reference|undefined} value
+ * @return {!proto.dictionary.Field} returns this
+*/
 proto.dictionary.Field.prototype.setReference = function(value) {
-  jspb.Message.setWrapperField(this, 43, value);
+  return jspb.Message.setWrapperField(this, 43, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Field} returns this
  */
 proto.dictionary.Field.prototype.clearReference = function() {
-  this.setReference(undefined);
+  return this.setReference(undefined);
 };
 
 
@@ -4768,17 +5116,21 @@ proto.dictionary.Field.prototype.getProcess = function() {
 };
 
 
-/** @param {?proto.dictionary.Process|undefined} value */
+/**
+ * @param {?proto.dictionary.Process|undefined} value
+ * @return {!proto.dictionary.Field} returns this
+*/
 proto.dictionary.Field.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 44, value);
+  return jspb.Message.setWrapperField(this, 44, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Field} returns this
  */
 proto.dictionary.Field.prototype.clearProcess = function() {
-  this.setProcess(undefined);
+  return this.setProcess(undefined);
 };
 
 
@@ -4800,9 +5152,12 @@ proto.dictionary.Field.prototype.getIsquerycriteria = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsquerycriteria = function(value) {
-  jspb.Message.setProto3BooleanField(this, 45, value);
+  return jspb.Message.setProto3BooleanField(this, 45, value);
 };
 
 
@@ -4815,9 +5170,12 @@ proto.dictionary.Field.prototype.getIsorderby = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsorderby = function(value) {
-  jspb.Message.setProto3BooleanField(this, 46, value);
+  return jspb.Message.setProto3BooleanField(this, 46, value);
 };
 
 
@@ -4830,9 +5188,12 @@ proto.dictionary.Field.prototype.getSeqnogrid = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setSeqnogrid = function(value) {
-  jspb.Message.setProto3IntField(this, 47, value);
+  return jspb.Message.setProto3IntField(this, 47, value);
 };
 
 
@@ -4845,9 +5206,12 @@ proto.dictionary.Field.prototype.getSortno = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setSortno = function(value) {
-  jspb.Message.setProto3IntField(this, 48, value);
+  return jspb.Message.setProto3IntField(this, 48, value);
 };
 
 
@@ -4860,9 +5224,12 @@ proto.dictionary.Field.prototype.getIsinfoonly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsinfoonly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 49, value);
+  return jspb.Message.setProto3BooleanField(this, 49, value);
 };
 
 
@@ -4875,9 +5242,12 @@ proto.dictionary.Field.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 50, value);
+  return jspb.Message.setProto3BooleanField(this, 50, value);
 };
 
 
@@ -4890,9 +5260,12 @@ proto.dictionary.Field.prototype.getDefaultvalueto = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setDefaultvalueto = function(value) {
-  jspb.Message.setProto3StringField(this, 51, value);
+  return jspb.Message.setProto3StringField(this, 51, value);
 };
 
 
@@ -4905,9 +5278,12 @@ proto.dictionary.Field.prototype.getFieldlength = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Field} returns this
+ */
 proto.dictionary.Field.prototype.setFieldlength = function(value) {
-  jspb.Message.setProto3IntField(this, 52, value);
+  return jspb.Message.setProto3IntField(this, 52, value);
 };
 
 
@@ -5106,9 +5482,12 @@ proto.dictionary.ContextInfo.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5121,9 +5500,12 @@ proto.dictionary.ContextInfo.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5136,9 +5518,12 @@ proto.dictionary.ContextInfo.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5151,9 +5536,12 @@ proto.dictionary.ContextInfo.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5167,17 +5555,21 @@ proto.dictionary.ContextInfo.prototype.getMessagetext = function() {
 };
 
 
-/** @param {?proto.dictionary.MessageText|undefined} value */
+/**
+ * @param {?proto.dictionary.MessageText|undefined} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+*/
 proto.dictionary.ContextInfo.prototype.setMessagetext = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.ContextInfo} returns this
  */
 proto.dictionary.ContextInfo.prototype.clearMessagetext = function() {
-  this.setMessagetext(undefined);
+  return this.setMessagetext(undefined);
 };
 
 
@@ -5199,9 +5591,12 @@ proto.dictionary.ContextInfo.prototype.getSqlstatement = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setSqlstatement = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -5214,9 +5609,12 @@ proto.dictionary.ContextInfo.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.ContextInfo} returns this
+ */
 proto.dictionary.ContextInfo.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -5413,9 +5811,12 @@ proto.dictionary.MessageText.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5428,9 +5829,12 @@ proto.dictionary.MessageText.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5443,9 +5847,12 @@ proto.dictionary.MessageText.prototype.getValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setValue = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5458,9 +5865,12 @@ proto.dictionary.MessageText.prototype.getMsgtype = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setMsgtype = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5473,9 +5883,12 @@ proto.dictionary.MessageText.prototype.getMsgtext = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setMsgtext = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -5488,9 +5901,12 @@ proto.dictionary.MessageText.prototype.getMsgtip = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setMsgtip = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -5503,9 +5919,12 @@ proto.dictionary.MessageText.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.MessageText} returns this
+ */
 proto.dictionary.MessageText.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -5678,9 +6097,12 @@ proto.dictionary.FieldGroup.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.FieldGroup} returns this
+ */
 proto.dictionary.FieldGroup.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5693,9 +6115,12 @@ proto.dictionary.FieldGroup.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldGroup} returns this
+ */
 proto.dictionary.FieldGroup.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5708,9 +6133,12 @@ proto.dictionary.FieldGroup.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldGroup} returns this
+ */
 proto.dictionary.FieldGroup.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5723,9 +6151,12 @@ proto.dictionary.FieldGroup.prototype.getFieldgrouptype = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldGroup} returns this
+ */
 proto.dictionary.FieldGroup.prototype.setFieldgrouptype = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5738,9 +6169,12 @@ proto.dictionary.FieldGroup.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.FieldGroup} returns this
+ */
 proto.dictionary.FieldGroup.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
@@ -5947,9 +6381,12 @@ proto.dictionary.FieldDefinition.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -5962,9 +6399,12 @@ proto.dictionary.FieldDefinition.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5977,9 +6417,12 @@ proto.dictionary.FieldDefinition.prototype.getValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setValue = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5992,9 +6435,12 @@ proto.dictionary.FieldDefinition.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6007,9 +6453,12 @@ proto.dictionary.FieldDefinition.prototype.getFieldgrouptype = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setFieldgrouptype = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -6023,9 +6472,12 @@ proto.dictionary.FieldDefinition.prototype.getConditionsList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.FieldCondition>} value */
+/**
+ * @param {!Array<!proto.dictionary.FieldCondition>} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+*/
 proto.dictionary.FieldDefinition.prototype.setConditionsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -6041,9 +6493,10 @@ proto.dictionary.FieldDefinition.prototype.addConditions = function(opt_value, o
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.FieldDefinition} returns this
  */
 proto.dictionary.FieldDefinition.prototype.clearConditionsList = function() {
-  this.setConditionsList([]);
+  return this.setConditionsList([]);
 };
 
 
@@ -6056,9 +6509,12 @@ proto.dictionary.FieldDefinition.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.FieldDefinition} returns this
+ */
 proto.dictionary.FieldDefinition.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -6231,9 +6687,12 @@ proto.dictionary.FieldCondition.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.FieldCondition} returns this
+ */
 proto.dictionary.FieldCondition.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6246,9 +6705,12 @@ proto.dictionary.FieldCondition.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldCondition} returns this
+ */
 proto.dictionary.FieldCondition.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6261,9 +6723,12 @@ proto.dictionary.FieldCondition.prototype.getCondition = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldCondition} returns this
+ */
 proto.dictionary.FieldCondition.prototype.setCondition = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6276,9 +6741,12 @@ proto.dictionary.FieldCondition.prototype.getStylesheet = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.FieldCondition} returns this
+ */
 proto.dictionary.FieldCondition.prototype.setStylesheet = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6291,9 +6759,12 @@ proto.dictionary.FieldCondition.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.FieldCondition} returns this
+ */
 proto.dictionary.FieldCondition.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
@@ -6575,9 +7046,12 @@ proto.dictionary.Process.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6590,9 +7064,12 @@ proto.dictionary.Process.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6605,9 +7082,12 @@ proto.dictionary.Process.prototype.getValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setValue = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6620,9 +7100,12 @@ proto.dictionary.Process.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6635,9 +7118,12 @@ proto.dictionary.Process.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -6650,9 +7136,12 @@ proto.dictionary.Process.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -6665,9 +7154,12 @@ proto.dictionary.Process.prototype.getIsreport = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setIsreport = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -6680,9 +7172,12 @@ proto.dictionary.Process.prototype.getAccesslevel = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -6695,9 +7190,12 @@ proto.dictionary.Process.prototype.getShowhelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setShowhelp = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -6710,9 +7208,12 @@ proto.dictionary.Process.prototype.getIsdirectprint = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setIsdirectprint = function(value) {
-  jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
@@ -6726,9 +7227,12 @@ proto.dictionary.Process.prototype.getParametersList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.Field>} value */
+/**
+ * @param {!Array<!proto.dictionary.Field>} value
+ * @return {!proto.dictionary.Process} returns this
+*/
 proto.dictionary.Process.prototype.setParametersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 11, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -6744,9 +7248,10 @@ proto.dictionary.Process.prototype.addParameters = function(opt_value, opt_index
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Process} returns this
  */
 proto.dictionary.Process.prototype.clearParametersList = function() {
-  this.setParametersList([]);
+  return this.setParametersList([]);
 };
 
 
@@ -6759,9 +7264,12 @@ proto.dictionary.Process.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Process} returns this
+ */
 proto.dictionary.Process.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -6775,9 +7283,12 @@ proto.dictionary.Process.prototype.getReportexporttypesList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.ReportExportType>} value */
+/**
+ * @param {!Array<!proto.dictionary.ReportExportType>} value
+ * @return {!proto.dictionary.Process} returns this
+*/
 proto.dictionary.Process.prototype.setReportexporttypesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 13, value);
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
 
@@ -6793,9 +7304,10 @@ proto.dictionary.Process.prototype.addReportexporttypes = function(opt_value, op
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Process} returns this
  */
 proto.dictionary.Process.prototype.clearReportexporttypesList = function() {
-  this.setReportexporttypesList([]);
+  return this.setReportexporttypesList([]);
 };
 
 
@@ -7004,9 +7516,12 @@ proto.dictionary.Form.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7019,9 +7534,12 @@ proto.dictionary.Form.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7034,9 +7552,12 @@ proto.dictionary.Form.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7049,9 +7570,12 @@ proto.dictionary.Form.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -7064,9 +7588,12 @@ proto.dictionary.Form.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -7079,9 +7606,12 @@ proto.dictionary.Form.prototype.getAccesslevel = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -7094,9 +7624,12 @@ proto.dictionary.Form.prototype.getFilename = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setFilename = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -7109,9 +7642,12 @@ proto.dictionary.Form.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Form} returns this
+ */
 proto.dictionary.Form.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -7490,9 +8026,12 @@ proto.dictionary.Browser.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7505,9 +8044,12 @@ proto.dictionary.Browser.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7520,9 +8062,12 @@ proto.dictionary.Browser.prototype.getValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setValue = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7535,9 +8080,12 @@ proto.dictionary.Browser.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -7550,9 +8098,12 @@ proto.dictionary.Browser.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -7565,9 +8116,12 @@ proto.dictionary.Browser.prototype.getHelp = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setHelp = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -7580,9 +8134,12 @@ proto.dictionary.Browser.prototype.getAccesslevel = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setAccesslevel = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -7595,9 +8152,12 @@ proto.dictionary.Browser.prototype.getQuery = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setQuery = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -7610,9 +8170,12 @@ proto.dictionary.Browser.prototype.getWhereclause = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setWhereclause = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
@@ -7625,9 +8188,12 @@ proto.dictionary.Browser.prototype.getOrderbyclause = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setOrderbyclause = function(value) {
-  jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -7640,9 +8206,12 @@ proto.dictionary.Browser.prototype.getIsupdateable = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsupdateable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 12, value);
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -7655,9 +8224,12 @@ proto.dictionary.Browser.prototype.getIsdeleteable = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsdeleteable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 13, value);
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -7670,9 +8242,12 @@ proto.dictionary.Browser.prototype.getIsselectedbydefault = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsselectedbydefault = function(value) {
-  jspb.Message.setProto3BooleanField(this, 14, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -7685,9 +8260,12 @@ proto.dictionary.Browser.prototype.getIscollapsiblebydefault = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIscollapsiblebydefault = function(value) {
-  jspb.Message.setProto3BooleanField(this, 15, value);
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -7700,9 +8278,12 @@ proto.dictionary.Browser.prototype.getIsexecutedquerybydefault = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsexecutedquerybydefault = function(value) {
-  jspb.Message.setProto3BooleanField(this, 16, value);
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 
@@ -7715,9 +8296,12 @@ proto.dictionary.Browser.prototype.getIsshowtotal = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsshowtotal = function(value) {
-  jspb.Message.setProto3BooleanField(this, 17, value);
+  return jspb.Message.setProto3BooleanField(this, 17, value);
 };
 
 
@@ -7730,9 +8314,12 @@ proto.dictionary.Browser.prototype.getViewuuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setViewuuid = function(value) {
-  jspb.Message.setProto3StringField(this, 18, value);
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
@@ -7746,17 +8333,21 @@ proto.dictionary.Browser.prototype.getWindow = function() {
 };
 
 
-/** @param {?proto.dictionary.Window|undefined} value */
+/**
+ * @param {?proto.dictionary.Window|undefined} value
+ * @return {!proto.dictionary.Browser} returns this
+*/
 proto.dictionary.Browser.prototype.setWindow = function(value) {
-  jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Browser} returns this
  */
 proto.dictionary.Browser.prototype.clearWindow = function() {
-  this.setWindow(undefined);
+  return this.setWindow(undefined);
 };
 
 
@@ -7779,17 +8370,21 @@ proto.dictionary.Browser.prototype.getProcess = function() {
 };
 
 
-/** @param {?proto.dictionary.Process|undefined} value */
+/**
+ * @param {?proto.dictionary.Process|undefined} value
+ * @return {!proto.dictionary.Browser} returns this
+*/
 proto.dictionary.Browser.prototype.setProcess = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
+  return jspb.Message.setWrapperField(this, 20, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.dictionary.Browser} returns this
  */
 proto.dictionary.Browser.prototype.clearProcess = function() {
-  this.setProcess(undefined);
+  return this.setProcess(undefined);
 };
 
 
@@ -7812,9 +8407,12 @@ proto.dictionary.Browser.prototype.getFieldsList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.Field>} value */
+/**
+ * @param {!Array<!proto.dictionary.Field>} value
+ * @return {!proto.dictionary.Browser} returns this
+*/
 proto.dictionary.Browser.prototype.setFieldsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 21, value);
+  return jspb.Message.setRepeatedWrapperField(this, 21, value);
 };
 
 
@@ -7830,9 +8428,10 @@ proto.dictionary.Browser.prototype.addFields = function(opt_value, opt_index) {
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Browser} returns this
  */
 proto.dictionary.Browser.prototype.clearFieldsList = function() {
-  this.setFieldsList([]);
+  return this.setFieldsList([]);
 };
 
 
@@ -7845,9 +8444,12 @@ proto.dictionary.Browser.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.Browser} returns this
+ */
 proto.dictionary.Browser.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 22, value);
+  return jspb.Message.setProto3BooleanField(this, 22, value);
 };
 
 
@@ -8032,9 +8634,12 @@ proto.dictionary.ZoomWindow.prototype.getId = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -8047,9 +8652,12 @@ proto.dictionary.ZoomWindow.prototype.getUuid = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setUuid = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8062,9 +8670,12 @@ proto.dictionary.ZoomWindow.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8077,9 +8688,12 @@ proto.dictionary.ZoomWindow.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -8092,9 +8706,12 @@ proto.dictionary.ZoomWindow.prototype.getIssotrx = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setIssotrx = function(value) {
-  jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
@@ -8107,9 +8724,12 @@ proto.dictionary.ZoomWindow.prototype.getIsactive = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.dictionary.ZoomWindow} returns this
+ */
 proto.dictionary.ZoomWindow.prototype.setIsactive = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -8316,9 +8936,12 @@ proto.dictionary.Reference.prototype.getTablename = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setTablename = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8331,9 +8954,12 @@ proto.dictionary.Reference.prototype.getKeycolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setKeycolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8346,9 +8972,12 @@ proto.dictionary.Reference.prototype.getDisplaycolumnname = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setDisplaycolumnname = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8361,9 +8990,12 @@ proto.dictionary.Reference.prototype.getQuery = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setQuery = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -8376,9 +9008,12 @@ proto.dictionary.Reference.prototype.getDirectquery = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setDirectquery = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -8391,9 +9026,12 @@ proto.dictionary.Reference.prototype.getValidationcode = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.Reference} returns this
+ */
 proto.dictionary.Reference.prototype.setValidationcode = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -8407,9 +9045,12 @@ proto.dictionary.Reference.prototype.getWindowsList = function() {
 };
 
 
-/** @param {!Array<!proto.dictionary.ZoomWindow>} value */
+/**
+ * @param {!Array<!proto.dictionary.ZoomWindow>} value
+ * @return {!proto.dictionary.Reference} returns this
+*/
 proto.dictionary.Reference.prototype.setWindowsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -8425,9 +9066,10 @@ proto.dictionary.Reference.prototype.addWindows = function(opt_value, opt_index)
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.dictionary.Reference} returns this
  */
 proto.dictionary.Reference.prototype.clearWindowsList = function() {
-  this.setWindowsList([]);
+  return this.setWindowsList([]);
 };
 
 
@@ -8576,9 +9218,12 @@ proto.dictionary.ReportExportType.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ReportExportType} returns this
+ */
 proto.dictionary.ReportExportType.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8591,9 +9236,12 @@ proto.dictionary.ReportExportType.prototype.getDescription = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ReportExportType} returns this
+ */
 proto.dictionary.ReportExportType.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8606,9 +9254,12 @@ proto.dictionary.ReportExportType.prototype.getType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.dictionary.ReportExportType} returns this
+ */
 proto.dictionary.ReportExportType.prototype.setType = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
