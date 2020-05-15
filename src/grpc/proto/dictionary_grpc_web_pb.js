@@ -37,16 +37,6 @@ proto.dictionary.DictionaryClient =
    */
   this.hostname_ = hostname;
 
-  /**
-   * @private @const {?Object} The credentials to be used to connect
-   *    to the server
-   */
-  this.credentials_ = credentials;
-
-  /**
-   * @private @const {?Object} Options for the client
-   */
-  this.options_ = options;
 };
 
 
@@ -73,17 +63,29 @@ proto.dictionary.DictionaryPromiseClient =
    */
   this.hostname_ = hostname;
 
-  /**
-   * @private @const {?Object} The credentials to be used to connect
-   *    to the server
-   */
-  this.credentials_ = credentials;
-
-  /**
-   * @private @const {?Object} Options for the client
-   */
-  this.options_ = options;
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Window>}
+ */
+const methodDescriptor_Dictionary_GetWindow = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetWindow',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Window,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Window.deserializeBinary
+);
 
 
 /**
@@ -94,7 +96,10 @@ proto.dictionary.DictionaryPromiseClient =
  */
 const methodInfo_Dictionary_GetWindow = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -118,7 +123,7 @@ proto.dictionary.DictionaryClient.prototype.getWindow =
       '/dictionary.Dictionary/GetWindow',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetWindow,
+      methodDescriptor_Dictionary_GetWindow,
       callback);
 };
 
@@ -137,8 +142,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getWindow =
       '/dictionary.Dictionary/GetWindow',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetWindow);
+      methodDescriptor_Dictionary_GetWindow);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Window>}
+ */
+const methodDescriptor_Dictionary_GetWindowAndTabs = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetWindowAndTabs',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Window,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Window.deserializeBinary
+);
 
 
 /**
@@ -149,7 +176,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getWindow =
  */
 const methodInfo_Dictionary_GetWindowAndTabs = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Window,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -173,7 +203,7 @@ proto.dictionary.DictionaryClient.prototype.getWindowAndTabs =
       '/dictionary.Dictionary/GetWindowAndTabs',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetWindowAndTabs,
+      methodDescriptor_Dictionary_GetWindowAndTabs,
       callback);
 };
 
@@ -192,8 +222,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getWindowAndTabs =
       '/dictionary.Dictionary/GetWindowAndTabs',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetWindowAndTabs);
+      methodDescriptor_Dictionary_GetWindowAndTabs);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Tab>}
+ */
+const methodDescriptor_Dictionary_GetTab = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetTab',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Tab,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Tab.deserializeBinary
+);
 
 
 /**
@@ -204,7 +256,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getWindowAndTabs =
  */
 const methodInfo_Dictionary_GetTab = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -228,7 +283,7 @@ proto.dictionary.DictionaryClient.prototype.getTab =
       '/dictionary.Dictionary/GetTab',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetTab,
+      methodDescriptor_Dictionary_GetTab,
       callback);
 };
 
@@ -247,8 +302,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getTab =
       '/dictionary.Dictionary/GetTab',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetTab);
+      methodDescriptor_Dictionary_GetTab);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Tab>}
+ */
+const methodDescriptor_Dictionary_GetTabAndFields = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetTabAndFields',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Tab,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Tab.deserializeBinary
+);
 
 
 /**
@@ -259,7 +336,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getTab =
  */
 const methodInfo_Dictionary_GetTabAndFields = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Tab,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -283,7 +363,7 @@ proto.dictionary.DictionaryClient.prototype.getTabAndFields =
       '/dictionary.Dictionary/GetTabAndFields',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetTabAndFields,
+      methodDescriptor_Dictionary_GetTabAndFields,
       callback);
 };
 
@@ -302,8 +382,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getTabAndFields =
       '/dictionary.Dictionary/GetTabAndFields',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetTabAndFields);
+      methodDescriptor_Dictionary_GetTabAndFields);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.FieldRequest,
+ *   !proto.dictionary.Field>}
+ */
+const methodDescriptor_Dictionary_GetField = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetField',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.FieldRequest,
+  proto.dictionary.Field,
+  /**
+   * @param {!proto.dictionary.FieldRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Field.deserializeBinary
+);
 
 
 /**
@@ -314,7 +416,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getTabAndFields =
  */
 const methodInfo_Dictionary_GetField = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Field,
-  /** @param {!proto.dictionary.FieldRequest} request */
+  /**
+   * @param {!proto.dictionary.FieldRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -338,7 +443,7 @@ proto.dictionary.DictionaryClient.prototype.getField =
       '/dictionary.Dictionary/GetField',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetField,
+      methodDescriptor_Dictionary_GetField,
       callback);
 };
 
@@ -357,8 +462,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getField =
       '/dictionary.Dictionary/GetField',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetField);
+      methodDescriptor_Dictionary_GetField);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.ReferenceRequest,
+ *   !proto.dictionary.Reference>}
+ */
+const methodDescriptor_Dictionary_GetReference = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetReference',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.ReferenceRequest,
+  proto.dictionary.Reference,
+  /**
+   * @param {!proto.dictionary.ReferenceRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Reference.deserializeBinary
+);
 
 
 /**
@@ -369,7 +496,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getField =
  */
 const methodInfo_Dictionary_GetReference = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Reference,
-  /** @param {!proto.dictionary.ReferenceRequest} request */
+  /**
+   * @param {!proto.dictionary.ReferenceRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -393,7 +523,7 @@ proto.dictionary.DictionaryClient.prototype.getReference =
       '/dictionary.Dictionary/GetReference',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetReference,
+      methodDescriptor_Dictionary_GetReference,
       callback);
 };
 
@@ -412,8 +542,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getReference =
       '/dictionary.Dictionary/GetReference',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetReference);
+      methodDescriptor_Dictionary_GetReference);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.ValidationRuleRequest,
+ *   !proto.dictionary.ValidationRule>}
+ */
+const methodDescriptor_Dictionary_GetValidationRule = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetValidationRule',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.ValidationRuleRequest,
+  proto.dictionary.ValidationRule,
+  /**
+   * @param {!proto.dictionary.ValidationRuleRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.ValidationRule.deserializeBinary
+);
 
 
 /**
@@ -424,7 +576,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getReference =
  */
 const methodInfo_Dictionary_GetValidationRule = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.ValidationRule,
-  /** @param {!proto.dictionary.ValidationRuleRequest} request */
+  /**
+   * @param {!proto.dictionary.ValidationRuleRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -448,7 +603,7 @@ proto.dictionary.DictionaryClient.prototype.getValidationRule =
       '/dictionary.Dictionary/GetValidationRule',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetValidationRule,
+      methodDescriptor_Dictionary_GetValidationRule,
       callback);
 };
 
@@ -467,8 +622,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getValidationRule =
       '/dictionary.Dictionary/GetValidationRule',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetValidationRule);
+      methodDescriptor_Dictionary_GetValidationRule);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Process>}
+ */
+const methodDescriptor_Dictionary_GetProcess = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetProcess',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Process,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Process.deserializeBinary
+);
 
 
 /**
@@ -479,7 +656,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getValidationRule =
  */
 const methodInfo_Dictionary_GetProcess = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Process,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -503,7 +683,7 @@ proto.dictionary.DictionaryClient.prototype.getProcess =
       '/dictionary.Dictionary/GetProcess',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetProcess,
+      methodDescriptor_Dictionary_GetProcess,
       callback);
 };
 
@@ -522,8 +702,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getProcess =
       '/dictionary.Dictionary/GetProcess',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetProcess);
+      methodDescriptor_Dictionary_GetProcess);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Browser>}
+ */
+const methodDescriptor_Dictionary_GetBrowser = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetBrowser',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Browser,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Browser.deserializeBinary
+);
 
 
 /**
@@ -534,7 +736,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getProcess =
  */
 const methodInfo_Dictionary_GetBrowser = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Browser,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -558,7 +763,7 @@ proto.dictionary.DictionaryClient.prototype.getBrowser =
       '/dictionary.Dictionary/GetBrowser',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetBrowser,
+      methodDescriptor_Dictionary_GetBrowser,
       callback);
 };
 
@@ -577,8 +782,30 @@ proto.dictionary.DictionaryPromiseClient.prototype.getBrowser =
       '/dictionary.Dictionary/GetBrowser',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetBrowser);
+      methodDescriptor_Dictionary_GetBrowser);
 };
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.dictionary.EntityRequest,
+ *   !proto.dictionary.Form>}
+ */
+const methodDescriptor_Dictionary_GetForm = new grpc.web.MethodDescriptor(
+  '/dictionary.Dictionary/GetForm',
+  grpc.web.MethodType.UNARY,
+  proto.dictionary.EntityRequest,
+  proto.dictionary.Form,
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.dictionary.Form.deserializeBinary
+);
 
 
 /**
@@ -589,7 +816,10 @@ proto.dictionary.DictionaryPromiseClient.prototype.getBrowser =
  */
 const methodInfo_Dictionary_GetForm = new grpc.web.AbstractClientBase.MethodInfo(
   proto.dictionary.Form,
-  /** @param {!proto.dictionary.EntityRequest} request */
+  /**
+   * @param {!proto.dictionary.EntityRequest} request
+   * @return {!Uint8Array}
+   */
   function(request) {
     return request.serializeBinary();
   },
@@ -613,7 +843,7 @@ proto.dictionary.DictionaryClient.prototype.getForm =
       '/dictionary.Dictionary/GetForm',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetForm,
+      methodDescriptor_Dictionary_GetForm,
       callback);
 };
 
@@ -632,7 +862,7 @@ proto.dictionary.DictionaryPromiseClient.prototype.getForm =
       '/dictionary.Dictionary/GetForm',
       request,
       metadata || {},
-      methodInfo_Dictionary_GetForm);
+      methodDescriptor_Dictionary_GetForm);
 };
 
 
