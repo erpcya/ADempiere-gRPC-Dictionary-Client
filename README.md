@@ -1,9 +1,9 @@
 # ADempiere Dictionary Client for gRPC
 
-[![npm version](https://img.shields.io/npm/v/@adempiere/grpc-data-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-data-client)
-[![License](https://img.shields.io/npm/l/@adempiere/grpc-data-client.svg)](https://github.com/erpcya/grpc-data-client/blob/master/LICENSE)
-[![Downloads](https://img.shields.io/npm/dm/@adempiere/grpc-data-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-data-client)
-[![Dependencies](https://img.shields.io/librariesio/github/erpcya/grpc-data-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-data-client)
+[![npm version](https://img.shields.io/npm/v/@adempiere/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
+[![License](https://img.shields.io/npm/l/@adempiere/grpc-dictionary-client.svg)](https://github.com/erpcya/grpc-dictionary-client/blob/master/LICENSE)
+[![Downloads](https://img.shields.io/npm/dm/@adempiere/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
+[![Dependencies](https://img.shields.io/librariesio/github/erpcya/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
 
 ADempiere Dictionary Client write in Javascript for gRPC service, use it for connect with
 [ADempiere-gRPC-Server](https://github.com/erpcya/adempiere-gRPC-Server).
