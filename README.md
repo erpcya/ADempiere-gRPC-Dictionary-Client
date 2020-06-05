@@ -170,9 +170,14 @@ protoc --version
 After installed it just go to source code folder an run it:
 
 Dictionary
-```
+```Shell
 protoc proto/dictionary.proto \
 --js_out=import_style=commonjs:src/grpc \
 --grpc-web_out=import_style=commonjs,mode=grpcwebtext:src/grpc
+```
+
+Or run:
+```Shell
+sh generate-stub.sh
 ```
 The result is generated on: src/grpc folder
