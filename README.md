@@ -1,4 +1,10 @@
 # ADempiere Dictionary Client for gRPC
+
+[![npm version](https://img.shields.io/npm/v/@adempiere/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
+[![License](https://img.shields.io/npm/l/@adempiere/grpc-dictionary-client.svg)](https://github.com/erpcya/grpc-dictionary-client/blob/master/LICENSE)
+[![Downloads](https://img.shields.io/npm/dm/@adempiere/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
+[![Dependencies](https://img.shields.io/librariesio/github/erpcya/grpc-dictionary-client.svg)](https://www.npmjs.com/package/@adempiere/grpc-dictionary-client)
+
 ADempiere Dictionary Client write in Javascript for gRPC service, use it for connect with
 [ADempiere-gRPC-Server](https://github.com/erpcya/adempiere-gRPC-Server).
 
@@ -10,7 +16,7 @@ ADempiere Dictionary Client write in Javascript for gRPC service, use it for con
 
 ``` bash
 # installing via NPM
-npm install @adempiere/grpc-dictionary-client
+npm i @adempiere/grpc-dictionary-client --save
 ```
 ``` bash
 # installing via Yarn
@@ -21,44 +27,28 @@ yarn add @adempiere/grpc-dictionary-client
 ### Declare Dictionary
 ```javascript
 const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary(GRPC_HOST, 'Session UUID');
-```
-### Declare Dictionary with specific language
-```javascript
-const Dictionary = require('@adempiere/grpc-dictionary-client');
-let dictionary = new Dictionary(GRPC_HOST, 'Session UUID', 'es_VE');
-```
-
-### Request a simple Menu
-```javascript
-//  Request Menu
-dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', false)
-.then(menu => {
-  console.log("Menu: " + menu);
-})
-.catch(err => {
-  console.log("Error " + err.code + ": " + err.message);
+const dictionary = new Dictionary({
+  host: GRPC_HOST,
+  sessionUuid: 'Session UUID'
 });
 ```
-### Request Menu and Childs
+
+### Declare Dictionary with specific language (i18n)
 ```javascript
-//  Request Menu with childs
-dictionary.requestMenu('8e4fd396-fb40-11e8-a479-7a0060f0aa01', true)
-.then(menu => {
-  console.log("Menu: " + menu);
-  for(var i = 0; i < menu.getChildsList().length; i++) {
-    console.log("Menu Child: " + menu.getChildsList()[i]);
-  }
-})
-.catch(err => {
-  console.log("Error " + err.code + ": " + err.message);
+const Dictionary = require('@adempiere/grpc-dictionary-client');
+const dictionary = new Dictionary({
+  host: GRPC_HOST,
+  sessionUuid: 'Session UUID',
+  language: 'es_VE'
 });
 ```
 
 ### Request a Window
 ```javascript
 //  Request Window
-dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
+dictionary.requestWindow({
+  uuid: 'a520de12-fb40-11e8-a479-7a0060f0aa01'
+})
 .then(window => {
   console.log("Window: " + window);
 })
@@ -66,14 +56,18 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', false)
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+
 ### Request a Window and Tabs of it
 ```javascript
 //  Request Window and Tabs
-dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
+dictionary.requestWindow({
+  uuid: 'a520de12-fb40-11e8-a479-7a0060f0aa01',
+  isWithTabs: true
+})
 .then(window => {
-  for(var i = 0; i < window.getTabsList().length; i++) {
-    console.log("Window Tab: " + window.getTabsList()[i]);
-  }
+  window.tabsList.foreach(tabElement => {
+    console.log("Window Tab: " + tabElement);
+  })
 })
 .catch(err => {
   console.log("Error " + err.code + ": " + err.message);
@@ -83,7 +77,10 @@ dictionary.requestWindow('a520de12-fb40-11e8-a479-7a0060f0aa01', true)
 ### Request a Tab
 ```javascript
 //  Request Tab
-dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
+dictionary.requestTab({
+  uuid: 'a49fb4e0-fb40-11e8-a479-7a0060f0aa01',
+  isWithProcess: false
+})
 .then(tab => {
   console.log("Tab: " + tab);
 })
@@ -91,23 +88,31 @@ dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', false)
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+
 ### Request a Tab and Fields
 ```javascript
 //  Request Window and Tabs
-dictionary.requestTab('a49fb4e0-fb40-11e8-a479-7a0060f0aa01', true)
+dictionary.requestTab({
+  uuid: 'a49fb4e0-fb40-11e8-a479-7a0060f0aa01',
+  isWithFields: true,
+  isWithProcess: false
+})
 .then(tab => {
-  for(var i = 0; i < tab.getFieldsList().length; i++) {
-    console.log("Field: " + tab.getFieldsList()[i]);
-  }
+  tab.fieldsList.foreach(fieldElement => {
+    console.log("Field: " + fieldElement);
+  })
 })
 .catch(err => {
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+
 ### Request a Field
 ```javascript
 //  Request Field
-dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
+dictionary.requestField({
+  fieldUuid: '8cecee3a-fb40-11e8-a479-7a0060f0aa01'
+})
 .then(field => {
   console.log("Field: " + field);
 })
@@ -115,10 +120,13 @@ dictionary.requestField('8cecee3a-fb40-11e8-a479-7a0060f0aa01')
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+
 ### Request a Process
 ```javascript
 //  Request Process
-dictionary.requestProcess('a42adc88-fb40-11e8-a479-7a0060f0aa01')
+dictionary.requestProcess({
+  uuid: 'a42adc88-fb40-11e8-a479-7a0060f0aa01'
+})
 .then(process => {
   console.log("Process: " + process);
 })
@@ -126,10 +134,13 @@ dictionary.requestProcess('a42adc88-fb40-11e8-a479-7a0060f0aa01')
   console.log("Error " + err.code + ": " + err.message);
 });
 ```
+
 ### Request a Smart Browser
 ```javascript
 //  Request Smart Browser
-dictionary.requestBrowser('8aaef794-fb40-11e8-a479-7a0060f0aa01')
+dictionary.requestBrowser({
+  uud: '8aaef794-fb40-11e8-a479-7a0060f0aa01'
+})
 .then(browser => {
   console.log("Smart Browser: " + browser);
 })
@@ -145,10 +156,28 @@ For recreate stub class you must have follow:
 - [protoc](https://github.com/grpc/grpc-web/releases)
 - Also you can see it: [gRPC-web](https://github.com/grpc/grpc-web)
 - [gRPC](https://grpc.io/docs/tutorials/basic/web.html)
-After installed it just go to source code folder an run it:
+
+Note: You can also install `protoc` and `protoc-gen-grpc-web` by going to the repository directory and run the command:
+```Shell
+sh install-protoc.sh
 ```
+
+When installation is complete, check the version with
+```Shell
+protoc --version
+```
+
+After installed it just go to source code folder an run it:
+
+Dictionary
+```Shell
 protoc proto/dictionary.proto \
 --js_out=import_style=commonjs:src/grpc \
 --grpc-web_out=import_style=commonjs,mode=grpcwebtext:src/grpc
+```
+
+Or run:
+```Shell
+sh generate-stub.sh
 ```
 The result is generated on: src/grpc folder
