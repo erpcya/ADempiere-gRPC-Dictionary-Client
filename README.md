@@ -169,7 +169,7 @@ protoc --version
 
 After installed it just go to source code folder an run it:
 
-Dictionary
+Run Dictionary gRPC
 ```Shell
 protoc proto/dictionary.proto \
 --js_out=import_style=commonjs:src/grpc \
@@ -180,4 +180,7 @@ Or run:
 ```Shell
 sh generate-stub.sh
 ```
+
 The result is generated on: src/grpc folder
+- `dictionary_pb.js`
+- `dictionary_grpc_web_pb.js`
